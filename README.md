@@ -1,4 +1,4 @@
-# Material-Design-3-Dynamic-Dashboard
+# Material-Design-3-Dynamic-Mobile-Dashboard
 
 A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
 Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
