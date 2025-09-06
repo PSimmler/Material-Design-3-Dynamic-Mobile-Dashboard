@@ -15,13 +15,13 @@ Each family member can have their own unique style and colors. Perfect for custo
 
 **📱 Dynamic UI Components**
 
-- Gesture navigation
+- Light button sliders
+- Light button
 - Waterfall graphs
 - Pop-up cards
 - Tabs & swipe cards
 - Expanders
-- Conditional cards (some elements only appear in certain contexts)
-- Auto Entities cards (filtering only active entities)
+- Gesture navigation
 
 **💡Community Inspired**
 
@@ -81,7 +81,12 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
 
-- Enjoy your personalized dynamic dashboard! 🎉
+- Select Transparent option in Card Type to get the wide-system transparent cards
+  
+![Transparent Card](https://github.com/user-attachments/assets/7d0e3895-edd7-4cd3-88a0-e56f2dbc1ab5)
+
+- Enjoy your personalized dynamic
+ dashboard! 🎉
 
 # 📚 Credits
 
