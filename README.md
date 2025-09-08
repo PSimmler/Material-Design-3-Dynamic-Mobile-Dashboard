@@ -96,3 +96,10 @@ This project builds upon the work of:
 - [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for button cards styling, sliders, etc
 - Other community members who kindly shared their cards
 - [Background Creator](https://www.pexels.com/photo/a-blurry-background-7640905)
+
+# 💖 Support My Work  
+
+If you enjoy my projects and find them useful, consider supporting me on [Ko-fi](https://ko-fi.com/ElementZoom).  
+Your support helps me keep creating and sharing more awesome open-source tools! ✨  
+
+Thank you for being part of this journey 🚀
