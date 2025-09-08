@@ -3423,7 +3423,7 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/004a366b6dd80576d543e36175e79069/original
-    theme: Material You Transparent Card No Mod
+    
   - type: sections
     max_columns: 4
     title: Rooms
@@ -5714,7 +5714,7 @@ views:
       layout: responsive
       badges_position: top
       badges_wrap: wrap
-    theme: Material You Transparent Card No Mod
+    
     background:
       opacity: 70
       alignment: center
@@ -8567,3 +8567,4 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/004a366b6dd80576d543e36175e79069/original
+
