@@ -92,6 +92,8 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - Enjoy your personalized dynamic
  dashboard! 🎉
 
+- Set the companion app to fullscreen (optional)
+
 # 📚 Credits
 
 This project builds upon the work of:
