@@ -3,6 +3,10 @@
 A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
 Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
 
+**v2.0.0 Update**: Quality-of-life improvements including a reworked weather panel, updated camera timeline, battery card fixes, CSS enhancements, and new wallpapers. See [full release notes](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/major-update)
+ for details.
+
+
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
