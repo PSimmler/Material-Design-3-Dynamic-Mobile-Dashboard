@@ -70,7 +70,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - [Navbar Card](https://github.com/joseluis9595/lovelace-navbar-card)
 - [Paper Buttons Row](https://github.com/jcwillox/lovelace-paper-buttons-row)
 - [Scene Presets](https://github.com/Hypfer/hass-scene_presets)
-- [Swipe Simple Card](https://github.com/michelelacorte/SwipeableCard)
+- [Swipe Simple Card](https://github.com/nutteloost/simple-swipe-card)
 - [Stack In Card](https://github.com/custom-cards/stack-in-card)
 - [Timer Bar Card](https://github.com/rianadon/timer-bar-card)
 - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
