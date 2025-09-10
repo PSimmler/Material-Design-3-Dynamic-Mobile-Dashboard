@@ -49,7 +49,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - [Button-Card](https://github.com/custom-cards/button-card)
 - [Calendar Card Pro](https://github.com/alexpfau/calendar-card-pro)
 - [Card-Mod](https://github.com/thomasloven/lovelace-card-mod)
-- Clock Weather Card HUI Icons
+- [Clock Weather Card HUI Icons](https://github.com/pkissling/clock-weather-card)
 - [Config Template Card](https://github.com/iantrich/config-template-card)
 - [Decluttering Card](https://github.com/custom-cards/decluttering-card)
 - [Expander-Card](https://github.com/MelleD/lovelace-expander-card)
