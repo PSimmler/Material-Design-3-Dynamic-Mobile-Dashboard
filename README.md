@@ -105,7 +105,9 @@ This project builds upon the work of:
 
 # 💖 Support My Work  
 
-If you enjoy my projects and find them useful, consider supporting me on [Ko-fi](https://ko-fi.com/ElementZoom).  
+If you want to hire me to make your personal dashboard you can hit me up in [Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)
+
+Or you support me on [Ko-fi](https://ko-fi.com/ElementZoom).  
 Your support helps me keep creating and sharing more awesome open-source tools! ✨  
 
 Thank you for being part of this journey 🚀
