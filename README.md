@@ -78,9 +78,10 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 # Installation
 
-- Copy the full YAML configuration into your Home Assistant dashboard setup.
+- Create a blank dashboard to start fresh (optional) or copy some part of the codes or full codes from  [full YAML](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/full_yaml.txt) into your Home Assistant dashboard.
 - Install the required HACS components (such as swipe-card, stack-in-card, popup-card, etc. — see your setup for what’s needed).
-- To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding sensors to your config (check the file section above to get the codes).
+- To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
+- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset)
 - Apply the MD3 theme and select your preferred colors. It is accessible from Home > More > Theme Icon
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
@@ -97,8 +98,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 # 📚 Credits
 
 This project builds upon the work of:
-- Newryn – [Material You Theme](https://github.com/Nerwyn/material-you-theme)
-- Newryn - [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
+- Newryn – [Material You Theme](https://github.com/Nerwyn/material-you-theme) & [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
 - [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for button cards styling, sliders, etc
 - Other community members who kindly shared their cards
 - [Background Creator](https://www.pexels.com/photo/a-blurry-background-7640905)
