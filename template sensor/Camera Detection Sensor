@@ -1,0 +1,22 @@
+- sensor:
+    - name: Total Camera Person Detections Today Inside Property
+      unique_id: total_camera_person_detections_today_inside
+      unit_of_measurement: "events"
+      state: >
+        {% set cams = [
+          states('sensor.garage_person_detections_today'),
+          states('sensor.right_backyard_person_detections_today'),
+          states('sensor.right_driveway_person_detections_today'),
+          states('sensor.right_walkway_person_detections_today')
+        ] %}
+        {{ cams | map('float') | sum }}
+
+    - name: Total Camera Person Detections Today Outside Property
+      unique_id: total_camera_person_detections_today_outside
+      unit_of_measurement: "events"
+      state: >
+        {% set cams = [
+          states('sensor.left_driveway_person_detections_today'),
+          states('sensor.left_walkway_person_detections_today')
+        ] %}
+        {{ cams | map('float') | sum }}
