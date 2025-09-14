@@ -3,10 +3,6 @@
 A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
 Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
 
-**v2.0.0 Update**: Quality-of-life improvements including a reworked weather panel, updated camera timeline, battery card fixes, CSS enhancements, and new wallpapers. See [full release notes](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/major-update)
- for details.
-
-
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
@@ -80,6 +76,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 - Create a blank dashboard to start fresh (optional) or copy some part of the codes or full codes from  [full YAML](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/full_yaml.txt) into your Home Assistant dashboard.
 - Install the required HACS components (such as swipe-card, stack-in-card, popup-card, etc. — see your setup for what’s needed).
+- You need to adjust the navbar card directory to suit your current dashboard (if you don't start fresh).
 - To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
 - For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset)
 - Apply the MD3 theme and select your preferred colors. It is accessible from Home > More > Theme Icon
