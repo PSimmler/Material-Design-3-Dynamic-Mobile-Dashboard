@@ -80,16 +80,22 @@ decluttering_templates:
       secondary_info: none
       card_mod:
         style:
-          mushroom-shape-icon$: |
-            .shape {
-              --icon-size: 135px;
-            }
+          ha-tile-icon$: |
+            .container {
+              border: 1px solid white;
+              width: 120px !important;
+              height: 120px !important;
+              border-radius: 50% !important;
+                }   
           .: |
+            ha-tile-icon {
+              --mdc-icon-size: 90px !important;
+               }
             ha-card {
-              border: 0px;
-              margin-left: -30px;
-              margin-top: -15px;
-            }
+              border: none;
+              margin-top: -10px !important;
+              margin-left: -20px !important;
+               }
   room_navigation_buttons:
     card:
       type: custom:paper-buttons-row
@@ -9149,4 +9155,5 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/dc3cdc3d0145db0f28be6dc8e8559c4c/original
+
 
