@@ -805,12 +805,8 @@ views:
               - layout: name|icon
                 entity: weather.met_service_home_forecast
                 name: >-
-                  {% set weather = states.weather.forecast_home.attributes %} {%
-                  if weather.temperature is defined %}
-                    {{ weather.temperature }}{{ weather.temperature_unit }}
-                  {% else %}
-                    Unknown
-                  {% endif %}
+                  {{ state_attr('weather.forecast_home', 'temperature') }} °C,
+                  {{ states('weather.met_service_home_forecast') | title }}
                 icon: '{{ states(''sensor.weather_condition_icon'') }}'
                 tap_action:
                   action: navigate
@@ -871,11 +867,12 @@ views:
                 entity: weather.met_service_home_forecast
                 name: >-
                   {% set forecast =
-                  state_attr('weather.met_service_home_forecast',
-                  'forecast_daily') %} {% if forecast %}
-                    {{ forecast[0].temperature }} °🔺
+                  state_attr('sensor.daily_weather_data_met_no',
+                  'forecast_data') %} {% if forecast is defined and
+                  forecast.temperature is defined %}
+                    {{ forecast.temperature }} °C🔺
                   {% else %}
-                    N/A °🔺
+                    N/A °C🔺
                   {% endif %}
                 tap_action:
                   action: navigate
@@ -905,11 +902,12 @@ views:
                 entity: weather.met_service_home_forecast
                 name: >-
                   {% set forecast =
-                  state_attr('weather.met_service_home_forecast',
-                  'forecast_daily') %} {% if forecast %}
-                    {{ forecast[0].templow }} °🔻
+                  state_attr('sensor.daily_weather_data_met_no',
+                  'forecast_data') %} {% if forecast is defined and
+                  forecast.temperature is defined %}
+                    {{ forecast.templow }} °C🔻
                   {% else %}
-                    N/A °🔻⛛
+                    N/A °C🔻
                   {% endif %}
                 tap_action:
                   action: navigate
@@ -9151,3 +9149,4 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/dc3cdc3d0145db0f28be6dc8e8559c4c/original
+
