@@ -1,0 +1,59 @@
+- trigger:
+    - platform: time_pattern
+      minutes: /15
+    - platform: homeassistant
+      event: start
+
+  sensor:
+    - name: "Hourly Weather Data - Met.no"
+      unique_id: hourly_weather_data_met_no
+      state: >
+        {% if forecast['weather.forecast_home'].forecast is defined
+              and forecast['weather.forecast_home'].forecast | length > 0 %}
+          {{ as_local(strptime(forecast['weather.forecast_home'].forecast[0].datetime,
+                               '%Y-%m-%dT%H:%M:%S%z')) }}
+        {% else %}
+          unknown
+        {% endif %}
+      attributes:
+        forecast_data: >
+          {% if forecast['weather.forecast_home'].forecast is defined
+                and forecast['weather.forecast_home'].forecast | length > 0 %}
+            {{ forecast['weather.forecast_home'].forecast[0] }}
+          {% else %}
+            {}
+          {% endif %}
+
+    - name: "Daily Weather Data - Met.no"
+      unique_id: daily_weather_data_met_no
+      state: >
+        {% if forecast_daily['weather.forecast_home'].forecast is defined
+              and forecast_daily['weather.forecast_home'].forecast | length > 0 %}
+          {{ as_local(strptime(forecast_daily['weather.forecast_home'].forecast[0].datetime,
+                               '%Y-%m-%dT%H:%M:%S%z')) }}
+        {% else %}
+          unknown
+        {% endif %}
+      attributes:
+        forecast_data: >
+          {% if forecast_daily['weather.forecast_home'].forecast is defined
+                and forecast_daily['weather.forecast_home'].forecast | length > 0 %}
+            {{ forecast_daily['weather.forecast_home'].forecast[0] }}
+          {% else %}
+            {}
+          `{% endif %}
+
+  action:
+    - action: weather.get_forecasts
+      target:
+        entity_id: weather.forecast_home
+      data:
+        type: hourly
+      response_variable: forecast
+
+    - action: weather.get_forecasts
+      target:
+        entity_id: weather.forecast_home
+      data:
+        type: daily
+      response_variable: forecast_daily
