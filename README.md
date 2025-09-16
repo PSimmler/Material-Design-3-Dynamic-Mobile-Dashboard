@@ -3,6 +3,8 @@
 A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
 Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
 
+v.2.0.2 has been released. A few [template sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/template%20sensor/Get%20Forecast%20Template%20Sensor) are added to the file section to fetch the weather forecast data correctly. A simple change has also been made to the Full YAML to reflect the changes in the temperature forecast.
+
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
@@ -13,7 +15,7 @@ Unlock unlimited color combinations with a simple color picker — thanks to the
 
 Each family member can have their own unique style and colors. Perfect for customizing your phone, tablets, and shared devices.
 
-**📱 Dynamic UI Components**
+**📱 UI Components**
 
 - Light button sliders
 - Light button
