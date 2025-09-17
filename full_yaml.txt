@@ -82,7 +82,7 @@ decluttering_templates:
         style:
           ha-tile-icon$: |
             .container {
-              border: 1px solid white;
+              border: 0px;
               width: 120px !important;
               height: 120px !important;
               border-radius: 50% !important;
@@ -93,8 +93,8 @@ decluttering_templates:
                }
             ha-card {
               border: none;
-              margin-top: -10px !important;
-              margin-left: -20px !important;
+              margin-top: -8px !important;
+              margin-left: -24px !important;
                }
   room_navigation_buttons:
     card:
@@ -9291,6 +9291,7 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/ae62d3e9f577bf284c0b934a3d445c05/original
+
 
 
 
