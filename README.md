@@ -3,7 +3,7 @@
 A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
 Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
 
-v.2.0.2 has been released. A few [template sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/template%20sensor/Get%20Forecast%20Template%20Sensor) are added to the file section to fetch the weather forecast data correctly. A simple change has also been made to the Full YAML to reflect the changes in the temperature forecast.
+[v2.1.0](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/v2.1.0) introduces an Apex Chart card for visualizing rainfall forecasts, adds daily and hourly rain forecast details, includes a Lunar Phase card, and adds several new template sensors to capture hourly weather data.
 
 # ✨ Features
 
@@ -42,6 +42,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - [Advanced Camera Card](https://github.com/dermotduffy/advanced-camera-card)
 - [Alarmo](https://github.com/nielsfaber/alarmo)
 - [Alarmo Card](https://github.com/nielsfaber/alarmo-card)
+- [Apex Charts Card](https://github.com/RomRider/apexcharts-card?tab=readme-ov-file#series-options)
 - [Auto-Entities](https://github.com/thomasloven/lovelace-auto-entities)
 - [Bubble Card](https://github.com/Clooos/Bubble-Card)
 - [Button-Card](https://github.com/custom-cards/button-card)
@@ -58,6 +59,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - [LLM Vision](https://github.com/valentinfrlch/ha-llmvision)
 - [LLM Vision Card](https://github.com/valentinfrlch/llmvision-card)
 - [Local Conditional Card](https://github.com/PiotrMachowski/Home-Assistant-Lovelace-Local-Conditional-card)
+- [Lunar Phase Card](https://github.com/ngocjohn/lunar-phase-card)
 - [Material You Theme](https://github.com/Nerwyn/material-you-theme)
 - [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
 - [MetService New Zealand Weather](https://github.com/ciejer/metservice-weather)
@@ -85,14 +87,14 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
 
-- Select Transparent option in Card Type to get the wide-system transparent cards
+- Select the Transparent option in Card Type to get the wide-system transparent cards
   
 ![Transparent Card](https://github.com/user-attachments/assets/7d0e3895-edd7-4cd3-88a0-e56f2dbc1ab5)
 
 - Enjoy your personalized dynamic
  dashboard! 🎉
 
-- Set the companion app to fullscreen (optional)
+- Set the companion app to full screen (optional)
 
 # 📚 Credits
 
@@ -104,7 +106,7 @@ This project builds upon the work of:
 
 # 💖 Support My Work  
 
-If you want to hire me to make your personal dashboard you can hit me up in [Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)
+If you want to hire me to make your personal dashboard, you can hit me up in [Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)
 
 Or you support me on [Ko-fi](https://ko-fi.com/ElementZoom).  
 Your support helps me keep creating and sharing more awesome open-source tools! ✨  
