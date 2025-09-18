@@ -9102,7 +9102,7 @@ views:
                 card:
                   type: grid
                   square: false
-                  columns: 2
+                  columns: 1
                 card_param: cards
                 filter:
                   include:
@@ -9124,7 +9124,8 @@ views:
                         primary: |
                           {{ states(entity) }}%
                         secondary: |
-                          {{ state_attr(entity, 'friendly_name') }}
+                          {{ state_attr(entity, 'friendly_name') }} -
+                                updated: {{ relative_time(states[entity].last_updated) }} ago
                         icon_color: |
                           {% set v = states(entity) | default(0) | int %}
                           {% if v < 25 %}
@@ -9291,6 +9292,7 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/ae62d3e9f577bf284c0b934a3d445c05/original
+
 
 
 
