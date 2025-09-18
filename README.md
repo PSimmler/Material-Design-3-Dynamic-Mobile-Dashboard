@@ -31,9 +31,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 **🖼️ Screenshots**
 
-<img width="800" height="720" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/641cba44-1425-4e7f-9a0a-87d5b173f325" />
-
-<img width="1920" height="1080" alt="Full Dashboard Showcase" src="https://github.com/user-attachments/assets/948cda33-95b8-47cb-a12a-b4295681cd51" />
+<img width="1920" height="1080" alt="Full Dashboard Showcase" src="https://github.com/user-attachments/assets/af4ef9d3-0269-499e-9f4f-3817f01b0691" />
 
 ⚠️ Some elements are hidden due to conditional rules, so not everything is visible at once.”)
 
