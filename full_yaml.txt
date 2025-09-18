@@ -3523,7 +3523,7 @@ views:
                 card:
                   type: iframe
                   url: >-
-                    https://embed.windy.com/embed2.html?lat=-36.85&lon=174.76&width=800&height=600
+                    https://embed.windy.com/embed2.html?lat=lattitude_coordinateslon=longitude_coordinates&width=800&height=600
                 style: |
                   ha-card {
                     height: 100% !important;
@@ -6768,7 +6768,7 @@ views:
                 card:
                   type: iframe
                   url: >-
-                    https://embed.windy.com/embed2.html?lat=-36.85&lon=174.76&width=800&height=600
+                    https://embed.windy.com/embed2.html?lat=lattitude_coordinateslon=longitude_coordinates&width=800&height=600
                 style: |
                   ha-card {
                     padding: 0;
@@ -9292,6 +9292,7 @@ views:
       repeat: repeat
       attachment: fixed
       image: /api/image/serve/ae62d3e9f577bf284c0b934a3d445c05/original
+
 
 
 
