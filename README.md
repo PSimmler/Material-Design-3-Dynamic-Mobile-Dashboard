@@ -1,15 +1,14 @@
 # Material-Design-3-Dynamic-Mobile-Dashboard
 
-A modern Home Assistant dashboard powered by Material Design 3 (MD3) principles.
-Features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience.
+A modern Home Assistant dashboard built on Material Design 3 (MD3) principles. It features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience. This is a complete dashboard that brings together lights, switches, temperature and humidity, rainfall, wind, weather forecasts, alarms, Hue scenes, cameras, heat pumps, door/window sensors, and more—all in one cohesive design.
 
-[v2.1.0](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/v2.1.0) introduces an Apex Chart card for visualizing rainfall forecasts, adds daily and hourly rain forecast details, includes a Lunar Phase card, and adds several new template sensors to capture hourly weather data.
+[v3.0.0](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/v3.0.0) brings a fresh look and smoother performance with new tab navigation powered by the Simple Tabs Card. The dashboard now follows MD3 guidelines more consistently, with refined light and dark modes and updated cards for a cohesive feel. Weather has been revamped by splitting the panel and forecast into an interactive pop-up card, plus new combined forecasts for rainfall × temperature and wind speed × wind direction. More cards have been optimized with decluttering_templates, along with overall cleanups and simplifications to achieve a minimal, functional, and visually polished design.
 
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
 
-Unlock unlimited color combinations with a simple color picker — thanks to the amazing work of Newryn’s Material You Theme repository.
+Unlock unlimited color combinations with a simple color picker — thanks to the amazing work of Material You Theme repository.
 
 **👥 Per-User Styling**
 
@@ -17,9 +16,10 @@ Each family member can have their own unique style and colors. Perfect for custo
 
 **📱 UI Components**
 
+- Tab Navigations
 - Light button sliders
-- Light button
-- Waterfall graphs
+- Other custom buttons
+- Waterfall temp/humidity graphs
 - Pop-up cards
 - Tabs & swipe cards
 - Expanders
@@ -31,7 +31,10 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 **🖼️ Screenshots**
 
-<img width="1920" height="1080" alt="Full Dashboard Showcase" src="https://github.com/user-attachments/assets/af4ef9d3-0269-499e-9f4f-3817f01b0691" />
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/6708cc5d-7b17-47af-bb35-b2652207aaaa" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/4f308712-3af0-4aa0-8957-3086cf759172" />
+<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/b7cca02e-db01-427f-afe3-75b85afc2929" />
+<img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/ce27fb0e-c345-4ed2-88d3-9d172b58080c" />
 
 ⚠️ Some elements are hidden due to conditional rules, so not everything is visible at once.”)
 
@@ -61,27 +64,28 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 - [Material You Theme](https://github.com/Nerwyn/material-you-theme)
 - [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
 - [MetService New Zealand Weather](https://github.com/ciejer/metservice-weather)
-- [Mini Media PLayer](https://github.com/kalkih/mini-media-player)
 - [Mini-Graph-Card](https://github.com/kalkih/mini-graph-card)
 - [Mushroomn](https://github.com/piitaya/lovelace-mushroom)
 - [My Cards Bundle](https://github.com/AnthonMS/my-cards)
 - [Navbar Card](https://github.com/joseluis9595/lovelace-navbar-card)
 - [Paper Buttons Row](https://github.com/jcwillox/lovelace-paper-buttons-row)
 - [Scene Presets](https://github.com/Hypfer/hass-scene_presets)
-- [Swipe Simple Card](https://github.com/nutteloost/simple-swipe-card)
+- [Simple Swipe Card](https://github.com/nutteloost/simple-swipe-card)
+- [Simple Tabs Card](https://github.com/agoberg85/home-assistant-simple-tabs) - new in v3.0.0
 - [Stack In Card](https://github.com/custom-cards/stack-in-card)
 - [Timer Bar Card](https://github.com/rianadon/timer-bar-card)
 - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
+- [Web RTC Camera](https://github.com/AlexxIT/WebRTC) - new in v3.0.0
 - [World's Air Quality Index](https://www.home-assistant.io/integrations/waqi/)
 
 # Installation
 
 - Create a blank dashboard to start fresh (optional) or copy some part of the codes or full codes from  [full_YAML](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/blob/main/full_yaml) into your Home Assistant dashboard.
-- Install the required HACS components (such as swipe-card, stack-in-card, popup-card, etc. — see your setup for what’s needed).
+- Install the required HACS components (such as simple swipe card, stack-in-card, popup-card, etc. — see your setup for what’s needed).
 - You need to adjust the navbar card directory to suit your current dashboard (if you don't start fresh).
 - To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
-- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset)
-- Apply the MD3 theme and select your preferred colors. It is accessible from Home > More > Theme Icon
+- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset). For the images, you can get them from [here](https://github.com/Hypfer/hass-scene_presets/blob/master/custom_components/scene_presets/assets/Readme.md).
+- Apply the MD3 theme and select your preferred colors. It is accessible from Overview page > More > Theme Icon
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
 
@@ -98,7 +102,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 This project builds upon the work of:
 - Newryn – [Material You Theme](https://github.com/Nerwyn/material-you-theme) & [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
-- [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for button cards styling, sliders, etc
+- [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for the new tabs button, button cards styling, sliders, etc
 - Other community members who kindly shared their cards
 - [Background Creator](https://www.pexels.com/photo/a-blurry-background-7640905)
 
