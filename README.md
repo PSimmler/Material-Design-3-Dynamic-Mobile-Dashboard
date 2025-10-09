@@ -2,7 +2,12 @@
 
 A modern Home Assistant dashboard built on Material Design 3 (MD3) principles. It features a dynamic, transparent, and adaptive card layout with a sleek, clean UI for an elegant smart home experience. This is a complete dashboard that brings together lights, switches, temperature and humidity, rainfall, wind, weather forecasts, alarms, Hue scenes, cameras, heat pumps, door/window sensors, and more—all in one cohesive design.
 
-[v3.0.0](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/releases/tag/v3.0.0) brings a fresh look and smoother performance with new tab navigation powered by the Simple Tabs Card. The dashboard now follows MD3 guidelines more consistently, with refined light and dark modes and updated cards for a cohesive feel. Weather has been revamped by splitting the panel and forecast into an interactive pop-up card, plus new combined forecasts for rainfall × temperature and wind speed × wind direction. More cards have been optimized with decluttering_templates, along with overall cleanups and simplifications to achieve a minimal, functional, and visually polished design.
+_v3.1.0_ brings a major visual and functional redesign inspired by Google Home, improving the overall Material Design 3 (MD3) experience. Buttons have been redesigned with new light sliders and switches, including tap and hold actions for quick off or more-info access. The Server page has been reworked to show detailed HAOS and Proxmox info, with battery data merged in. Each room now features climate control, power consumption charts where available, and media player support for rooms with speakers. Most MDI icons have been replaced with Material Symbols, and the font has been updated to Figtree (similar to Google Sans). Old decluttering templates tied to previous button cards have been removed, and a new media_player_card decluttering template has been added. This release focuses on polish, consistency, and usability, making the dashboard cleaner, more functional, and visually cohesive.
+
+This update features a major redesign of buttons to better match Google Home’s look — including new light sliders and switch buttons that make it easier to tell them apart. You can now use tap and hold actions on light sliders to turn lights off or access more-info (like changing light colors).
+The Server page has been reworked to include detailed HAOS and Proxmox info, with battery data now merged into this section. Each room now includes climate control, power consumption charts (where available), and media player controls for rooms with speakers.
+Most MDI icons have been replaced with Material Symbols to better align with the MD3 aesthetic. The font has also been switched to Figtree, closely resembling Google Sans.
+Lastly, some older decluttering_templates tied to the previous button setup have been removed, while a new media_player_card decluttering_template has been added for cleaner, more flexible use.
 
 # ✨ Features
 
@@ -31,52 +36,58 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 **🖼️ Screenshots**
 
-<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/6708cc5d-7b17-47af-bb35-b2652207aaaa" />
-<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/4f308712-3af0-4aa0-8957-3086cf759172" />
-<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/b7cca02e-db01-427f-afe3-75b85afc2929" />
-<img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/ce27fb0e-c345-4ed2-88d3-9d172b58080c" />
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/fba10b44-d711-4c13-943c-4cb318956a89" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/03a3cb16-dfeb-48a4-a4e5-7d04a5c92f4f" />
+
 
 ⚠️ Some elements are hidden due to conditional rules, so not everything is visible at once.”)
 
 # 🚀 Requirements / Dependencies
 
-- [Advanced Camera Card](https://github.com/dermotduffy/advanced-camera-card)
-- [Alarmo](https://github.com/nielsfaber/alarmo)
+Card Related Stuffs:
 - [Alarmo Card](https://github.com/nielsfaber/alarmo-card)
-- [Apex Charts Card](https://github.com/RomRider/apexcharts-card?tab=readme-ov-file#series-options)
-- [Auto-Entities](https://github.com/thomasloven/lovelace-auto-entities)
+- [Apex Charts Card](https://github.com/RomRider/apexcharts-card?tab=readme-ov-file#series-options)- 
+- [Clock Weather Card HUI Icons](https://github.com/pkissling/clock-weather-card)
 - [Bubble Card](https://github.com/Clooos/Bubble-Card)
 - [Button-Card](https://github.com/custom-cards/button-card)
 - [Calendar Card Pro](https://github.com/alexpfau/calendar-card-pro)
-- [Card-Mod](https://github.com/thomasloven/lovelace-card-mod)
-- [Clock Weather Card HUI Icons](https://github.com/pkissling/clock-weather-card)
-- [Config Template Card](https://github.com/iantrich/config-template-card)
-- [Decluttering Card](https://github.com/custom-cards/decluttering-card)
 - [Expander-Card](https://github.com/MelleD/lovelace-expander-card)
-- [Home Assistant Swipe Navigation](https://github.com/zanna-37/hass-swipe-navigation)
-- [Horizontal Waterfall History Card](https://github.com/sxdjt/horizontal-waterfall-history-card)
-- [Kiosk Mode](https://github.com/maykar/kiosk-mode)
-- [Layout-Card](https://github.com/thomasloven/lovelace-layout-card)
-- [LLM Vision](https://github.com/valentinfrlch/ha-llmvision)
 - [LLM Vision Card](https://github.com/valentinfrlch/llmvision-card)
-- [Local Conditional Card](https://github.com/PiotrMachowski/Home-Assistant-Lovelace-Local-Conditional-card)
-- [Lunar Phase Card](https://github.com/ngocjohn/lunar-phase-card)
-- [Material You Theme](https://github.com/Nerwyn/material-you-theme)
-- [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
-- [MetService New Zealand Weather](https://github.com/ciejer/metservice-weather)
 - [Mini-Graph-Card](https://github.com/kalkih/mini-graph-card)
 - [Mushroomn](https://github.com/piitaya/lovelace-mushroom)
-- [My Cards Bundle](https://github.com/AnthonMS/my-cards)
 - [Navbar Card](https://github.com/joseluis9595/lovelace-navbar-card)
+- [Timer Bar Card](https://github.com/rianadon/timer-bar-card)
+- [Web RTC Camera](https://github.com/AlexxIT/WebRTC)
+
+Theming / ETC:
+- [Auto-Entities](https://github.com/thomasloven/lovelace-auto-entities)
+- [Card-Mod](https://github.com/thomasloven/lovelace-card-mod)
+- [Config Template Card](https://github.com/iantrich/config-template-card)
+- [Decluttering Card](https://github.com/custom-cards/decluttering-card)
+- [Home Assistant Swipe Navigation](https://github.com/zanna-37/hass-swipe-navigation)
+- [Kiosk Mode](https://github.com/maykar/kiosk-mode)
+- [Layout-Card](https://github.com/thomasloven/lovelace-layout-card)
+- [Lovelace Material Compoonents](https://github.com/giovannilamarmora/lovelace-material-components) - New in v3.1.0
+- [Material Symbols](https://github.com/beecho01/material-symbols) - New in v3.1.0
+- [Material You Theme](https://github.com/Nerwyn/material-you-theme)
+- [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
+- [My Cards Bundle](https://github.com/AnthonMS/my-cards)
 - [Paper Buttons Row](https://github.com/jcwillox/lovelace-paper-buttons-row)
+- [Stack In Card](https://github.com/custom-cards/stack-in-card)
 - [Scene Presets](https://github.com/Hypfer/hass-scene_presets)
 - [Simple Swipe Card](https://github.com/nutteloost/simple-swipe-card)
-- [Simple Tabs Card](https://github.com/agoberg85/home-assistant-simple-tabs) - new in v3.0.0
-- [Stack In Card](https://github.com/custom-cards/stack-in-card)
-- [Timer Bar Card](https://github.com/rianadon/timer-bar-card)
+- [Simple Tabs Card](https://github.com/agoberg85/home-assistant-simple-tabs)
 - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
-- [Web RTC Camera](https://github.com/AlexxIT/WebRTC) - new in v3.0.0
+
+Weather Related:
+- [Lunar Phase Card](https://github.com/ngocjohn/lunar-phase-card)
+- [MetService New Zealand Weather](https://github.com/ciejer/metservice-weather)
 - [World's Air Quality Index](https://www.home-assistant.io/integrations/waqi/)
+
+Removed in v3.1.0:
+- [Advanced Camera Card](https://github.com/dermotduffy/advanced-camera-card)
+- [Horizontal Waterfall History Card](https://github.com/sxdjt/horizontal-waterfall-history-card)
+- [Local Conditional Card](https://github.com/PiotrMachowski/Home-Assistant-Lovelace-Local-Conditional-card)
 
 # Installation
 
@@ -102,7 +113,7 @@ Several cards are inspired by the incredible work of others in the Home Assistan
 
 This project builds upon the work of:
 - Nerwyn – [Material You Theme](https://github.com/Nerwyn/material-you-theme) & [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
-- [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for the new tabs button, button cards styling, sliders, etc
+- [MySmartHome](https://www.youtube.com/@My_Smart_Home) - for the new simple tabs card, button cards styling, sliders, etc
 - Other community members who kindly shared their cards
 - [Background Creator](https://www.pexels.com/photo/a-blurry-background-7640905)
 
@@ -110,7 +121,7 @@ This project builds upon the work of:
 
 If you want to hire me to make your personal dashboard, you can hit me up in [Reddit](https://www.reddit.com/u/ElementZoom/s/dr4NN0mTtj)
 
-Or you support me on [Ko-fi](https://ko-fi.com/ElementZoom).  
+Or you support me on [Ko-fi](https://ko-fi.com/ElementZoom).
 Your support helps me keep creating and sharing more awesome open-source tools! ✨  
 
 Thank you for being part of this journey 🚀
