@@ -5653,9 +5653,11 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Camera
-                    - type: custom:advanced-camera-card
-                      cameras:
-                        - camera_entity: camera.garage_camera_fluent
+                    - type: custom:webrtc-camera
+                      streams:
+                        - entity: camera.garage_camera_fluent
+                          mode: webrtc
+                          muted: true
               - title: Stats
                 icon: m3of:chart-data
                 card:
@@ -5664,14 +5666,73 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Humidity
-                    - type: custom:decluttering-card
-                      template: waterfall_temp_hum
-                      variables:
-                        - temp_entity: sensor.garage_temperature
-                        - temp_name: Temperature
-                        - hum_entity: sensor.garage_humidity
-                        - hum_name: Humidity
+                        - title: Temperature & Humidity
+                    - type: custom:mini-graph-card
+                      entities:
+                        - entity: sensor.garage_temperature
+                          name: Inne
+                          color: '#ffe871'
+                          unit: °C
+                        - entity: sensor.garage_humidity
+                          name: Ute
+                          color: '#abdee6'
+                          y_axis: secondary
+                          show_state: true
+                          unit: '%'
+                      hours_to_show: 24
+                      line_width: 3
+                      font_size: 50
+                      height: 70
+                      animate: true
+                      show:
+                        name: false
+                        icon: false
+                        state: true
+                        legend: false
+                        labels_secondary: true
+                        labels: true
+                        fill: fade
+                      tap_action:
+                        action: none
+                      card_mod:
+                        style: |
+                          @media screen and (min-width: 1200px) {
+                             ha-card {
+                               box-shadow: none;
+                               border-radius: 20px;
+                               aspect-ratio: 3.3 / 1;
+                               margin: 0px 3px -11px 3px;
+                               background: var(--card-color);
+                               height: 70px;
+                             }
+                             
+                             .states.flex .state .state__value.ellipsis {
+                               font-size: 36px;
+                               font-weight: bold;
+                             }
+                             .states.flex .state .state__uom.ellipsis {
+                               font-size: 17px;
+                               align-self: center;
+                             }
+                           
+                           @media screen and (max-width: 750px) {
+                              ha-card {
+                                 height: 190px;
+                                 aspect-ratio: 2 / 1; 
+                                 
+                               }
+                             .states.flex .state .state__value.ellipsis {
+                               font-size: 12px;
+                               font-weight: bold;
+                               }
+                             .states.flex .state .state__uom.ellipsis {
+                               font-size: 8px;
+                               align-self: center;
+                               }
+                             .graph {
+                                height: 190px;
+                             }
+                           }
               - title: Active
                 icon: m3of:play-circle
                 card:
