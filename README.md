@@ -4,11 +4,6 @@ A modern Home Assistant dashboard built on Material Design 3 (MD3) principles. I
 
 _v3.1.0_ brings a major visual and functional redesign inspired by Google Home, improving the overall Material Design 3 (MD3) experience. Buttons have been redesigned with new light sliders and switches, including tap and hold actions for quick off or more-info access. The Server page has been reworked to show detailed HAOS and Proxmox info, with battery data merged in. Each room now features climate control, power consumption charts where available, and media player support for rooms with speakers. Most MDI icons have been replaced with Material Symbols, and the font has been updated to Figtree (similar to Google Sans). Old decluttering templates tied to previous button cards have been removed, and a new media_player_card decluttering template has been added. This release focuses on polish, consistency, and usability, making the dashboard cleaner, more functional, and visually cohesive.
 
-This update features a major redesign of buttons to better match Google Home’s look — including new light sliders and switch buttons that make it easier to tell them apart. You can now use tap and hold actions on light sliders to turn lights off or access more-info (like changing light colors).
-The Server page has been reworked to include detailed HAOS and Proxmox info, with battery data now merged into this section. Each room now includes climate control, power consumption charts (where available), and media player controls for rooms with speakers.
-Most MDI icons have been replaced with Material Symbols to better align with the MD3 aesthetic. The font has also been switched to Figtree, closely resembling Google Sans.
-Lastly, some older decluttering_templates tied to the previous button setup have been removed, while a new media_player_card decluttering_template has been added for cleaner, more flexible use.
-
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
