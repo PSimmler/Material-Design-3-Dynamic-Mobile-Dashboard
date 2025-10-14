@@ -4313,33 +4313,24 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.buro
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.buro_decke
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Musik
                 icon: m3of:play-circle
                 card:
@@ -4581,43 +4572,30 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.wohnzimmer
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.signe_gradient_wohnzimmer
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.wohnzimmer_decke_tv
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Klima
                 icon: m3of:heat-pump
                 card:
@@ -4794,55 +4772,38 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.schlafzimmer
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.philipp_sandra_fair
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.philipp
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.sandra
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Musik
                 icon: m3of:play-circle
                 card:
@@ -4929,65 +4890,44 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.esszimmer
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.esszimmer_decke_unten
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.esszimmer_decke_oben
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.esszimmer_decke_garderobe
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.zurilicht
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Musik
                 icon: m3of:play-circle
                 card:
@@ -5073,43 +5013,30 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.kinderzimmer
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.kinderzimmer_enrave
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.lia_light_strip
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Musik
                 icon: m3of:play-circle
                 card:
@@ -5220,65 +5147,44 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.gang
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.gang_farbig_1_schlafzimmer
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.gang_farbig_2_buro
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.gang_farbig_3_pinwand
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
+                        - type: custom:material-slider-card
                           entity: light.gang_farbig_4_lia
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light                      
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5374,33 +5280,24 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.eingang
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.eingang_decke
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light                      
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5496,33 +5393,24 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      use_default_toggle: true
-                      use_default_text: true
+                    - type: custom:material-slider-card
                       entity: light.balkonlicht
                       icon: m3of:lightbulb
-                      height: 97
-                      control_type: generic
-                      dual_icon: true
-                      icon_on: m3of:lightbulb
-                      icon_off: m3of:light-off
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
                         - title: Einzelne Lichter
                     - type: horizontal-stack
                       cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          use_default_toggle: true
-                          use_default_text: true
+                        - type: custom:material-slider-card
                           entity: light.balkonlicht
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:lightbulb
-                          icon_off: m3of:light-off
+                          icon: m3of:lightbulb
+                          show_percentage: true
+                          bold_text: false
+                          control_type: light
               - title: Klima
                 icon: m3of:heat-pump
                 card:
