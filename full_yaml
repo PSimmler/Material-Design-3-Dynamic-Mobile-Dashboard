@@ -317,11 +317,11 @@ decluttering_templates:
                   display: flex;
                   {% set media_type = state_attr(config.entity, 'media_content_type') %}
                   {% if media_type == 'tvshow' %}
-                    --card-mod-icon: mdi:television-classic;
-                    animation: flicker 1s linear infinite alternate;
+                    --card-mod-icon: m3of:comedy_mask;
+                    animation: beat 1.3s ease-out infinite both;
                   {% elif media_type == 'movie' %}
-                    --card-mod-icon: mdi:movie-roll;
-                    animation: spin 2s linear infinite reverse;
+                    --card-mod-icon: m3of:movie;
+                    animation: beat 1.3s ease-out infinite both;
                   {% elif media_type == 'music' %}
                     --card-mod-icon: m3of:music-note;
                     animation: beat 1.3s ease-out infinite both;
@@ -354,9 +354,9 @@ decluttering_templates:
                     {% set media_type = state_attr(config.entity, 'media_content_type') %}
                     --card-mod-icon:
                     {% if media_type == 'tvshow' %}
-                       mdi:television-classic
+                       m3of:comedy_mask
                     {% elif media_type == 'movie' %}
-                      mdi:movie-roll
+                      m3of:movie
                     {% elif media_type == 'music' %}
                       m3of:music-note
                     {% elif media_type == 'playlist' %}
@@ -383,7 +383,7 @@ decluttering_templates:
 
                       /* Apply album art color to media player controls */
                       --rgb-primary-text-color: var(--rgb-primary-text-color);
-                      --primary-text-color: var(--rgb-primary-text-color));
+                      --primary-text-color: var(--rgb-primary-text-color);
 
                       /* Add space for progress bar */
                       padding-top: 24px;
@@ -2620,15 +2620,15 @@ views:
                   - type: custom:mushroom-chips-card
                     chips:
                       - type: template
-                        entity: light.buro
+                        entity: light.buro_decke
                         tap_action:
                           action: toggle
                         icon: m3of:lightbulb
                         card_mod:
                           style: |
                             ha-card {
-                              --chip-background: {% if is_state('light.buro', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                              --color: {% if is_state('light.buro', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                              --chip-background: {% if is_state('light.buro_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                              --color: {% if is_state('light.buro_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
                               justify-content: center;
                               height: 35px !important;
                               width: 35px !important;
@@ -3108,15 +3108,15 @@ views:
                 - type: custom:mushroom-chips-card
                   chips:
                     - type: template
-                      entity: light.eingang
+                      entity: light.eingang_decke
                       tap_action:
                         action: toggle
                       icon: m3of:light
                       card_mod:
                         style: |
                           ha-card {
-                            --chip-background: {% if is_state('light.eingang', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                            --color: {% if is_state('light.eingang', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                            --chip-background: {% if is_state('light.eingang_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                            --color: {% if is_state('light.eingang_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
                             justify-content: center;
                             height: 35px !important;
                             width: 35px !important;
@@ -3151,7 +3151,7 @@ views:
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
                         variables:
-                          - entity: light.kinderzimmer
+                          - entity: light.balkonlicht
                           - icon: m3of:lightbulb_circle
                   - type: custom:mushroom-chips-card
                     chips:
@@ -4312,66 +4312,49 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: vertical-stack
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.buro
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
                         - type: custom:material-button-card
                           use_default_icon: false
                           use_default_toggle: true
                           use_default_text: true
-                          entity: light.buro
-                          icon: m3of:lightbulb
+                          entity: light.buro_decke
                           height: 97
                           control_type: generic
                           dual_icon: true
                           icon_on: m3of:lightbulb
                           icon_off: m3of:light-off
-                          cards:
-                            - type: horizontal-stack
-                              cards:
-                                - type: custom:material-button-card
-                                  use_default_icon: false
-                                  use_default_toggle: true
-                                  use_default_text: true
-                                  entity: light.buro
-                                  height: 97
-                                  control_type: generic
-                                  dual_icon: true
-                                  icon_on: m3of:lightbulb
-                                  icon_off: m3of:light-off
-                                - type: custom:material-button-card
-                                  use_default_icon: false
-                                  use_default_toggle: true
-                                  use_default_text: true
-                                  entity: light.buro
-                                  height: 97
-                                  control_type: generic
-                                  dual_icon: true
-                                  icon_on: m3of:lightbulb
-                                  icon_off: m3of:light-off
               - title: Musik
                 icon: m3of:play-circle
                 card:
                   type: vertical-stack
                   cards:
-                    - type: conditional
-                      conditions:
-                        - condition: state
-                          entity: media_player.buro_roam
-                          state: playing
-                      card:
-                        type: vertical-stack
-                        cards:
-                          - type: custom:decluttering-card
-                            template: mushroom_title_card
-                            variables:
-                              - title: Speaker
-                          - type: custom:decluttering-card
-                            template: media_player_card
-                            variables:
-                              - entity: media_player.buro_roam
-                              - icon: m3of:play-circle
-                              - tap_action: more-info
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Büro/Roam
+                    - type: custom:decluttering-card
+                      template: media_player_card
+                      variables:
+                        - entity: media_player.buro_roam
+                        - icon: m3of:play-circle
+                        - tap_action: more-info
     header:
       card:
         type: vertical-stack
@@ -4597,23 +4580,44 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: vertical-stack
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.wohnzimmer
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
-                        - type: horizontal-stack
-                          cards:
-                            - type: custom:google-slider-card
-                              entity: light.signe_gradient_wohnzimmer
-                              icon: m3of:floor_lamp
-                              show_percentage: true
-                              bold_text: false
-                              control_type: light
-                            - type: custom:google-slider-card
-                              entity: light.wohnzimmer_decke_tv
-                              icon: m3of:light
-                              show_percentage: true
-                              bold_text: false
-                              control_type: light
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.signe_gradient_wohnzimmer
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.wohnzimmer_decke_tv
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
               - title: Klima
                 icon: m3of:heat-pump
                 card:
@@ -4705,30 +4709,19 @@ views:
                               }
               - title: Musik
                 icon: m3of:play-circle
-                conditions:
-                  - entity: media_player.wohnzimmer
-                    state: playing
                 card:
                   type: vertical-stack
                   cards:
-                    - type: conditional
-                      conditions:
-                        - condition: state
-                          entity: media_player.wohnzimmer
-                          state: playing
-                      card:
-                        type: vertical-stack
-                        cards:
-                          - type: custom:decluttering-card
-                            template: mushroom_title_card
-                            variables:
-                              - title: Speaker
-                          - type: custom:decluttering-card
-                            template: media_player_card
-                            variables:
-                              - entity: media_player.wohnzimmer
-                              - icon: m3of:play-circle
-                              - tap_action: more-info
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Wohnzimmer Arc
+                    - type: custom:decluttering-card
+                      template: media_player_card
+                      variables:
+                        - entity: media_player.wohnzimmer
+                        - icon: m3of:play-circle
+                        - tap_action: more-info
       - type: grid
         cards: []
     header:
@@ -4739,51 +4732,6 @@ views:
             template: mushroom_room_title_card
             variables:
               - title: Wohnzimmer
-          - type: custom:paper-buttons-row
-            styles:
-              justify-content: flex-start
-              flex-wrap: wrap
-              font-size: 0.9em
-              line-height: 1.2em
-              margin: 0 0 0 6px
-              width: 100%
-            buttons:
-              - layout: name
-                name: Room is
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: sensor.indoor_temperature
-                name: >-
-                  {{ states('sensor.indoor_temperature') | float | round(1)
-                  }}°C
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: ·
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
       layout: responsive
       badges_position: top
       badges_wrap: wrap
@@ -4845,207 +4793,71 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:google-slider-card
-                          entity: light.lights_mbr
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          entity: switch.left_bedside_light_switch_mbr
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:face-2
-                          icon_off: m3o:face-2
-                        - type: custom:material-button-card
-                          use_default_icon: false
-                          entity: switch.right_bedside_light_switch_mbr
-                          height: 97
-                          control_type: generic
-                          dual_icon: true
-                          icon_on: m3of:face
-                          icon_off: m3o:face
-                    - type: horizontal-stack
-                      cards:
-                        - type: custom:google-slider-card
-                          entity: light.makeup_table_led_mbr
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.schlafzimmer
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Fan
-                    - type: custom:material-button-card
-                      use_default_icon: false
-                      entity: fan.mbrt
-                      height: 97
-                      control_type: generic
-                    - type: custom:expander-card
-                      padding: 0
-                      child-margin-top: 0.6em
-                      clear: true
-                      title-card-button-overlay: true
-                      title-card-clickable: true
-                      expanded: false
-                      title-card:
-                        type: custom:mushroom-title-card
-                        title: Other Lights
-                        card_mod:
-                          style: |
-                            ha-card {
-                              --title-font-size: 20px !important;
-                               transform: translateY(-16px);
-                            }
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
-                        - type: horizontal-stack
-                          cards:
-                            - type: custom:google-slider-card
-                              entity: light.lights_wr
-                              show_percentage: true
-                              bold_text: false
-                              control_type: light
-                            - type: custom:material-button-card
-                              use_default_icon: false
-                              entity: switch.patio_main_switch_la
-                              height: 97
-                              control_type: generic
-                              icon: mdi:outdoor-lamp
-                        - type: custom:google-slider-card
-                          entity: light.floor_led_wr
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.philipp_sandra_fair
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.philipp
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.sandra
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
               - title: Musik
                 icon: m3of:play-circle
-                conditions:
-                  - entity: media_player.master_bedroom_room_speaker
-                    state: playing
                 card:
                   type: vertical-stack
                   cards:
-                    - type: conditional
-                      conditions:
-                        - condition: state
-                          entity: media_player.master_bedroom_room_speaker
-                          state: playing
-                      card:
-                        type: vertical-stack
-                        cards:
-                          - type: custom:decluttering-card
-                            template: mushroom_title_card
-                            variables:
-                              - title: Speaker
-                          - type: custom:decluttering-card
-                            template: media_player_card
-                            variables:
-                              - entity: media_player.multiple_guest_room_speaker
-                              - icon: m3of:play-circle
-                              - tap_action: more-info   }
-    header:
-      card:
-        type: vertical-stack
-        cards:
-          - type: custom:decluttering-card
-            template: mushroom_room_title_card
-            variables:
-              - title: Schlafzimmer
-          - type: custom:paper-buttons-row
-            styles:
-              justify-content: flex-start
-              flex-wrap: wrap
-              font-size: 0.9em
-              line-height: 1.2em
-              margin: 0 0 0 6px
-              width: 100%
-            buttons:
-              - layout: name
-                name: Room is
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                name: ·
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_mbr_one_occupancy
-                name: >
-                  {% if
-                  is_state('binary_sensor.motion_sensor_mbr_one_occupancy',
-                  'off') %}
-                    clear
-                  {% else %}
-                    {{ states('binary_sensor.motion_sensor_mbr_one_occupancy') }}
-                  {% endif %}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: since
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_mbr_one_occupancy
-                name: >-
-                  {{
-                  relative_time(states.binary_sensor.motion_sensor_mbr_one_occupancy.last_updated)
-                  }}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: ago.
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-      layout: responsive
-      badges_position: top
-      badges_wrap: wrap
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Schlafzimmer Era 100
+                    - type: custom:decluttering-card
+                      template: media_player_card
+                      variables:
+                        - entity: media_player.schlafzimmer
+                        - icon: m3of:play-circle
+                        - tap_action: more-info
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5062,6 +4874,17 @@ views:
                     --chip-background: {{ 'var(--md-sys-color-primary)' }};
                     margin-top: 0.7em;
                   }
+    header:
+      layout: responsive
+      badges_position: top
+      badges_wrap: wrap
+      card:
+        type: vertical-stack
+        cards:
+          - type: custom:decluttering-card
+            template: mushroom_room_title_card
+            variables:
+              - title: Schlafzimmer
     cards: []
     subview: true
     background:
@@ -5105,31 +4928,81 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: vertical-stack
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.esszimmer
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
-                        - type: custom:google-slider-card
-                          entity: light.lights_br
-                          icon: m3of:lightbulb
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
-                        - type: horizontal-stack
-                          cards:
-                            - type: custom:google-slider-card
-                              entity: light.ava_bed_led_br
-                              icon: mdi:led-strip-variant
-                              show_percentage: true
-                              bold_text: false
-                              control_type: light
-                            - type: custom:google-slider-card
-                              entity: light.iyla_bed_led_br
-                              icon: mdi:led-strip-variant
-                              show_percentage: true
-                              bold_text: false
-                              control_type: light
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.esszimmer_decke_unten
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.esszimmer_decke_oben
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.esszimmer_decke_garderobe
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.zurilicht
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
               - title: Musik
                 icon: m3of:play-circle
+                card:
+                  type: vertical-stack
+                  cards:
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Esszimmer Play 5
+                    - type: custom:decluttering-card
+                      template: media_player_card
+                      variables:
+                        - entity: media_player.esszimmer
+                        - icon: m3of:play-circle
+                        - tap_action: more-info
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5157,92 +5030,6 @@ views:
             template: mushroom_room_title_card
             variables:
               - title: Esszimmer
-          - type: custom:paper-buttons-row
-            styles:
-              justify-content: flex-start
-              flex-wrap: wrap
-              font-size: 0.9em
-              line-height: 1.2em
-              margin: 0 0 0 6px
-              width: 100%
-            buttons:
-              - layout: name
-                name: Room is
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                name: ·
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_br_occupancy
-                name: >
-                  {% if is_state('binary_sensor.motion_sensor_br_occupancy',
-                  'off') %}
-                    clear
-                  {% else %}
-                    {{ states('binary_sensor.motion_sensor_br_occupancy') }}
-                  {% endif %}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: since
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_br_occupancy
-                name: >-
-                  {{
-                  relative_time(states.binary_sensor.motion_sensor_br_occupancy.last_updated)
-                  }}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: ago.
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
     cards: []
     subview: true
     background:
@@ -5285,37 +5072,59 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: vertical-stack
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.kinderzimmer
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
-                        - type: custom:google-slider-card
-                          entity: light.lights_sgr
-                          icon: m3of:lightbulb
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
-                        - type: custom:google-slider-card
-                          entity: light.bed_led_sgr
-                          icon: mdi:led-strip-variant
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.kinderzimmer_enrave
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.lia_light_strip
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
               - title: Musik
                 icon: m3of:play-circle
-                conditions:
-                  - entity: media_player.multiple_guest_room_speaker
-                    state: playing
                 card:
                   type: vertical-stack
                   cards:
                     - type: custom:decluttering-card
-                      template: open_window_title_card
+                      template: mushroom_title_card
                       variables:
-                        - windows_entity: binary_sensor.windows_sgr
+                        - title: Kinderzimmer Play 1
                     - type: custom:decluttering-card
-                      template: open_window_chip_card
+                      template: media_player_card
                       variables:
-                        - windows_entity: binary_sensor.windows_sgr
+                        - entity: media_player.kinderzimmer
+                        - icon: m3of:play-circle
+                        - tap_action: more-info
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5343,92 +5152,6 @@ views:
             template: mushroom_room_title_card
             variables:
               - title: Kinderzimmer
-          - type: custom:paper-buttons-row
-            styles:
-              justify-content: flex-start
-              flex-wrap: wrap
-              font-size: 0.9em
-              line-height: 1.2em
-              margin: 0 0 0 6px
-              width: 100%
-            buttons:
-              - layout: name
-                name: Room is
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                name: ·
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_sgr_occupancy
-                name: >
-                  {% if is_state('binary_sensor.motion_sensor_sgr_occupancy',
-                  'off') %}
-                    clear
-                  {% else %}
-                    {{ states('binary_sensor.motion_sensor_sgr_occupancy') }}
-                  {% endif %}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: since
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_sgr_occupancy
-                name: >-
-                  {{
-                  relative_time(states.binary_sensor.motion_sensor_sgr_occupancy.last_updated)
-                  }}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-              - layout: name
-                name: ago.
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
     cards: []
     subview: true
     background:
@@ -5440,9 +5163,9 @@ views:
       image: null
   - type: sections
     max_columns: 4
-    icon: m3of:groups-2
+    icon: m3of:hallway
     path: gang
-    title: Multiple Guest
+    title: Gang
     sections:
       - type: grid
         cards:
@@ -5496,47 +5219,66 @@ views:
                     - type: custom:decluttering-card
                       template: mushroom_title_card
                       variables:
-                        - title: Lights
-                    - type: vertical-stack
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.gang
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
                       cards:
-                        - type: custom:google-slider-card
-                          entity: light.lights_mgr
-                          icon: m3of:lightbulb
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
-                        - type: custom:google-slider-card
-                          entity: light.bed_led_mgr
-                          icon: mdi:led-strip-variant
-                          show_percentage: true
-                          bold_text: false
-                          control_type: light
-              - title: Musik
-                icon: m3of:play-circle
-                conditions:
-                  - entity: media_player.multiple_guest_room_speaker
-                    state: playing
-                card:
-                  type: vertical-stack
-                  cards:
-                    - type: conditional
-                      conditions:
-                        - condition: state
-                          entity: media_player.multiple_guest_room_speaker
-                          state: playing
-                      card:
-                        type: vertical-stack
-                        cards:
-                          - type: custom:decluttering-card
-                            template: mushroom_title_card
-                            variables:
-                              - title: Speaker
-                          - type: custom:decluttering-card
-                            template: media_player_card
-                            variables:
-                              - entity: media_player.multiple_guest_room_speaker
-                              - icon: m3of:play-circle
-                              - tap_action: more-info
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.gang_farbig_1_schlafzimmer
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.gang_farbig_2_buro
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.gang_farbig_3_pinwand
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.gang_farbig_4_lia
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5563,93 +5305,340 @@ views:
           - type: custom:decluttering-card
             template: mushroom_room_title_card
             variables:
-              - title: Multiple Guest
+              - title: Gang
+    cards: []
+    subview: true
+    background:
+      opacity: 90
+      alignment: center
+      size: cover
+      repeat: repeat
+      attachment: fixed
+      image: null
+  - type: sections
+    max_columns: 4
+    icon: m3of:hallway
+    path: eingang
+    title: Eingang
+    sections:
+      - type: grid
+        cards:
           - type: custom:paper-buttons-row
             styles:
+              gap: 8px
               justify-content: flex-start
-              flex-wrap: wrap
-              font-size: 0.9em
-              line-height: 1.2em
-              margin: 0 0 0 6px
-              width: 100%
+              overflow: scroll
+              margin: 12px 0 12px -18px
+              padding-left: 18px
+              width: calc(100% + 36px)
+            extra_styles: |
+              ::-webkit-scrollbar {
+                display: none;
+              }
             buttons:
-              - layout: name
-                name: Room is
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                name: ·
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_mgr_occupancy
-                name: >
-                  {% if is_state('binary_sensor.motion_sensor_mgr_occupancy',
-                  'off') %}
-                    clear
-                  {% else %}
-                    {{ states('binary_sensor.motion_sensor_mgr_occupancy') }}
-                  {% endif %}
+              - entity: automation.room_presence_multiple_guest_room
+                state_icons:
+                  'on': m3of:sensor-occupied
+                  'off': m3o:sensors-krx-off
+                layout: icon_name
+                name: Presence Sensor
                 tap_action:
-                  action: more-info
+                  action: toggle
                 styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
                   name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
+                    color: var(--gray800)
                   button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
-                    border-radius: 24px
+                    padding: 12px
+                    width: 76px
+                    height: 76px
                     flex-basis: 1
                     flex-shrink: 0
                     display: flex
-              - layout: name
-                name: since
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
-              - layout: name
-                entity: binary_sensor.motion_sensor_mgr_occupancy
-                name: >-
-                  {{
-                  relative_time(states.binary_sensor.motion_sensor_mgr_occupancy.last_updated)
-                  }}
-                tap_action:
-                  action: more-info
-                styles:
-                  icon:
-                    color: var(--md-sys-color-on-primary)
-                  name:
-                    color: var(--md-sys-color-on-primary)
-                    font-weight: bold
-                  button:
-                    padding: 2px 8px
-                    background-color: var(--md-sys-color-primary)
+                    background-color: var(--popupBG)
                     border-radius: 24px
+                    color: var(--white)
+                  icon:
+                    '--mdc-icon-size': 26px
+                    color: var(--gray800)
+          - type: custom:simple-tabs
+            pre-load: true
+            active-background: var(--md-sys-color-tertiary)
+            active-text-color: var(--md-sys-color-on-tertiary)
+            tabs:
+              - title: Lichter
+                icon: m3of:home
+                card:
+                  type: vertical-stack
+                  cards:
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.eingang
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.eingang_decke
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+    badges:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: template
+            tap_action:
+              action: navigate
+              navigation_path: /test-material-3/rooms
+            icon: m3of:arrow-left-alt
+            card_mod:
+              style:
+                .: |
+                  ha-card {
+                    --color: {{ 'var(--md-sys-color-on-primary)'   }};
+                    --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                    margin-top: 0.7em;
+                  }
+    header:
+      layout: responsive
+      badges_position: top
+      badges_wrap: wrap
+      card:
+        type: vertical-stack
+        cards:
+          - type: custom:decluttering-card
+            template: mushroom_room_title_card
+            variables:
+              - title: Eingang
+    cards: []
+    subview: true
+    background:
+      opacity: 90
+      alignment: center
+      size: cover
+      repeat: repeat
+      attachment: fixed
+      image: null
+  - type: sections
+    max_columns: 4
+    icon: m3of:hallway
+    path: balkon
+    title: Balkon
+    sections:
+      - type: grid
+        cards:
+          - type: custom:paper-buttons-row
+            styles:
+              gap: 8px
+              justify-content: flex-start
+              overflow: scroll
+              margin: 12px 0 12px -18px
+              padding-left: 18px
+              width: calc(100% + 36px)
+            extra_styles: |
+              ::-webkit-scrollbar {
+                display: none;
+              }
+            buttons:
+              - entity: automation.room_presence_multiple_guest_room
+                state_icons:
+                  'on': m3of:sensor-occupied
+                  'off': m3o:sensors-krx-off
+                layout: icon_name
+                name: Presence Sensor
+                tap_action:
+                  action: toggle
+                styles:
+                  name:
+                    color: var(--gray800)
+                  button:
+                    padding: 12px
+                    width: 76px
+                    height: 76px
                     flex-basis: 1
                     flex-shrink: 0
                     display: flex
-              - layout: name
-                name: ago.
-                styles:
-                  button:
-                    flex-basis: 1
-                    flex-shrink: 0
-                  name:
-                    color: var(--primary-text-color)
+                    background-color: var(--popupBG)
+                    border-radius: 24px
+                    color: var(--white)
+                  icon:
+                    '--mdc-icon-size': 26px
+                    color: var(--gray800)
+          - type: custom:simple-tabs
+            pre-load: true
+            active-background: var(--md-sys-color-tertiary)
+            active-text-color: var(--md-sys-color-on-tertiary)
+            tabs:
+              - title: Lichter
+                icon: m3of:home
+                card:
+                  type: vertical-stack
+                  cards:
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Raum
+                    - type: custom:material-button-card
+                      use_default_icon: false
+                      use_default_toggle: true
+                      use_default_text: true
+                      entity: light.balkonlicht
+                      icon: m3of:lightbulb
+                      height: 97
+                      control_type: generic
+                      dual_icon: true
+                      icon_on: m3of:lightbulb
+                      icon_off: m3of:light-off
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Einzelne Lichter
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:material-button-card
+                          use_default_icon: false
+                          use_default_toggle: true
+                          use_default_text: true
+                          entity: light.balkonlicht
+                          height: 97
+                          control_type: generic
+                          dual_icon: true
+                          icon_on: m3of:lightbulb
+                          icon_off: m3of:light-off
+              - title: Klima
+                icon: m3of:heat-pump
+                card:
+                  type: vertical-stack
+                  cards:
+                    - type: custom:decluttering-card
+                      template: mushroom_title_card
+                      variables:
+                        - title: Klima
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:mushroom-template-card
+                          entity: sensor.outdoor_temperature
+                          primary: >-
+                            Temperatur: {{ states('sensor.outdoor_temperature')
+                            }}%
+                          icon: m3of:device_thermostat
+                          color: >-
+                            {% set temp = states('sensor.outdoor_temperature') |
+                            float(0) %} {% if temp >= 28 or temp <= 17 %}
+                              #99332d
+                            {% else %}
+                              #228B22
+                            {% endif %}
+                          features_position: bottom
+                        - type: custom:mushroom-chips-card
+                          chips:
+                            - type: conditional
+                              conditions:
+                                - condition: numeric_state
+                                  entity: sensor.outdoor_temperature
+                                  above: 0
+                              chip:
+                                type: template
+                                entity: sensor.outdoor_temperature
+                                icon: mdi:chart-areaspline
+                                content: >-
+                                  {% set val =
+                                  states('sensor.outdoor_temperature') |
+                                  float(0) %} {% set hours = val | int %} {% set
+                                  minutes = ((val - hours) * 60) | round(0) |
+                                  int %} {{ hours }}h {{ minutes }}m
+                          alignment: end
+                          card_mod:
+                            style: |
+                              ha-card {
+                                margin-top: 0.6em
+                              }
+                    - type: horizontal-stack
+                      cards:
+                        - type: custom:mushroom-template-card
+                          entity: sensor.indoor_humidity
+                          primary: >-
+                            Humidity: {{ states('sensor.outdoor_humidity')
+                            }}%
+                          icon: mdi:water-percent
+                          color: >-
+                            {% set hum = states('sensor.outdoor_humidity') |
+                            float(0) %} {% if hum < 31 %}
+                              #99332d
+                            {% elif hum < 51 %}
+                              #228B22
+                            {% else %}
+                              #99332d
+                            {% endif %}
+                          features_position: bottom
+                        - type: custom:mushroom-chips-card
+                          chips:
+                            - type: conditional
+                              conditions:
+                                - condition: numeric_state
+                                  entity: sensor.outdoor_humidity
+                                  above: 0
+                              chip:
+                                type: template
+                                entity: sensor.outdoor_humidity
+                                icon: mdi:chart-areaspline
+                                content: >-
+                                  {% set val =
+                                  states('sensor.outdoor_humidity') |
+                                  float(0) %} {% set hours = val | int %} {% set
+                                  minutes = ((val - hours) * 60) | round(0) |
+                                  int %} {{ hours }}h {{ minutes }}m
+                          alignment: end
+                          card_mod:
+                            style: |
+                              ha-card {
+                                margin-top: 0.6em
+                              }
+    badges:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: template
+            tap_action:
+              action: navigate
+              navigation_path: /test-material-3/rooms
+            icon: m3of:arrow-left-alt
+            card_mod:
+              style:
+                .: |
+                  ha-card {
+                    --color: {{ 'var(--md-sys-color-on-primary)'   }};
+                    --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                    margin-top: 0.7em;
+                  }
+    header:
+      layout: responsive
+      badges_position: top
+      badges_wrap: wrap
+      card:
+        type: vertical-stack
+        cards:
+          - type: custom:decluttering-card
+            template: mushroom_room_title_card
+            variables:
+              - title: Balkon
     cards: []
     subview: true
     background:
