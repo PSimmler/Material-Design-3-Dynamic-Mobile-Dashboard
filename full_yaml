@@ -6,6 +6,29 @@ kiosk_mode:
 swipe_nav:
   animate: swipe
   enable_on_subviews: false    
+button_card_templates:
+  scene_button:
+    layout: icon_name
+    tap_action:
+      action: call-service
+      service: scene.turn_on
+      data: 
+        entity_id: '[[[scene]]]'
+    styles:
+      name:
+        - color: var(--gray800)
+      button:
+        - padding: 12px
+        - width: 90px
+        - height: 76px
+        - flex-basis: 1
+        - flex-shrink: 0
+        - display: flex
+        - background-color: var(--popupBG)
+        - border-radius: 24px
+      icon:
+        - '--mdc-icon-size': 26px
+        - color: var(--gray800)
 decluttering_templates:
   mushroom_title_card:
     default:
@@ -4390,174 +4413,6 @@ views:
     sections:
       - type: grid
         cards:
-          - type: custom:paper-buttons-row
-            styles:
-              gap: 8px
-              justify-content: flex-start
-              overflow: scroll
-              margin: 12px 0 12px -18px
-              padding-left: 18px
-              width: calc(100% + 36px)
-            extra_styles: |
-              ::-webkit-scrollbar {
-                display: none;
-              }
-            buttons:
-              - entity: binary_sensor.presence_active_la
-                state_icons:
-                  'on': m3of:sensor-occupied
-                  'off': m3o:sensors-krx-off
-                layout: icon_name
-                name: Presence Sensor
-                tap_action:
-                  action: call-service
-                  service: script.toggle_presence_sensor_la
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 76px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                    color: var(--white)
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - entity: input_boolean.movie_mode
-                state_icons:
-                  'on': mdi:movie-open
-                  'off': mdi:movie-off-outline
-                layout: icon_name
-                name: Movie Mode
-                tap_action:
-                  action: call-service
-                  service: script.movie_mode_2
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 76px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                    color: var(--white)
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - icon: m3of:sunny-snowing
-                layout: icon_name
-                name: Dynamic Daylight
-                tap_action:
-                  action: call-service
-                  service: script.clear_color_temp_override
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 90px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - icon: mdi:weather-night
-                layout: icon_name
-                name: Warm White
-                tap_action:
-                  action: call-service
-                  service: script.set_color_temp_to_2700k
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 90px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - icon: mdi:weather-partly-cloudy
-                layout: icon_name
-                name: Natural White
-                tap_action:
-                  action: call-service
-                  service: script.set_color_temp_to_4000k
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 90px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - icon: mdi:weather-sunny
-                layout: icon_name
-                name: Daylight White
-                tap_action:
-                  action: call-service
-                  service: script.set_color_temp_to_5000k
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 90px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
-              - icon: mdi:white-balance-sunny
-                layout: icon_name
-                name: Natural Daylight
-                tap_action:
-                  action: call-service
-                  service: script.set_color_temp_to_6500k
-                styles:
-                  name:
-                    color: var(--gray800)
-                  button:
-                    padding: 12px
-                    width: 90px
-                    height: 76px
-                    flex-basis: 1
-                    flex-shrink: 0
-                    display: flex
-                    background-color: var(--popupBG)
-                    border-radius: 24px
-                  icon:
-                    '--mdc-icon-size': 26px
-                    color: var(--gray800)
           - type: custom:simple-tabs
             pre-load: true
             active-background: var(--md-sys-color-tertiary)
@@ -4572,6 +4427,134 @@ views:
                       template: mushroom_title_card
                       variables:
                         - title: Raum
+                    - type: custom:paper-buttons-row
+                      styles:
+                        gap: 8px
+                        justify-content: flex-start
+                        overflow: scroll
+                        margin: 12px 0 12px -18px
+                        padding-left: 18px
+                        width: calc(100% + 36px)
+                      extra_styles: |
+                        ::-webkit-scrollbar {
+                          display: none;
+                        }
+                      buttons:
+                        - type: custom:button-card
+                          template: scene_button
+                          icon: m3of:relax
+                          name: Entspannen
+                          scene: scene.wohn_esszimmer_fernsehabend
+                        - type: custom:button-card
+                          template: scene_button
+                          icon: m3of:movie
+                          name: Filmabend
+                          scene: scene.wohn_esszimmer_fernsehabend
+                        - icon: m3of:sunny-snowing
+                          layout: icon_name
+                          name: Dynamic Daylight
+                          tap_action:
+                            action: call-service
+                            service: script.clear_color_temp_override
+                          styles:
+                            name:
+                              color: var(--gray800)
+                            button:
+                              padding: 12px
+                              width: 90px
+                              height: 76px
+                              flex-basis: 1
+                              flex-shrink: 0
+                              display: flex
+                              background-color: var(--popupBG)
+                              border-radius: 24px
+                            icon:
+                              '--mdc-icon-size': 26px
+                              color: var(--gray800)
+                        - icon: mdi:weather-night
+                          layout: icon_name
+                          name: Warm White
+                          tap_action:
+                            action: call-service
+                            service: script.set_color_temp_to_2700k
+                          styles:
+                            name:
+                              color: var(--gray800)
+                            button:
+                              padding: 12px
+                              width: 90px
+                              height: 76px
+                              flex-basis: 1
+                              flex-shrink: 0
+                              display: flex
+                              background-color: var(--popupBG)
+                              border-radius: 24px
+                            icon:
+                              '--mdc-icon-size': 26px
+                              color: var(--gray800)
+                        - icon: mdi:weather-partly-cloudy
+                          layout: icon_name
+                          name: Natural White
+                          tap_action:
+                            action: call-service
+                            service: script.set_color_temp_to_4000k
+                          styles:
+                            name:
+                              color: var(--gray800)
+                            button:
+                              padding: 12px
+                              width: 90px
+                              height: 76px
+                              flex-basis: 1
+                              flex-shrink: 0
+                              display: flex
+                              background-color: var(--popupBG)
+                              border-radius: 24px
+                            icon:
+                              '--mdc-icon-size': 26px
+                              color: var(--gray800)
+                        - icon: mdi:weather-sunny
+                          layout: icon_name
+                          name: Daylight White
+                          tap_action:
+                            action: call-service
+                            service: script.set_color_temp_to_5000k
+                          styles:
+                            name:
+                              color: var(--gray800)
+                            button:
+                              padding: 12px
+                              width: 90px
+                              height: 76px
+                              flex-basis: 1
+                              flex-shrink: 0
+                              display: flex
+                              background-color: var(--popupBG)
+                              border-radius: 24px
+                            icon:
+                              '--mdc-icon-size': 26px
+                              color: var(--gray800)
+                        - icon: mdi:white-balance-sunny
+                          layout: icon_name
+                          name: Natural Daylight
+                          tap_action:
+                            action: call-service
+                            service: script.set_color_temp_to_6500k
+                          styles:
+                            name:
+                              color: var(--gray800)
+                            button:
+                              padding: 12px
+                              width: 90px
+                              height: 76px
+                              flex-basis: 1
+                              flex-shrink: 0
+                              display: flex
+                              background-color: var(--popupBG)
+                              border-radius: 24px
+                            icon:
+                              '--mdc-icon-size': 26px
+                              color: var(--gray800)
                     - type: custom:material-slider-card
                       entity: light.wohnzimmer
                       icon: m3of:lightbulb
