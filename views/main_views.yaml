@@ -1,0 +1,142 @@
+# main_views.yaml (List of Views)
+- title: Overview
+  icon: m3o:home
+  cards:
+    !include overview.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Räume
+  icon: m3o:door
+  path: rooms
+  max_columns: 4
+  cards:
+    !include rooms.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Szenen
+  icon: m3o:layers
+  path: scenes
+  max_columns: 4
+  cards:
+    !include scenes.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Büro
+  icon: m3of:computer
+  path: buro
+  max_columns: 4
+  cards:
+    !include rooms/buro.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Wohnzimmer
+  icon: m3of:computer
+  path: wohnzimmer
+  max_columns: 4
+  cards:
+    !include rooms/wohnzimmer.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Schlafzimmer
+  icon: m3of:bed
+  path: schlafzimmer
+  max_columns: 4
+  cards:
+    !include rooms/schlafzimmer.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Esszimmer
+  icon: m3of:restaurant
+  path: esszimmer
+  max_columns: 4
+  cards:
+    !include rooms/esszimmer.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Kinderzimmer
+  icon: m3of:person-3
+  path: kinderzimmer
+  max_columns: 4
+  cards:
+    !include rooms/kinderzimmer.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Gang
+  icon: m3of:person-3
+  path: hallway
+  max_columns: 4
+  cards:
+    !include rooms/hallway.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Eingang
+  icon: m3of:door
+  path: door
+  max_columns: 4
+  cards:
+    !include rooms/door.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+
+- title: Balkon
+  icon: m3of:hallway
+  path: balcony
+  max_columns: 4
+  cards:
+    !include rooms/balcony.yaml
+  background:
+    opacity: 90
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+

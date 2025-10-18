@@ -1,0 +1,992 @@
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  cards: []
+type: sections
+max_columns: 4
+path: overview
+sections:
+  - type: grid
+    cards:
+      - type: custom:decluttering-card
+        template: mushroom_title_card
+        variables:
+          - title: Scenes Preset
+      - type: custom:mushroom-title-card
+        subtitle: Refreshing
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Blossom.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: blossom
+              - type: picture
+                image: /local/hue/raw/Crocus.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: crocus
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Precious.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: precious
+              - type: picture
+                image: /local/hue/raw/Narcissa.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: narcissa
+      - type: custom:mushroom-title-card
+        subtitle: Peaceful
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Mountain breeze.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: mountain_breeze
+              - type: picture
+                image: /local/hue/raw/Lake mist.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: lake_mist
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Sunday morning.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: sunday_morning
+              - type: picture
+                image: /local/hue/raw/Spring blossom.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: spring_blossom
+      - type: custom:mushroom-title-card
+        subtitle: Cozy
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Rolling hills.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: rolling_hills
+              - type: picture
+                image: /local/hue/raw/Dreamy dusk.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: dreamy_dusk
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Savannah sunset.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: savannah_sunset
+              - type: picture
+                image: /local/hue/raw/Ruby glow.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: ruby_glow
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Golden pond.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: golden_pond
+              - type: picture
+                image: /local/hue/raw/Tropical twilight.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: tropical_twilight
+      - type: custom:mushroom-title-card
+        subtitle: Dreamy
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Still waters.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: still_waters
+              - type: picture
+                image: /local/hue/raw/Adrift.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: adrift
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Blue lagoon.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: blue_lagoon
+              - type: picture
+                image: /local/hue/raw/Palm Beach.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: palm_beach
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Majestic morning.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: majestic_morning
+              - type: picture
+                image: /local/hue/raw/Pensive.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: pensive
+      - type: custom:mushroom-title-card
+        subtitle: Pure
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Amethyst Valley.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: amethyst_valley
+              - type: picture
+                image: /local/hue/raw/Hazy Days.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: hazy_days
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Spring lake.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: spring_lake
+              - type: picture
+                image: /local/hue/raw/Midwinter.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: midwinter
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Autumn gold.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: autumn_gold
+              - type: picture
+                image: /local/hue/raw/Misty ridge.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: misty_ridge
+      - type: custom:mushroom-title-card
+        subtitle: Serenity
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Galaxy.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: galaxy
+              - type: picture
+                image: /local/hue/raw/Arctic aurora.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: arctic_aurora
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Moonlight.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: moonlight
+              - type: picture
+                image: /local/hue/raw/Nebula.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: nebula
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Starlight.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: starlight
+              - type: picture
+                image: /local/hue/raw/Blood moon.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: blood_moon
+      - type: custom:mushroom-title-card
+        subtitle: Romantic
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Ruby romance.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: ruby_romance
+              - type: picture
+                image: /local/hue/raw/City of love.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: city_of_love
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Sunset allure.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: sunset_allure
+              - type: picture
+                image: /local/hue/raw/Lovebirds.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: lovebirds
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Smitten.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: smitten
+              - type: picture
+                image: /local/hue/raw/Promise.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: promise
+      - type: custom:mushroom-title-card
+        subtitle: Party
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Fairfax.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: fairfax
+              - type: picture
+                image: /local/hue/raw/Tokyo.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: tokyo
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Miami.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: miami
+              - type: picture
+                image: /local/hue/raw/Cancun.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: cancun
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Osaka.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: osaka
+              - type: picture
+                image: /local/hue/raw/Motown.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: motown
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Ibiza.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: ibiza
+              - type: picture
+                image: /local/hue/raw/Chinatown.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: chinatown
+      - type: custom:mushroom-title-card
+        subtitle: Luxurious
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Emerald flutter.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: emerald_flutter
+              - type: picture
+                image: /local/hue/raw/Memento.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: memento
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Resplendent.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: resplendent
+              - type: picture
+                image: /local/hue/raw/Scarlet dream.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: scarlet_dream
+      - type: custom:mushroom-title-card
+        subtitle: Race Day
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Zandvoort.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: zandvoort
+              - type: picture
+                image: /local/hue/raw/Bahrain.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: bahrain
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Silverstone.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: silverstone
+              - type: picture
+                image: /local/hue/raw/Sao Paulo.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: sao_paulo
+      - type: custom:mushroom-title-card
+        subtitle: Holiday
+        title: ""
+      - type: custom:simple-swipe-card
+        view_mode: carousel
+        card_min_width: 400
+        card_spacing: 8
+        show_pagination: false
+        auto_hide_pagination: 0
+        loop_mode: infinite
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Under The Tree.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: under_the_tree
+              - type: picture
+                image: /local/hue/raw/Snow Sparkle.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: snow_sparkle
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Silent Night.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: silent_night
+              - type: picture
+                image: /local/hue/raw/Rosy Sparkle.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: rosy_sparkle
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/hue/raw/Color Burst.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: color_burst
+              - type: picture
+                image: /local/hue/raw/Festive Fun.png
+                tap_action:
+                  action: call-service
+                  service: input_text.set_value
+                  data:
+                    entity_id: input_text.dynamic_scene_selected
+                    value: festive_fun
+          - type: vertical -stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: "#room-selector"
+                margin_top_mobile: calc(96vh - 800px)
+                name: Room Selector
+                icon: m3o:room-preferences
+                styles: |-
+                  #root {
+                          height: unset !important;
+                          max-height: 100% !important;
+                          transition: transform var(--md-sys-motion-expressive-spatial-default) !important;
+                        }
+                        .bubble-pop-up-container {
+                          padding-bottom: 64px !important;
+
+                        }
+                bg_color: var(--card-background-color)
+                button_type: name
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: m3of:table-restaurant
+                    primary: Dining
+                    secondary: >-
+                      {{ states('input_text.dining_table_dynamic_scene_active')
+                      }}
+                    tap_action:
+                      action: call-service
+                      service: script.toggle_or_apply_dynamic_scene
+                      data:
+                        room_lights:
+                          - light.light_one_dt
+                          - light.light_two_dt
+                          - light.light_three_dt
+                          - light.light_one_ktc_dt
+                          - light.light_two_ktc_dt
+                          - light.light_three_ktc_dt
+                        presence_automation:
+                          - automation.room_presence_dining_table
+                        room_boolean: input_boolean.dining_table_dynamic_scene
+                        room_scene_tracker: input_text.dining_table_dynamic_scene_active
+                    color: >-
+                      {% if
+                      states('input_text.dining_table_dynamic_scene_active') !=
+                      '' %}
+                        #d53e4f
+                      {% else %}
+                        #aaaaaa
+                      {% endif %}
+                    features_position: bottom
+                  - type: custom:mushroom-template-card
+                    icon: m3of:chair
+                    primary: Sofa
+                    tap_action:
+                      action: call-service
+                      service: script.toggle_or_apply_dynamic_scene
+                      data:
+                        room_lights:
+                          - light.light_one_sofa
+                          - light.light_two_sofa
+                          - light.light_three_sofa
+                          - light.light_four_sofa
+                          - light.light_three_dt
+                          - light.light_three_ktc_dt
+                        presence_automation:
+                          - automation.room_presence_sofa
+                          - automation.sofa_sensor_workaround
+                        room_boolean: input_boolean.sofa_dynamic_scene
+                        room_scene_tracker: input_text.sofa_dynamic_scene_active
+                    secondary: "{{ states('input_text.sofa_dynamic_scene_active') }}"
+                    color: >-
+                      {% if states('input_text.sofa_dynamic_scene_active') != ''
+                      %}
+                        #fc8d59
+                      {% else %}
+                        #aaaaaa
+                      {% endif %}
+                    features_position: bottom
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: m3of:bed
+                    primary: Schlafzimmer
+                    tap_action:
+                      action: call-service
+                      service: script.toggle_or_apply_dynamic_scene
+                      data:
+                        room_lights:
+                          - light.light_one_mbr
+                          - light.light_two_mbr
+                    features_position: bottom
+                  - type: custom:mushroom-template-card
+                    icon: m3of:restaurant
+                    primary: Esszimmer
+                    tap_action:
+                      action: call-service
+                      service: script.toggle_or_apply_dynamic_scene
+                      data:
+                        room_lights:
+                          - light.light_one_br
+                          - light.light_two_br
+                        room_boolean: input_boolean.baby_room_dynamic_scene
+                        room_scene_tracker: input_text.baby_room_dynamic_scene_active
+                    secondary: "{{ states('input_text.baby_room_dynamic_scene_active') }}"
+                    color: >-
+                      {% if states('input_text.baby_room_dynamic_scene_active')
+                      != '' %}
+                        #e6f598
+                      {% else %}
+                        #aaaaaa
+                      {% endif %}
+                    features_position: bottom
+              - type: horizontal-stack
+                cards:
+                  - type: custom:mushroom-template-card
+                    icon: m3of:person-3
+                    primary: Kinderzimmer
+                    tap_action:
+                      action: perform-action
+                      data:
+                        room_lights:
+                          - light.light_one_sgr
+                          - light.light_two_sgr
+                    features_position: bottom
+                  - type: custom:mushroom-template-card
+                    icon: m3of:groups-2
+                    primary: Multiple
+                    tap_action:
+                      action: perform-action
+                      data:
+                        room_lights:
+                          - light.light_one_mgr
+                          - light.light_two_mgr
+                        presence_automation: automation.room_presence_multiple_guest_room
+                        room_boolean: input_boolean.multiple_guest_room_dynamic_scene
+                        room_scene_tracker: input_text.multiple_guest_room_dynamic_scene_active
+                      perform_action: script.toggle_or_apply_dynamic_scene
+                      target: {}
+                    secondary: >-
+                      {{
+                      states('input_text.multiple_guest_room_dynamic_scene_active')
+                      }}
+                    color: >-
+                      {% if
+                      states('input_text.multiple_guest_room_dynamic_scene_active')
+                      != '' %}
+                        #000000
+                      {% else %}
+                        #aaaaaa
+                      {% endif %}
+                    features_position: bottom
+              - type: custom:expander-card
+                child-margin-top: 0.6em
+                padding: 0
+                clear: true
+                title-card-button-overlay: true
+                title-card-clickable: true
+                expanded: true
+                title-card:
+                  type: custom:mushroom-title-card
+                  subtitle: Scene Controls
+                  card_mod:
+                    style: |
+                      ha-card {
+                        --title-font-size: 20px !important;
+                         transform: translateY(-16px);
+                      }
+                cards:
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:mushroom-number-card
+                        entity: input_number.dynamic_scene_brightness
+                        name: Brightness
+                        icon: mdi:brightness-6
+                        display_mode: slider
+                        fill_container: true
+                        card_mod:
+                          style:
+                            .: |
+                              ha-state-icon {
+                                color: var(--md-sys-color-secondary);
+                              }
+                            mushroom-shape-icon$: |
+                              .shape {
+                                --shape-color: var(--md-sys-color-on-secondary) !important;
+                              }
+                            mushroom-number-value-control$: |
+                              mushroom-slider {
+                                --main-color: var(--md-sys-color-on-secondary) !important;
+                                --bg-color: var(--md-sys-color-secondary) !important;
+                              }
+                      - type: custom:mushroom-number-card
+                        entity: input_number.dynamic_scene_interval
+                        name: Interval
+                        icon: mdi:timer
+                        display_mode: slider
+                        fill_container: true
+                        card_mod:
+                          style:
+                            .: |
+                              ha-state-icon {
+                                color: var(--md-sys-color-secondary);
+                              }
+                            mushroom-shape-icon$: |
+                              .shape {
+                                --shape-color: var(--md-sys-color-on-secondary) !important;
+                              }
+                            mushroom-number-value-control$: |
+                              mushroom-slider {
+                                --main-color: var(--md-sys-color-on-secondary) !important;
+                                --bg-color: var(--md-sys-color-secondary) !important;
+                              }
+              - type: custom:bubble-card
+                card_type: separator
+                styles: |-
+                  .bubble-icon,
+                  .bubble-name {
+                    display: none;
+                  }
+                  .bubble-line {
+                    margin-right: 0;
+                    height: 4px;
+                    max-width: 32px;
+                    opacity: 1;
+                    background: var(--md-sys-color-on-surface-variant);
+                  }
+                  .bubble-separator {
+                    height: min-content !important;
+                    justify-content: center;
+                  }
+  - type: grid
+    cards:
+      - type: custom:navbar-card
+        mobile:
+          show_labels: true
+        desktop:
+          show_labels: true
+          position: left
+          min_width: 768
+        routes:
+          - url: /test-material-3/overview
+            label: Home
+            icon: m3o:home
+            icon_selected: m3of:home
+          - url: /test-material-3/rooms
+            label: Räume
+            icon: m3o:chair
+            icon_selected: m3of:chair
+            tap_action:
+              action: navigate
+              navigation_path: /test-material-3/rooms
+            hold_action:
+              action: open-popup
+            popup:
+              - icon: m3of:computer
+                url: /test-material-3/buro
+              - icon: m3of:chair
+                url: /test-material-3/wohnzimmer
+              - icon: m3of:bed
+                url: /test-material-3/schlafzimmer
+              - icon: m3of:restaurant
+                url: /test-material-3/esszimmer
+              - icon: m3of:person-3
+                url: /test-material-3/kinderzimmer
+              - icon: m3of:groups-2
+                url: /test-material-3/gang
+          - url: /test-material-3/scenes
+            label: Scenes
+            icon: m3o:layers
+            icon_selected: m3of:layers
+          - icon: mdi:dots-horizontal
+            label: More
+            tap_action:
+              action: open-popup
+            popup:
+              - icon: m3of:tools-wrench
+                url: /config/dashboard
+              - icon: m3o:room-preferences
+                url: "#room-selector"
+        styles: |
+          .navbar-card {
+            --navbar-primary-color: var(--md-sys-color-tertiary);
+            background: var(--nav-background);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(20px) !important;
+            background-blend-mode: overlay;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+          }
+badges:
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        tap_action:
+          action: navigate
+          navigation_path: /test-material-3/overview
+        icon: m3of:arrow-left-alt
+        card_mod:
+          style:
+            .: |
+              ha-card {
+                --color: {{ 'var(--md-sys-color-on-primary)' }};
+                --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                margin-top: 0.7em;
+              }
+background:
+  opacity: 90
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: null

@@ -1,0 +1,113 @@
+sections:
+  - type: grid
+    cards:
+      - type: custom:paper-buttons-row
+        styles:
+          gap: 8px
+          justify-content: flex-start
+          overflow: scroll
+          margin: 12px 0 12px -18px
+          padding-left: 18px
+          width: calc(100% + 36px)
+        extra_styles: |
+          ::-webkit-scrollbar {
+            display: none;
+          }
+      - type: custom:simple-tabs
+        pre-load: true
+        active-background: var(--md-sys-color-tertiary)
+        active-text-color: var(--md-sys-color-on-tertiary)
+        tabs:
+          - title: Lichter
+            icon: m3of:home
+            card:
+              type: vertical-stack
+              cards:
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Raum
+                - type: custom:material-slider-card
+                  entity: light.schlafzimmer
+                  icon: m3of:lightbulb
+                  show_percentage: true
+                  bold_text: false
+                  control_type: light
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Einzelne Lichter
+                - type: horizontal-stack
+                  cards:
+                    - type: custom:material-slider-card
+                      entity: light.philipp_sandra_fair
+                      icon: m3of:lightbulb
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
+                    - type: custom:material-slider-card
+                      entity: light.philipp
+                      icon: m3of:lightbulb
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
+                - type: horizontal-stack
+                  cards:
+                    - type: custom:material-slider-card
+                      entity: light.sandra
+                      icon: m3of:lightbulb
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
+          - title: Musik
+            icon: m3of:play-circle
+            card:
+              type: vertical-stack
+              cards:
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Schlafzimmer Era 100
+                - type: custom:decluttering-card
+                  template: media_player_card
+                  variables:
+                    - entity: media_player.schlafzimmer
+                    - icon: m3of:play-circle
+                    - tap_action: more-info
+badges:
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        tap_action:
+          action: navigate
+          navigation_path: /test-material-3/rooms
+        icon: m3of:arrow-left-alt
+        card_mod:
+          style:
+            .: |
+              ha-card {
+                --color: {{ 'var(--md-sys-color-on-primary)'   }};
+                --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                margin-top: 0.7em;
+              }
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  card:
+    type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: mushroom_room_title_card
+        variables:
+          - title: Schlafzimmer
+cards: []
+subview: true
+background:
+  opacity: 90
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: null
+  top_margin: false

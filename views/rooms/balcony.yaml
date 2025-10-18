@@ -1,0 +1,197 @@
+sections:
+  - type: grid
+    cards:
+      - type: custom:paper-buttons-row
+        styles:
+          gap: 8px
+          justify-content: flex-start
+          overflow: scroll
+          margin: 12px 0 12px -18px
+          padding-left: 18px
+          width: calc(100% + 36px)
+        extra_styles: |
+          ::-webkit-scrollbar {
+            display: none;
+          }
+        buttons:
+          - entity: automation.room_presence_multiple_guest_room
+            state_icons:
+              "on": m3of:sensor-occupied
+              "off": m3o:sensors-krx-off
+            layout: icon_name
+            name: Presence Sensor
+            tap_action:
+              action: toggle
+            styles:
+              name:
+                color: var(--gray800)
+              button:
+                padding: 12px
+                width: 76px
+                height: 76px
+                flex-basis: 1
+                flex-shrink: 0
+                display: flex
+                background-color: var(--popupBG)
+                border-radius: 24px
+                color: var(--white)
+              icon:
+                "--mdc-icon-size": 26px
+                color: var(--gray800)
+      - type: custom:simple-tabs
+        pre-load: true
+        active-background: var(--md-sys-color-tertiary)
+        active-text-color: var(--md-sys-color-on-tertiary)
+        tabs:
+          - title: Lichter
+            icon: m3of:home
+            card:
+              type: vertical-stack
+              cards:
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Raum
+                - type: custom:material-slider-card
+                  entity: light.balkonlicht
+                  icon: m3of:lightbulb
+                  show_percentage: true
+                  bold_text: false
+                  control_type: light
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Einzelne Lichter
+                - type: horizontal-stack
+                  cards:
+                    - type: custom:material-slider-card
+                      entity: light.balkonlicht
+                      icon: m3of:lightbulb
+                      show_percentage: true
+                      bold_text: false
+                      control_type: light
+          - title: Klima
+            icon: m3of:heat-pump
+            card:
+              type: vertical-stack
+              cards:
+                - type: custom:decluttering-card
+                  template: mushroom_title_card
+                  variables:
+                    - title: Klima
+                - type: horizontal-stack
+                  cards:
+                    - type: custom:mushroom-template-card
+                      entity: sensor.outdoor_temperature
+                      primary: >-
+                        Temperatur: {{ states('sensor.outdoor_temperature')
+                        }}%
+                      icon: m3of:device_thermostat
+                      color: >-
+                        {% set temp = states('sensor.outdoor_temperature') |
+                        float(0) %} {% if temp >= 28 or temp <= 17 %}
+                          #99332d
+                        {% else %}
+                          #228B22
+                        {% endif %}
+                      features_position: bottom
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: conditional
+                          conditions:
+                            - condition: numeric_state
+                              entity: sensor.outdoor_temperature
+                              above: 0
+                          chip:
+                            type: template
+                            entity: sensor.outdoor_temperature
+                            icon: mdi:chart-areaspline
+                            content: >-
+                              {% set val =
+                              states('sensor.outdoor_temperature') |
+                              float(0) %} {% set hours = val | int %} {% set
+                              minutes = ((val - hours) * 60) | round(0) |
+                              int %} {{ hours }}h {{ minutes }}m
+                      alignment: end
+                      card_mod:
+                        style: |
+                          ha-card {
+                            margin-top: 0.6em
+                          }
+                - type: horizontal-stack
+                  cards:
+                    - type: custom:mushroom-template-card
+                      entity: sensor.indoor_humidity
+                      primary: >-
+                        Humidity: {{ states('sensor.outdoor_humidity')
+                        }}%
+                      icon: mdi:water-percent
+                      color: >-
+                        {% set hum = states('sensor.outdoor_humidity') |
+                        float(0) %} {% if hum < 31 %}
+                          #99332d
+                        {% elif hum < 51 %}
+                          #228B22
+                        {% else %}
+                          #99332d
+                        {% endif %}
+                      features_position: bottom
+                    - type: custom:mushroom-chips-card
+                      chips:
+                        - type: conditional
+                          conditions:
+                            - condition: numeric_state
+                              entity: sensor.outdoor_humidity
+                              above: 0
+                          chip:
+                            type: template
+                            entity: sensor.outdoor_humidity
+                            icon: mdi:chart-areaspline
+                            content: >-
+                              {% set val =
+                              states('sensor.outdoor_humidity') |
+                              float(0) %} {% set hours = val | int %} {% set
+                              minutes = ((val - hours) * 60) | round(0) |
+                              int %} {{ hours }}h {{ minutes }}m
+                      alignment: end
+                      card_mod:
+                        style: |
+                          ha-card {
+                            margin-top: 0.6em
+                          }
+badges:
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        tap_action:
+          action: navigate
+          navigation_path: /test-material-3/rooms
+        icon: m3of:arrow-left-alt
+        card_mod:
+          style:
+            .: |
+              ha-card {
+                --color: {{ 'var(--md-sys-color-on-primary)'   }};
+                --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                margin-top: 0.7em;
+              }
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  card:
+    type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: mushroom_room_title_card
+        variables:
+          - title: Balkon
+cards: []
+subview: true
+background:
+  opacity: 90
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: null

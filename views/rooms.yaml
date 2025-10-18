@@ -1,0 +1,709 @@
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  cards: []
+type: sections
+max_columns: 4
+path: overview
+sections:
+  - type: grid
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:decluttering-card
+            template: mushroom_title_card
+            variables:
+              - title: Räume
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Büro
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/buro
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.buro
+                      - icon: m3of:computer
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.buro_decke
+                    tap_action:
+                      action: toggle
+                    icon: m3of:lightbulb
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.buro_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.buro_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Wohnzimmer
+                      - temperature_sensor: sensor.indoor_temperature
+                      - humidity_sensor: sensor.indoor_humidity
+                      - navigation_path: /test-material-3/wohnzimmer
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.wohnzimmer
+                      - icon: m3of:chair
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.signe_gradient_wohnzimmer
+                    tap_action:
+                      action: toggle
+                    icon: m3of:floor_lamp
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.wohnzimmer_decke_tv
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  background:
+                  {% set temp = states('sensor.indoor_temperature') | float %}
+                    {% if temp < 13 %}
+                      rgba(172, 156, 175, 0.8)
+                    {% elif temp < 16 %}          
+                      rgba(215, 196, 219, 0.8)
+                    {% elif temp < 19 %}
+                      rgba(163, 217, 245, 0.8)
+                    {% elif temp < 22 %}
+                      rgba(205, 227, 219, 0.8)
+                    {% elif temp < 24 %}
+                      rgba(255, 229, 153, 0.8)
+                    {% elif temp < 27 %}
+                      rgba(247, 190, 129, 0.8)
+                    {% else %}
+                      rgba(224, 102, 102, 0.8)
+                    {% endif %};             
+                  max-width: 100%;
+                  min-width: 50%;
+                  height: 186px;
+                }
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Schlafzimmer
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/schlafzimmer
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.schlafzimmer
+                      - icon: m3of:bed
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.philipp_sandra_fair
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.philipp_sandra_fair', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.philipp_sandra_fair', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.philipp
+                    tap_action:
+                      action: toggle
+                    icon: m3of:wall_lamp
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.philipp', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.philipp', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.sandra
+                    tap_action:
+                      action: toggle
+                    icon: m3of:wall_lamp
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.sandra', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.sandra', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Esszimmer
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/esszimmer
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.esszimmer
+                      - icon: m3of:restaurant
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.esszimmer_decke_unten
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.esszimmer_decke_unten', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.esszimmer_decke_unten', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.esszimmer_decke_oben
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.esszimmer_decke_oben', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.esszimmer_decke_oben', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.esszimmer_decke_garderobe
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.esszimmer_decke_garderobe', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.esszimmer_decke_garderobe', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.zurilicht
+                    tap_action:
+                      action: toggle
+                    icon: m3of:wall_lamp
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.zurilicht', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.zurilicht', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Kinderzimmer
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/kinderzimmer
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.kinderzimmer
+                      - icon: m3of:girl
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.kinderzimmer_enrave
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.kinderzimmer_enrave', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.kinderzimmer_enrave', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.lia_light_strip
+                    tap_action:
+                      action: toggle
+                    icon: m3of:backlight_high
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.lia_light_strip', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.lia_light_strip', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Gang
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/gang
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.gang
+                      - icon: m3of:hallway
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.gang_farbig_1_schlafzimmer
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.gang_farbig_1_schlafzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.gang_farbig_1_schlafzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.gang_farbig_2_buro
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.gang_farbig_2_buro', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.gang_farbig_2_buro', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.gang_farbig_3_pinwand
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.gang_farbig_3_pinwand', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.gang_farbig_3_pinwand', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                  - type: template
+                    entity: light.gang_farbig_4_lia
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.gang_farbig_4_lia', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.gang_farbig_4_lia', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Eingang
+                      - temperature_sensor:
+                      - humidity_sensor:
+                      - navigation_path: /test-material-3/eingang
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.eingang
+                      - icon: m3of:door_front
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.eingang_decke
+                    tap_action:
+                      action: toggle
+                    icon: m3of:light
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.eingang_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.eingang_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+          - type: custom:stack-in-card
+            mode: horizontal
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: room_summary_card
+                    variables:
+                      - room_name: Balkon
+                      - temperature_sensor: sensor.outdoor_temperature
+                      - humidity_sensor: sensor.outdoor_humidity
+                      - navigation_path: /test-material-3/balkon
+                  - type: custom:decluttering-card
+                    template: big_icon_toggle_card
+                    variables:
+                      - entity: light.balkonlicht
+                      - icon: m3of:lightbulb_circle
+              - type: custom:mushroom-chips-card
+                chips:
+                  - type: template
+                    entity: light.balkonlicht
+                    tap_action:
+                      action: toggle
+                    icon: m3of:lightbulb_circle
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --chip-background: {% if is_state('light.balkonlicht', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                          --color: {% if is_state('light.balkonlicht', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                          justify-content: center;
+                          height: 35px !important;
+                          width: 35px !important;
+                          border: 0 !important;
+                          box-shadow: none !important;
+                          border-radius: 22px !important;
+                        }
+                card_mod:
+                  style: |
+                    .chip-container {
+                      flex-flow: column wrap-reverse !important;
+                      display: flex !important;
+                      --chip-spacing: 8px;
+                      margin: 12px;
+                    }
+                    .: |
+                    .container {
+                      align: end;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  background:
+                  {% set temp = states('sensor.outdoor_temperature') | float %}
+                    {% if temp < 13 %}
+                      rgba(172, 156, 175, 0.8)
+                    {% elif temp < 16 %}          
+                      rgba(215, 196, 219, 0.8)
+                    {% elif temp < 19 %}
+                      rgba(163, 217, 245, 0.8)
+                    {% elif temp < 22 %}
+                      rgba(205, 227, 219, 0.8)
+                    {% elif temp < 24 %}
+                      rgba(255, 229, 153, 0.8)
+                    {% elif temp < 27 %}
+                      rgba(247, 190, 129, 0.8)
+                    {% else %}
+                      rgba(224, 102, 102, 0.8)
+                    {% endif %};             
+                  max-width: 100%;
+                  min-width: 50%;
+                  height: 186px;
+                }
+  - type: grid
+    cards:
+      - type: custom:navbar-card
+        mobile:
+          show_labels: true
+        desktop:
+          show_labels: true
+          position: left
+          min_width: 768
+        routes:
+          - url: /test-material-3/overview
+            label: Home
+            icon: m3o:home
+            icon_selected: m3of:home
+          - url: /test-material-3/rooms
+            label: Räume
+            icon: m3o:chair
+            icon_selected: m3of:chair
+            tap_action:
+              action: navigate
+              navigation_path: /test-material-3/rooms
+            hold_action:
+              action: open-popup
+            popup:
+              - icon: m3of:computer
+                url: /test-material-3/buro
+              - icon: m3of:chair
+                url: /test-material-3/wohnzimmer
+              - icon: m3of:bed
+                url: /test-material-3/schlafzimmer
+              - icon: m3of:restaurant
+                url: /test-material-3/esszimmer
+              - icon: m3of:person-3
+                url: /test-material-3/kinderzimmer
+              - icon: m3of:groups-2
+                url: /test-material-3/gang
+          - url: /test-material-3/scenes
+            label: Scenes
+            icon: m3o:layers
+            icon_selected: m3of:layers
+          - icon: mdi:dots-horizontal
+            label: More
+            tap_action:
+              action: open-popup
+            popup:
+              - icon: m3of:tools-wrench
+                url: /config/dashboard
+        styles: |
+          .navbar-card {
+            --navbar-primary-color: var(--md-sys-color-tertiary);
+            background: var(--nav-background);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(20px) !important;
+            background-blend-mode: overlay;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            overflow: hidden;
+          }
+badges:
+  - type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        tap_action:
+          action: navigate
+          navigation_path: /test-material-3/overview
+        icon: m3of:arrow-left-alt
+        card_mod:
+          style:
+            .: |
+              ha-card {
+                --color: {{ 'var(--md-sys-color-on-primary)' }};
+                --chip-background: {{ 'var(--md-sys-color-primary)' }};
+                margin-top: 0.7em;
+              }
+background:
+  opacity: 90
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: null
