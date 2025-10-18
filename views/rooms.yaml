@@ -25,7 +25,7 @@ sections:
                       - room_name: Büro
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/buro
+                      - navigation_path: /buro
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -73,7 +73,7 @@ sections:
                       - room_name: Wohnzimmer
                       - temperature_sensor: sensor.indoor_temperature
                       - humidity_sensor: sensor.indoor_humidity
-                      - navigation_path: /test-material-3/wohnzimmer
+                      - navigation_path: /wohnzimmer
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -164,7 +164,7 @@ sections:
                       - room_name: Schlafzimmer
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/schlafzimmer
+                      - navigation_path: /schlafzimmer
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -246,7 +246,7 @@ sections:
                       - room_name: Esszimmer
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/esszimmer
+                      - navigation_path: /esszimmer
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -347,7 +347,7 @@ sections:
                       - room_name: Kinderzimmer
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/kinderzimmer
+                      - navigation_path: /kinderzimmer
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -412,7 +412,7 @@ sections:
                       - room_name: Gang
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/gang
+                      - navigation_path: /gang
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -513,7 +513,7 @@ sections:
                       - room_name: Eingang
                       - temperature_sensor:
                       - humidity_sensor:
-                      - navigation_path: /test-material-3/eingang
+                      - navigation_path: /eingang
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -561,7 +561,7 @@ sections:
                       - room_name: Balkon
                       - temperature_sensor: sensor.outdoor_temperature
                       - humidity_sensor: sensor.outdoor_humidity
-                      - navigation_path: /test-material-3/balkon
+                      - navigation_path: /balkon
                   - type: custom:decluttering-card
                     template: big_icon_toggle_card
                     variables:
@@ -632,33 +632,33 @@ sections:
           position: left
           min_width: 768
         routes:
-          - url: /test-material-3/overview
+          - url: /overview
             label: Home
             icon: m3o:home
             icon_selected: m3of:home
-          - url: /test-material-3/rooms
+          - url: /rooms
             label: Räume
             icon: m3o:chair
             icon_selected: m3of:chair
             tap_action:
               action: navigate
-              navigation_path: /test-material-3/rooms
+              navigation_path: /rooms
             hold_action:
               action: open-popup
             popup:
               - icon: m3of:computer
-                url: /test-material-3/buro
+                url: /buro
               - icon: m3of:chair
-                url: /test-material-3/wohnzimmer
+                url: /wohnzimmer
               - icon: m3of:bed
-                url: /test-material-3/schlafzimmer
+                url: /schlafzimmer
               - icon: m3of:restaurant
-                url: /test-material-3/esszimmer
+                url: /esszimmer
               - icon: m3of:person-3
-                url: /test-material-3/kinderzimmer
+                url: /kinderzimmer
               - icon: m3of:groups-2
-                url: /test-material-3/gang
-          - url: /test-material-3/scenes
+                url: /gang
+          - url: /scenes
             label: Scenes
             icon: m3o:layers
             icon_selected: m3of:layers
@@ -692,7 +692,7 @@ badges:
       - type: template
         tap_action:
           action: navigate
-          navigation_path: /test-material-3/overview
+          navigation_path: /overview
         icon: m3of:arrow-left-alt
         card_mod:
           style:

@@ -9,7 +9,7 @@ swipe_nav:
 button_card_templates: 
   !include includes/button_card_templates.yaml
 decluttering_templates:
-  !include ./includes/decluttering_templates.yaml
+  !include includes/decluttering_templates.yaml
 
 views:
   !include views/views.yaml
