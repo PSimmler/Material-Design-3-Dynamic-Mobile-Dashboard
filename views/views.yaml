@@ -1,6 +1,7 @@
 # Overview
-- title: Wohnzimmer
-  icon: mdi:sofa
+- title: Overview
+  icon: m3o:home
+  path: overview
   cards:
     !include overview.yaml
 
