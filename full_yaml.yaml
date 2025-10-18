@@ -5,17 +5,17 @@ kiosk_mode:
     custom_width: 768
 swipe_nav:
   animate: swipe
-  enable_on_subviews: false    
+  enable_on_subviews: false
 button_card_templates:
   scene_button:
     layout: icon_name
     variables:
-      - scene: ''
+      - scene: ""
     tap_action:
       action: call-service
       service: scene.turn_on
       data:
-        entity_id: '[[[scene]]]'
+        entity_id: "[[[scene]]]"
     styles:
       name:
         - color: var(--gray800)
@@ -29,15 +29,15 @@ button_card_templates:
         - background-color: var(--popupBG)
         - border-radius: 24px
       icon:
-        - '--mdc-icon-size': 26px
+        - "--mdc-icon-size": 26px
         - color: var(--gray800)
 decluttering_templates:
   mushroom_title_card:
     default:
-      - title: ''
+      - title: ""
     card:
       type: custom:mushroom-title-card
-      title: '[[title]]'
+      title: "[[title]]"
       card_mod:
         style: |
           ha-card {
@@ -45,23 +45,23 @@ decluttering_templates:
           }
   mushroom_room_title_card:
     default:
-      - title: ''
+      - title: ""
     card:
       type: custom:mushroom-title-card
-      title: '[[title]]'
+      title: "[[title]]"
       card_mod:
         style: |
           ha-card {
             --title-font-size: 35px !important;
-          }          
+          }
   mushroom_title_subtitle_card:
     default:
-      title: ''
-      subtitle: ''
+      title: ""
+      subtitle: ""
     card:
       type: custom:mushroom-title-card
-      title: '[[title]]'
-      subtitle: '[[subtitle]]'
+      title: "[[title]]"
+      subtitle: "[[subtitle]]"
       card_mod:
         style: |
           ha-card {
@@ -70,20 +70,20 @@ decluttering_templates:
           }
   mushroom_overview_card:
     default:
-      title: ''
-      subtitle: ''
+      title: ""
+      subtitle: ""
     card:
       type: custom:mushroom-title-card
-      title: '[[title]]'
-      subtitle: '[[subtitle]]'
+      title: "[[title]]"
+      subtitle: "[[subtitle]]"
       card_mod:
         style: |
           ha-card {
             --subtitle-font-size: 13px !important;
-          }    
+          }
   temperature_entity:
     default:
-      - title: ''
+      - title: ""
     card:
       type: entities
       card_mod:
@@ -97,9 +97,9 @@ decluttering_templates:
             padding: 0 !important;    /* kill inner padding */
           }
       entities:
-        - entity: '[[entity]]'
-          name: '[[name]]'
-          icon: '[[icon]]'
+        - entity: "[[entity]]"
+          name: "[[name]]"
+          icon: "[[icon]]"
           card_mod:
             style: |
               hui-generic-entity-row {
@@ -165,7 +165,7 @@ decluttering_templates:
               }
   humidity_entity:
     default:
-      - title: ''
+      - title: ""
     card:
       type: entities
       card_mod:
@@ -179,9 +179,9 @@ decluttering_templates:
             padding: 0 !important;    /* kill inner padding */
           }
       entities:
-        - entity: '[[entity]]'
-          name: '[[name]]'
-          icon: '[[icon]]'
+        - entity: "[[entity]]"
+          name: "[[name]]"
+          icon: "[[icon]]"
           card_mod:
             style: |
               hui-generic-entity-row {
@@ -235,13 +235,13 @@ decluttering_templates:
       - navigation_path
     card:
       type: custom:mushroom-template-card
-      primary: '[[room_name]]'
+      primary: "[[room_name]]"
       secondary: >-
         {{ states('[[temperature_sensor]]') | round(1) }}°C / {{
         states('[[humidity_sensor]]') | round(1) }}%
       tap_action:
         action: navigate
-        navigation_path: '[[navigation_path]]'
+        navigation_path: "[[navigation_path]]"
       hold_action:
         action: none
       double_tap_action:
@@ -268,15 +268,15 @@ decluttering_templates:
       - icon
     card:
       type: custom:mushroom-template-card
-      entity: '[[entity]]'
+      entity: "[[entity]]"
       layout: horizontal
-      icon: '[[icon]]'
+      icon: "[[icon]]"
       icon_color: |-
         {% if is_state(entity, 'on') %} 
           #ecce85
         {% else %}
           #5b5b5b
-        {% endif %}      
+        {% endif %}
       tap_action:
         action: toggle
       hold_action:
@@ -293,7 +293,7 @@ decluttering_templates:
               width: 120px !important;
               height: 120px !important;
               border-radius: 50% !important;
-                }   
+                }
           .: |
             ha-tile-icon {
               --mdc-icon-size: 90px !important;
@@ -312,9 +312,9 @@ decluttering_templates:
       type: custom:stack-in-card
       cards:
         - type: custom:mushroom-media-player-card
-          entity: '[[entity]]'
-          icon: '[[icon]]'
-          name: '[[name]]'
+          entity: "[[entity]]"
+          icon: "[[icon]]"
+          name: "[[name]]"
           use_media_info: true
           use_media_artwork: false
           show_volume_level: false
@@ -328,7 +328,7 @@ decluttering_templates:
           fill_container: false
           collapsible_controls: true
           tap_action:
-            action: '[[tap_action]]'
+            action: "[[tap_action]]"
           layout: vertical
           card_mod:
             style:
@@ -414,7 +414,7 @@ decluttering_templates:
                       padding-top: 24px;
                     {% endif %}
                   }
-        - entity: '[[entity]]'
+        - entity: "[[entity]]"
           hide:
             icon: true
             name: true
@@ -504,7 +504,7 @@ views:
           - type: custom:decluttering-card
             template: mushroom_overview_card
             variables:
-              - subtitle: '{{ now().strftime(''%a %b %-d - %I:%M %p'') }}'
+              - subtitle: "{{ now().strftime('%a %b %-d - %I:%M %p') }}"
           - type: custom:mushroom-chips-card
             chips:
               - type: conditional
@@ -517,7 +517,7 @@ views:
                   entity: sensor.latest_nearby_quake
                   tap_action:
                     action: navigate
-                    navigation_path: '#earthquake-warning'
+                    navigation_path: "#earthquake-warning"
                   icon: m3of:globe-location-pin
                   icon_color: >
                     {% set mag = state_attr('sensor.latest_nearby_quake',
@@ -535,7 +535,7 @@ views:
                   entity: sensor.volcano_rotorua
                   tap_action:
                     action: navigate
-                    navigation_path: '#volcano-warning'
+                    navigation_path: "#volcano-warning"
                   icon: m3of:mountain-steam
                   icon_color: |
                     {% set level = states('sensor.volcano_rotorua') | int %}
@@ -556,7 +556,7 @@ views:
                   entity: sensor.home_metservice_weather_warnings
                   tap_action:
                     action: navigate
-                    navigation_path: '#weather-warning'
+                    navigation_path: "#weather-warning"
                   icon: m3of:warning
                   icon_color: orange
               - type: conditional
@@ -569,9 +569,9 @@ views:
                   content: Triggered
                   tap_action:
                     action: navigate
-                    navigation_path: '#alarmo'
+                    navigation_path: "#alarmo"
                   icon: m3of:notifications-active
-                  icon_color: '#d14f3a'
+                  icon_color: "#d14f3a"
               - type: conditional
                 conditions:
                   - entity: alarm_control_panel.alarmo
@@ -582,9 +582,9 @@ views:
                   content: Armed away
                   tap_action:
                     action: navigate
-                    navigation_path: '#alarmo'
+                    navigation_path: "#alarmo"
                   icon: mdi:shield-lock
-                  icon_color: '#69ac5a'
+                  icon_color: "#69ac5a"
               - type: conditional
                 conditions:
                   - entity: alarm_control_panel.alarmo
@@ -595,9 +595,9 @@ views:
                   content: Arming
                   tap_action:
                     action: navigate
-                    navigation_path: '#alarmo'
+                    navigation_path: "#alarmo"
                   icon: mdi:shield
-                  icon_color: '#efa340'
+                  icon_color: "#efa340"
               - type: conditional
                 conditions:
                   - entity: alarm_control_panel.alarmo
@@ -608,9 +608,9 @@ views:
                   content: Pending
                   tap_action:
                     action: navigate
-                    navigation_path: '#alarmo'
+                    navigation_path: "#alarmo"
                   icon: mdi:shield-outline
-                  icon_color: '#efa340'
+                  icon_color: "#efa340"
               - type: conditional
                 conditions:
                   - entity: alarm_control_panel.alarmo
@@ -620,15 +620,15 @@ views:
                   entity: alarm_control_panel.alarmo
                   tap_action:
                     action: navigate
-                    navigation_path: '#alarmo'
+                    navigation_path: "#alarmo"
                   icon: mdi:shield-off
-                  icon_color: '#disarmed'
+                  icon_color: "#disarmed"
               - type: template
                 entity: sensor.active_notification_count
                 icon: m3of:notifications
                 tap_action:
                   action: navigate
-                  navigation_path: '#notifications'
+                  navigation_path: "#notifications"
                 hold_action:
                   action: none
                 card_mod:
@@ -714,10 +714,10 @@ views:
                 name: >-
                   {{ state_attr('weather.forecast_home', 'temperature') }} °C,
                   {{ states('weather.met_service_home_forecast') | title }}
-                icon: '{{ states(''sensor.weather_condition_icon'') }}'
+                icon: "{{ states('sensor.weather_condition_icon') }}"
                 tap_action:
                   action: navigate
-                  navigation_path: '#weather'
+                  navigation_path: "#weather"
                 styles:
                   icon:
                     color: var(--md-sys-color-on-primary)
@@ -748,7 +748,7 @@ views:
                   weather.wind_speed }} {{ weather.wind_speed_unit }}
                 tap_action:
                   action: navigate
-                  navigation_path: '#weather'
+                  navigation_path: "#weather"
                 styles:
                   name:
                     color: var(--md-sys-color-on-primary)
@@ -783,7 +783,7 @@ views:
                   {% endif %}
                 tap_action:
                   action: navigate
-                  navigation_path: '#weather-forecast'
+                  navigation_path: "#weather-forecast"
                 styles:
                   name:
                     color: var(--md-sys-color-on-primary)
@@ -818,7 +818,7 @@ views:
                   {% endif %}
                 tap_action:
                   action: navigate
-                  navigation_path: '#weather-forecast'
+                  navigation_path: "#weather-forecast"
                 styles:
                   name:
                     color: var(--md-sys-color-on-primary)
@@ -844,7 +844,7 @@ views:
                       conditions:
                         - condition: state
                           entity: switch.all_water_taps
-                          state: 'on'
+                          state: "on"
                       card:
                         type: custom:simple-swipe-card
                         view_mode: carousel
@@ -862,9 +862,9 @@ views:
                                   - type: custom:mushroom-template-card
                                     entity: sensor.house_average_temperature
                                     primary: |
-                                      {{ states(entity) | round(1) }}°C 
+                                      {{ states(entity) | round(1) }}°C
                                     secondary: |
-                                      {{ state_attr(entity,'friendly_name') }} 
+                                      {{ state_attr(entity,'friendly_name') }}
                                     icon: >
                                       {% set hvac_mode =
                                       states('climate.heat_pump') %}
@@ -905,7 +905,7 @@ views:
                                   - type: custom:mushroom-template-card
                                     entity: sensor.outdoor_temperature
                                     primary: |
-                                      {{ states(entity) | round(1) }}°C 
+                                      {{ states(entity) | round(1) }}°C
                                     secondary: |
                                       Outdoor Feels Like
                                     icon: >-
@@ -929,7 +929,7 @@ views:
                                       {% else %} #752722 {% endif %}
                                     tap_action:
                                       action: navigate
-                                      navigation_path: '#weather'
+                                      navigation_path: "#weather"
                               - type: custom:config-template-card
                                 entities:
                                   - sensor.house_average_temperature
@@ -990,7 +990,7 @@ views:
                                       - cool
                                       - heat
                                       - fan_only
-                                      - 'off'
+                                      - "off"
                           - type: custom:vertical-stack-in-card
                             cards:
                               - type: custom:mushroom-template-card
@@ -1055,7 +1055,7 @@ views:
                                 entity: sensor.current_water_restriction
                                 primary: >
                                   {{ states('sensor.current_water_restriction')
-                                  }} 
+                                  }}
                                 tap_action:
                                   action: more-info
                                 icon: >
@@ -1101,7 +1101,7 @@ views:
                       conditions:
                         - condition: state
                           entity: switch.all_water_taps
-                          state: 'off'
+                          state: "off"
                       card:
                         type: custom:vertical-stack-in-card
                         cards:
@@ -1114,7 +1114,7 @@ views:
                                 primary: |
                                   {{ states(entity) | round(1) }} °C
                                 secondary: |
-                                  {{ state_attr(entity,'friendly_name') }} 
+                                  {{ state_attr(entity,'friendly_name') }}
                                 icon: >
                                   {% set hvac_mode = states('climate.heat_pump')
                                   %}
@@ -1156,7 +1156,7 @@ views:
                                   {{ states(entity) | round(1) }} °C
                                 secondary: |
                                   Outdoor Feels Like
-                                icon: '{{ states(''sensor.weather_condition_icon'') }}'
+                                icon: "{{ states('sensor.weather_condition_icon') }}"
                                 icon_color: >
                                   {% set temp =
                                   state_attr('weather.forecast_home',
@@ -1175,7 +1175,7 @@ views:
                                   {% else %} #752722 {% endif %}
                                 tap_action:
                                   action: navigate
-                                  navigation_path: '#weather'
+                                  navigation_path: "#weather"
                           - type: custom:config-template-card
                             entities:
                               - sensor.house_average_temperature
@@ -1235,7 +1235,7 @@ views:
                                   - cool
                                   - heat
                                   - fan_only
-                                  - 'off'
+                                  - "off"
                     - type: custom:simple-swipe-card
                       auto_hide_pagination: 0
                       cards:
@@ -1267,9 +1267,9 @@ views:
                           }
                     - entities:
                         - entity: calendar.1
-                          accent_color: '#ff6a6a'
+                          accent_color: "#ff6a6a"
                         - entity: calendar.2
-                          accent_color: '#71c8fe'
+                          accent_color: "#71c8fe"
                       days_to_show: 10
                       compact_events_to_show: 10
                       background_color: transparent
@@ -1336,7 +1336,7 @@ views:
                       conditions:
                         - condition: state
                           entity: light.all_lights
-                          state: 'on'
+                          state: "on"
                       card:
                         type: custom:decluttering-card
                         template: mushroom_title_card
@@ -1352,7 +1352,7 @@ views:
                         include:
                           - group: light.all_lights
                             entity_id: light.lights_*
-                            state: 'on'
+                            state: "on"
                             options:
                               type: custom:google-slider-card
                               entity: this.entity_id
@@ -1360,8 +1360,8 @@ views:
                               bold_text: false
                               control_type: light
                           - group: light.all_lights
-                            entity_id: '*led*'
-                            state: 'on'
+                            entity_id: "*led*"
+                            state: "on"
                             options:
                               type: custom:google-slider-card
                               entity: this.entity_id
@@ -1379,7 +1379,7 @@ views:
                           conditions:
                             - condition: state
                               entity: switch.all_light_switches
-                              state: 'on'
+                              state: "on"
                           card:
                             type: custom:decluttering-card
                             template: mushroom_title_card
@@ -1394,8 +1394,8 @@ views:
                           filter:
                             include:
                               - group: switch.all_light_switches
-                                entity_id: '*switch*'
-                                state: 'on'
+                                entity_id: "*switch*"
+                                state: "on"
                                 options:
                                   type: custom:material-button-card
                                   use_default_icon: false
@@ -1418,7 +1418,7 @@ views:
                           conditions:
                             - condition: state
                               entity: fan.all_fans
-                              state: 'on'
+                              state: "on"
                           card:
                             type: custom:decluttering-card
                             template: mushroom_title_card
@@ -1433,7 +1433,7 @@ views:
                           filter:
                             include:
                               - group: fan.all_fans
-                                state: 'on'
+                                state: "on"
                                 options:
                                   type: custom:material-button-card
                                   use_default_icon: false
@@ -1453,7 +1453,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#notifications'
+                hash: "#notifications"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Notifications
                 icon: m3of:notifications
@@ -1480,7 +1480,7 @@ views:
                       type: template
                       entity: sensor.soil_sensor_corner_moisture
                       icon: mdi:water-percent
-                      content: '{{ states(''sensor.soil_sensor_corner_moisture'') }}%'
+                      content: "{{ states('sensor.soil_sensor_corner_moisture') }}%"
                       icon_color: >
                         {% set moisture =
                         states('sensor.soil_sensor_corner_moisture') | int(0) %}
@@ -1497,7 +1497,7 @@ views:
                     conditions:
                       - condition: state
                         entity: sensor.house_maintenance_chip_card
-                        state: 'true'
+                        state: "true"
                     chip:
                       type: template
                       entity: sensor.house_maintenance_chip_card
@@ -1518,14 +1518,14 @@ views:
                           Rubbish Day
                         {% elif is_state('input_boolean.recycle', 'on') %}
                           Recycle Day
-                        {% else %} {% endif %}      
+                        {% else %} {% endif %}
                       tap_action:
                         action: more-info
                   - type: conditional
                     conditions:
                       - condition: state
                         entity: binary_sensor.all_doors
-                        state: 'on'
+                        state: "on"
                     chip:
                       type: template
                       entity: binary_sensor.all_doors
@@ -1577,7 +1577,7 @@ views:
                       tap_action:
                         action: more-info
                       icon: mdi:tumble-dryer
-                      icon_color: '#880808'
+                      icon_color: "#880808"
                       content: Dryer Running
                   - type: conditional
                     conditions:
@@ -1588,7 +1588,7 @@ views:
                             state: playing
                           - condition: state
                             entity: media_player.all_speakers
-                            state: 'on'
+                            state: "on"
                     chip:
                       type: template
                       entity: media_player.all_speakers
@@ -1605,7 +1605,7 @@ views:
                 conditions:
                   - condition: state
                     entity: binary_sensor.doors_grg
-                    state: 'on'
+                    state: "on"
                 card:
                   type: vertical-stack
                   cards:
@@ -1646,10 +1646,10 @@ views:
                     conditions:
                       - condition: state
                         entity: input_boolean.rubbish
-                        state: 'on'
+                        state: "on"
                       - condition: state
                         entity: input_boolean.recycle
-                        state: 'on'
+                        state: "on"
                 card:
                   type: vertical-stack
                   cards:
@@ -1694,7 +1694,7 @@ views:
                         conditions:
                           - condition: state
                             entity: binary_sensor.show_wash_cuddly_timer
-                            state: 'on'
+                            state: "on"
                           - condition: state
                             entity: timer.wash_cuddly
                             state: idle
@@ -1706,7 +1706,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#f385bc'
+                        color: "#f385bc"
                   - type: conditional
                     conditions:
                       - condition: state
@@ -1734,7 +1734,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#b5e0f7'
+                        color: "#b5e0f7"
                   - type: conditional
                     conditions:
                       - condition: state
@@ -1748,7 +1748,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#D70040'
+                        color: "#D70040"
                   - type: conditional
                     conditions:
                       - condition: state
@@ -1762,7 +1762,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#A020F0'
+                        color: "#A020F0"
                   - type: conditional
                     conditions:
                       - condition: state
@@ -1776,7 +1776,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#4CBB17'
+                        color: "#4CBB17"
                   - type: conditional
                     conditions:
                       - condition: state
@@ -1790,7 +1790,7 @@ views:
                       bar_width: 60%
                       mushroom:
                         layout: vertical
-                        color: '#f3c843'
+                        color: "#f3c843"
               - type: custom:bubble-card
                 card_type: separator
                 styles: |-
@@ -1813,7 +1813,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#volcano-warning'
+                hash: "#volcano-warning"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Taupo Volcano Warning
                 icon: m3of:mountain-steam
@@ -1861,7 +1861,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#earthquake-warning'
+                hash: "#earthquake-warning"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Earthquake Warning
                 icon: m3of:globe-location-pin
@@ -1946,7 +1946,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#alarmo'
+                hash: "#alarmo"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Alarm
                 icon: m3of:pin
@@ -1992,7 +1992,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#weather'
+                hash: "#weather"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Weather
                 icon: mdi:weather-partly-cloudy
@@ -2076,7 +2076,7 @@ views:
                     variables:
                       - title: Lunar Phase
                   - type: custom:lunar-phase-card
-                    entity: ''
+                    entity: ""
                     12hr_format: true
                     calendar_modal: false
                     compact_view: true
@@ -2106,12 +2106,12 @@ views:
                       header_font_style: capitalize
                       label_font_size: small
                       label_font_style: none
-                      label_font_color: ''
+                      label_font_color: ""
                       hide_label: false
                     latitude: your_lattitude
                     longitude: your_longitude
                     location:
-                      city: ''
+                      city: ""
                       country: New Zealand
                     theme:
                       selected_theme: Material You
@@ -2174,7 +2174,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#weather-warning'
+                hash: "#weather-warning"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Weather Warning
                 icon: m3of:warning
@@ -2205,7 +2205,7 @@ views:
                     icon: mdi:weather-cloudy-arrow-right
                     tap_action:
                       action: navigate
-                      navigation_path: '#weather-forecast'
+                      navigation_path: "#weather-forecast"
                     content: Open Weather Forecast Panel
                     card_mod:
                       style:
@@ -2238,7 +2238,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#weather-forecast'
+                hash: "#weather-forecast"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Forecast
                 icon: mdi:weather-cloudy-arrow-right
@@ -2389,7 +2389,7 @@ views:
                         curve: smooth
                         yaxis_id: temp
                         stroke_width: 2
-                        color: '#E53935'
+                        color: "#E53935"
                         data_generator: |
                           return entity.attributes.forecasts.map(f => {
                             return {
@@ -2470,7 +2470,7 @@ views:
                         type: line
                         curve: smooth
                         yaxis_id: speed
-                        color: '#0288D1'
+                        color: "#0288D1"
                         stroke_width: 2
                         data_generator: |
                           return entity.attributes.forecasts.map(f => {
@@ -2483,7 +2483,7 @@ views:
                         type: line
                         curve: smooth
                         yaxis_id: direction
-                        color: '#8E24AA'
+                        color: "#8E24AA"
                         stroke_width: 1
                         data_generator: |
                           return entity.attributes.forecasts.map(f => {
@@ -2496,7 +2496,7 @@ views:
                     icon: mdi:weather-partly-cloudy
                     tap_action:
                       action: navigate
-                      navigation_path: '#weather'
+                      navigation_path: "#weather"
                     content: Open Weather Panel
                     card_mod:
                       style:
@@ -2634,8 +2634,8 @@ views:
                         template: room_summary_card
                         variables:
                           - room_name: Büro
-                          - temperature_sensor: 
-                          - humidity_sensor: 
+                          - temperature_sensor:
+                          - humidity_sensor:
                           - navigation_path: /test-material-3/buro
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
@@ -2773,8 +2773,8 @@ views:
                         template: room_summary_card
                         variables:
                           - room_name: Schlafzimmer
-                          - temperature_sensor: 
-                          - humidity_sensor: 
+                          - temperature_sensor:
+                          - humidity_sensor:
                           - navigation_path: /test-material-3/schlafzimmer
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
@@ -2855,8 +2855,8 @@ views:
                         template: room_summary_card
                         variables:
                           - room_name: Esszimmer
-                          - temperature_sensor: 
-                          - humidity_sensor: 
+                          - temperature_sensor:
+                          - humidity_sensor:
                           - navigation_path: /test-material-3/esszimmer
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
@@ -2881,7 +2881,7 @@ views:
                               border: 0 !important;
                               box-shadow: none !important;
                               border-radius: 22px !important;
-                            }                            
+                            }
                       - type: template
                         entity: light.esszimmer_decke_oben
                         tap_action:
@@ -2898,7 +2898,7 @@ views:
                               border: 0 !important;
                               box-shadow: none !important;
                               border-radius: 22px !important;
-                            }    
+                            }
                       - type: template
                         entity: light.esszimmer_decke_garderobe
                         tap_action:
@@ -2915,7 +2915,7 @@ views:
                               border: 0 !important;
                               box-shadow: none !important;
                               border-radius: 22px !important;
-                            }   
+                            }
                       - type: template
                         entity: light.zurilicht
                         tap_action:
@@ -2932,7 +2932,7 @@ views:
                               border: 0 !important;
                               box-shadow: none !important;
                               border-radius: 22px !important;
-                            }  
+                            }
                     card_mod:
                       style: |
                         .chip-container {
@@ -2956,8 +2956,8 @@ views:
                         template: room_summary_card
                         variables:
                           - room_name: Kinderzimmer
-                          - temperature_sensor: 
-                          - humidity_sensor: 
+                          - temperature_sensor:
+                          - humidity_sensor:
                           - navigation_path: /test-material-3/kinderzimmer
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
@@ -3021,8 +3021,8 @@ views:
                         template: room_summary_card
                         variables:
                           - room_name: Gang
-                          - temperature_sensor: 
-                          - humidity_sensor: 
+                          - temperature_sensor:
+                          - humidity_sensor:
                           - navigation_path: /test-material-3/gang
                       - type: custom:decluttering-card
                         template: big_icon_toggle_card
@@ -3116,51 +3116,51 @@ views:
               - type: custom:stack-in-card
                 mode: horizontal
                 cards:
-                - type: vertical-stack
-                  cards:
-                    - type: custom:decluttering-card
-                      template: room_summary_card
-                      variables:
-                        - room_name: Eingang
-                        - temperature_sensor: 
-                        - humidity_sensor: 
-                        - navigation_path: /test-material-3/eingang
-                    - type: custom:decluttering-card
-                      template: big_icon_toggle_card
-                      variables:
-                        - entity: light.eingang
-                        - icon: m3of:door_front
-                - type: custom:mushroom-chips-card
-                  chips:
-                    - type: template
-                      entity: light.eingang_decke
-                      tap_action:
-                        action: toggle
-                      icon: m3of:light
-                      card_mod:
-                        style: |
-                          ha-card {
-                            --chip-background: {% if is_state('light.eingang_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                            --color: {% if is_state('light.eingang_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                            justify-content: center;
-                            height: 35px !important;
-                            width: 35px !important;
-                            border: 0 !important;
-                            box-shadow: none !important;
-                            border-radius: 22px !important;
-                          }
-                  card_mod:
-                    style: |
-                      .chip-container {
-                        flex-flow: column wrap-reverse !important;
-                        display: flex !important;
-                        --chip-spacing: 8px;
-                        margin: 12px;
-                      }
-                      .: |
-                      .container {
-                        align: end;
-                      }
+                  - type: vertical-stack
+                    cards:
+                      - type: custom:decluttering-card
+                        template: room_summary_card
+                        variables:
+                          - room_name: Eingang
+                          - temperature_sensor:
+                          - humidity_sensor:
+                          - navigation_path: /test-material-3/eingang
+                      - type: custom:decluttering-card
+                        template: big_icon_toggle_card
+                        variables:
+                          - entity: light.eingang
+                          - icon: m3of:door_front
+                  - type: custom:mushroom-chips-card
+                    chips:
+                      - type: template
+                        entity: light.eingang_decke
+                        tap_action:
+                          action: toggle
+                        icon: m3of:light
+                        card_mod:
+                          style: |
+                            ha-card {
+                              --chip-background: {% if is_state('light.eingang_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                              --color: {% if is_state('light.eingang_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                              justify-content: center;
+                              height: 35px !important;
+                              width: 35px !important;
+                              border: 0 !important;
+                              box-shadow: none !important;
+                              border-radius: 22px !important;
+                            }
+                    card_mod:
+                      style: |
+                        .chip-container {
+                          flex-flow: column wrap-reverse !important;
+                          display: flex !important;
+                          --chip-spacing: 8px;
+                          margin: 12px;
+                        }
+                        .: |
+                        .container {
+                          align: end;
+                        }
               - type: custom:stack-in-card
                 mode: horizontal
                 cards:
@@ -3210,29 +3210,29 @@ views:
                           align: end;
                         }
                 card_mod:
-                    style: |
-                      ha-card {
-                        background:
-                        {% set temp = states('sensor.outdoor_temperature') | float %}
-                          {% if temp < 13 %}
-                            rgba(172, 156, 175, 0.8)
-                          {% elif temp < 16 %}          
-                            rgba(215, 196, 219, 0.8)
-                          {% elif temp < 19 %}
-                            rgba(163, 217, 245, 0.8)
-                          {% elif temp < 22 %}
-                            rgba(205, 227, 219, 0.8)
-                          {% elif temp < 24 %}
-                            rgba(255, 229, 153, 0.8)
-                          {% elif temp < 27 %}
-                            rgba(247, 190, 129, 0.8)
-                          {% else %}
-                            rgba(224, 102, 102, 0.8)
-                          {% endif %};             
-                        max-width: 100%;
-                        min-width: 50%;
-                        height: 186px;
-                      }
+                  style: |
+                    ha-card {
+                      background:
+                      {% set temp = states('sensor.outdoor_temperature') | float %}
+                        {% if temp < 13 %}
+                          rgba(172, 156, 175, 0.8)
+                        {% elif temp < 16 %}          
+                          rgba(215, 196, 219, 0.8)
+                        {% elif temp < 19 %}
+                          rgba(163, 217, 245, 0.8)
+                        {% elif temp < 22 %}
+                          rgba(205, 227, 219, 0.8)
+                        {% elif temp < 24 %}
+                          rgba(255, 229, 153, 0.8)
+                        {% elif temp < 27 %}
+                          rgba(247, 190, 129, 0.8)
+                        {% else %}
+                          rgba(224, 102, 102, 0.8)
+                        {% endif %};             
+                      max-width: 100%;
+                      min-width: 50%;
+                      height: 186px;
+                    }
       - type: grid
         cards:
           - type: custom:navbar-card
@@ -3334,7 +3334,7 @@ views:
               - title: Scenes Preset
           - type: custom:mushroom-title-card
             subtitle: Refreshing
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3381,7 +3381,7 @@ views:
                         value: narcissa
           - type: custom:mushroom-title-card
             subtitle: Peaceful
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3428,7 +3428,7 @@ views:
                         value: spring_blossom
           - type: custom:mushroom-title-card
             subtitle: Cozy
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3493,7 +3493,7 @@ views:
                         value: tropical_twilight
           - type: custom:mushroom-title-card
             subtitle: Dreamy
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3558,7 +3558,7 @@ views:
                         value: pensive
           - type: custom:mushroom-title-card
             subtitle: Pure
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3623,7 +3623,7 @@ views:
                         value: misty_ridge
           - type: custom:mushroom-title-card
             subtitle: Serenity
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3688,7 +3688,7 @@ views:
                         value: blood_moon
           - type: custom:mushroom-title-card
             subtitle: Romantic
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3753,7 +3753,7 @@ views:
                         value: promise
           - type: custom:mushroom-title-card
             subtitle: Party
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3836,7 +3836,7 @@ views:
                         value: chinatown
           - type: custom:mushroom-title-card
             subtitle: Luxurious
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3883,7 +3883,7 @@ views:
                         value: scarlet_dream
           - type: custom:mushroom-title-card
             subtitle: Race Day
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3930,7 +3930,7 @@ views:
                         value: sao_paulo
           - type: custom:mushroom-title-card
             subtitle: Holiday
-            title: ''
+            title: ""
           - type: custom:simple-swipe-card
             view_mode: carousel
             card_min_width: 400
@@ -3999,7 +3999,7 @@ views:
             cards:
               - type: custom:bubble-card
                 card_type: pop-up
-                hash: '#room-selector'
+                hash: "#room-selector"
                 margin_top_mobile: calc(96vh - 800px)
                 name: Room Selector
                 icon: m3o:room-preferences
@@ -4066,7 +4066,7 @@ views:
                           - automation.sofa_sensor_workaround
                         room_boolean: input_boolean.sofa_dynamic_scene
                         room_scene_tracker: input_text.sofa_dynamic_scene_active
-                    secondary: '{{ states(''input_text.sofa_dynamic_scene_active'') }}'
+                    secondary: "{{ states('input_text.sofa_dynamic_scene_active') }}"
                     color: >-
                       {% if states('input_text.sofa_dynamic_scene_active') != ''
                       %}
@@ -4100,7 +4100,7 @@ views:
                           - light.light_two_br
                         room_boolean: input_boolean.baby_room_dynamic_scene
                         room_scene_tracker: input_text.baby_room_dynamic_scene_active
-                    secondary: '{{ states(''input_text.baby_room_dynamic_scene_active'') }}'
+                    secondary: "{{ states('input_text.baby_room_dynamic_scene_active') }}"
                     color: >-
                       {% if states('input_text.baby_room_dynamic_scene_active')
                       != '' %}
@@ -4275,7 +4275,7 @@ views:
                   - icon: m3of:tools-wrench
                     url: /config/dashboard
                   - icon: m3o:room-preferences
-                    url: '#room-selector'
+                    url: "#room-selector"
             styles: |
               .navbar-card {
                 --navbar-primary-color: var(--md-sys-color-tertiary);
@@ -4473,7 +4473,7 @@ views:
                               background-color: var(--popupBG)
                               border-radius: 24px
                             icon:
-                              '--mdc-icon-size': 26px
+                              "--mdc-icon-size": 26px
                               color: var(--gray800)
                         - icon: mdi:weather-night
                           layout: icon_name
@@ -4494,7 +4494,7 @@ views:
                               background-color: var(--popupBG)
                               border-radius: 24px
                             icon:
-                              '--mdc-icon-size': 26px
+                              "--mdc-icon-size": 26px
                               color: var(--gray800)
                         - icon: mdi:weather-partly-cloudy
                           layout: icon_name
@@ -4515,7 +4515,7 @@ views:
                               background-color: var(--popupBG)
                               border-radius: 24px
                             icon:
-                              '--mdc-icon-size': 26px
+                              "--mdc-icon-size": 26px
                               color: var(--gray800)
                         - icon: mdi:weather-sunny
                           layout: icon_name
@@ -4536,7 +4536,7 @@ views:
                               background-color: var(--popupBG)
                               border-radius: 24px
                             icon:
-                              '--mdc-icon-size': 26px
+                              "--mdc-icon-size": 26px
                               color: var(--gray800)
                         - icon: mdi:white-balance-sunny
                           layout: icon_name
@@ -4557,7 +4557,7 @@ views:
                               background-color: var(--popupBG)
                               border-radius: 24px
                             icon:
-                              '--mdc-icon-size': 26px
+                              "--mdc-icon-size": 26px
                               color: var(--gray800)
                     - type: custom:material-slider-card
                       entity: light.wohnzimmer
@@ -5098,8 +5098,8 @@ views:
             buttons:
               - entity: automation.room_presence_multiple_guest_room
                 state_icons:
-                  'on': m3of:sensor-occupied
-                  'off': m3o:sensors-krx-off
+                  "on": m3of:sensor-occupied
+                  "off": m3o:sensors-krx-off
                 layout: icon_name
                 name: Presence Sensor
                 tap_action:
@@ -5118,7 +5118,7 @@ views:
                     border-radius: 24px
                     color: var(--white)
                   icon:
-                    '--mdc-icon-size': 26px
+                    "--mdc-icon-size": 26px
                     color: var(--gray800)
           - type: custom:simple-tabs
             pre-load: true
@@ -5171,7 +5171,7 @@ views:
                           icon: m3of:lightbulb
                           show_percentage: true
                           bold_text: false
-                          control_type: light                      
+                          control_type: light
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5231,8 +5231,8 @@ views:
             buttons:
               - entity: automation.room_presence_multiple_guest_room
                 state_icons:
-                  'on': m3of:sensor-occupied
-                  'off': m3o:sensors-krx-off
+                  "on": m3of:sensor-occupied
+                  "off": m3o:sensors-krx-off
                 layout: icon_name
                 name: Presence Sensor
                 tap_action:
@@ -5251,7 +5251,7 @@ views:
                     border-radius: 24px
                     color: var(--white)
                   icon:
-                    '--mdc-icon-size': 26px
+                    "--mdc-icon-size": 26px
                     color: var(--gray800)
           - type: custom:simple-tabs
             pre-load: true
@@ -5284,7 +5284,7 @@ views:
                           icon: m3of:lightbulb
                           show_percentage: true
                           bold_text: false
-                          control_type: light                      
+                          control_type: light
     badges:
       - type: custom:mushroom-chips-card
         chips:
@@ -5344,8 +5344,8 @@ views:
             buttons:
               - entity: automation.room_presence_multiple_guest_room
                 state_icons:
-                  'on': m3of:sensor-occupied
-                  'off': m3o:sensors-krx-off
+                  "on": m3of:sensor-occupied
+                  "off": m3o:sensors-krx-off
                 layout: icon_name
                 name: Presence Sensor
                 tap_action:
@@ -5364,7 +5364,7 @@ views:
                     border-radius: 24px
                     color: var(--white)
                   icon:
-                    '--mdc-icon-size': 26px
+                    "--mdc-icon-size": 26px
                     color: var(--gray800)
           - type: custom:simple-tabs
             pre-load: true
@@ -5655,11 +5655,11 @@ views:
                 series:
                   - entity: sensor.download_speed_mbps
                     name: Download
-                    color: '#42a5f5'
+                    color: "#42a5f5"
                     type: area
                   - entity: sensor.upload_speed_mbps
                     name: Upload
-                    color: '#66bb6a'
+                    color: "#66bb6a"
                     type: area
           - type: vertical-stack
             cards:
@@ -5675,7 +5675,7 @@ views:
                 card_param: cards
                 filter:
                   include:
-                    - entity_id: '*battery*'
+                    - entity_id: "*battery*"
                       state: < 60
                       options:
                         type: custom:mushroom-template-card
