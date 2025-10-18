@@ -1,0 +1,8 @@
+title: My New View
+icon: mdi:home-assistant
+cards:
+  - type: entities
+    entities:
+      - light.wohnzimmer
+  - type: weather-forecast
+    entity: weather.home
