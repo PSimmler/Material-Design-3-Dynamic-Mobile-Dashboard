@@ -9,10 +9,12 @@ swipe_nav:
 button_card_templates:
   scene_button:
     layout: icon_name
+    variables:
+      - scene: ''
     tap_action:
       action: call-service
       service: scene.turn_on
-      data: 
+      data:
         entity_id: '[[[scene]]]'
     styles:
       name:
@@ -4444,12 +4446,14 @@ views:
                           template: scene_button
                           icon: m3of:relax
                           name: Entspannen
-                          scene: scene.wohn_esszimmer_fernsehabend
+                          variables:
+                            scene: scene.wohn_esszimmer_fernsehabend
                         - type: custom:button-card
                           template: scene_button
                           icon: m3of:movie
                           name: Filmabend
-                          scene: scene.wohn_esszimmer_fernsehabend
+                          variables:
+                            scene: scene.wohn_esszimmer_filmabend
                         - icon: m3of:sunny-snowing
                           layout: icon_name
                           name: Dynamic Daylight
