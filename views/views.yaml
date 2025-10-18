@@ -2,13 +2,13 @@
 - title: Wohnzimmer
   icon: mdi:sofa
   cards:
-    !include views/overview.yaml
+    !include overview.yaml
 
 # Rooms
 - title: Schlafzimmer
   icon: mdi:bed
   cards:
-    !include views/rooms.yaml
+    !include rooms.yaml
 
 #!include views/scenes.yaml
 #  !include views/rooms/balcony.yaml
