@@ -27,7 +27,7 @@
     !include rooms/balcony.yaml
 
 - title: Kinderzimmer
-  icon: mdi:balcony
+  icon: mdi:girl
   path: childroom
   cards:
     !include rooms/childroom.yaml
