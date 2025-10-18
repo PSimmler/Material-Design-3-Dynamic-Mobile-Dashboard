@@ -1868,33 +1868,33 @@ sections:
           min_width: 768
           show_popup_label_backgrounds: false
         routes:
-          - url: /test-material-3/overview
+          - url: /overview
             label: Home
             icon: m3o:home
             icon_selected: m3of:home
-          - url: /test-material-3/rooms
+          - url: /rooms
             label: Rooms
             icon: m3o:chair
             icon_selected: m3of:chair
             tap_action:
               action: navigate
-              navigation_path: /test-material-3/rooms
+              navigation_path: /rooms
             hold_action:
               action: open-popup
             popup:
               - icon: m3of:computer
-                url: /test-material-3/buro
+                url: /office
               - icon: m3of:chair
-                url: /test-material-3/wohnzimmer
+                url: /livingroom
               - icon: m3of:bed
-                url: /test-material-3/schlafzimmer
+                url: /master
               - icon: m3of:restaurant
-                url: /test-material-3/esszimmer
+                url: /diningroom
               - icon: m3of:person-3
-                url: /test-material-3/kinderzimmer
+                url: /childroom
               - icon: m3of:groups-2
-                url: /test-material-3/gang
-          - url: /test-material-3/scenes
+                url: /hallway
+          - url: /scenes
             label: Scenes
             icon: m3o:layers
             icon_selected: m3of:layers
@@ -1908,7 +1908,7 @@ sections:
               - icon: m3of:colors
                 url: /material-you-configuration
               - icon: m3of:server-person
-                url: /test-material-3/server
+                url: /server
               - icon: m3of:power-settings-new
                 tap_action:
                   action: call-service

@@ -6,47 +6,64 @@
     !include overview.yaml
 
 # Rooms
-- title: Schlafzimmer
-  icon: mdi:bed
+- title: Räume
+  icon: mdi:floor-plan
+  path: rooms
   cards:
     !include rooms.yaml
 
 # Scenes
 - title: Scenes
   icon: mdi:movie-roll
+  path: scenes
   cards:
     !include scenes.yaml
 
 #Rooms Details
 - title: Balkon
   icon: mdi:balcony
+  path: balcony
   cards:
     !include rooms/balcony.yaml
+
 - title: Kinderzimmer
   icon: mdi:balcony
+  path: childroom
   cards:
     !include rooms/childroom.yaml
+
 - title: Dining Room
   icon: mdi:food
+  path: diningroom
   cards:
     !include rooms/diningroom.yaml
+
 - title: Door
   icon: mdi:door
+  path: door
   cards:
     !include rooms/door.yaml
+
 - title: Hallway
   icon: mdi:floor-plan
+  path: hallway
   cards:
     !include rooms/hallway.yaml    
+
 - title: Wohnzimmer
   icon: mdi:sofa
+  path: livingroom
   cards:
    !include rooms/livingroom.yaml
+
 - title: Schlafzimmer   
   icon: mdi:bed
+  path: bedroom
   cards:
     !include rooms/master.yaml
+
 - title: Office
   icon: mdi:desk
+  path: office
   cards:
     !include rooms/office.yaml
