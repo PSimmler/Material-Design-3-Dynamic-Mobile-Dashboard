@@ -1,3 +1,8 @@
+title: Eingang
+icon: m3of:door
+path: door
+type: sections
+max_columns: 4
 sections:
   - type: grid
     cards:

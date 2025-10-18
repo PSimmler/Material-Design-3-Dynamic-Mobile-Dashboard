@@ -1,0 +1,24 @@
+scene_button:
+  layout: icon_name
+  variables:
+    - entity: ""
+  tap_action:
+    action: call-service
+    service: scene.turn_on
+    data:
+      entity_id: "[[[entity]]]"
+  styles:
+    name:
+      - color: var(--gray800)
+    button:
+      - padding: 12px
+      - width: 90px
+      - height: 76px
+      - flex-basis: 1
+      - flex-shrink: 0
+      - display: flex
+      - background-color: var(--popupBG)
+      - border-radius: 24px
+    icon:
+      - "--mdc-icon-size": 26px
+      - color: var(--gray800)

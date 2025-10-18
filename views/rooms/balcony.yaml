@@ -1,3 +1,8 @@
+title: Balkon
+icon: m3of:hallway
+path: balcony
+type: sections
+max_columns: 4
 sections:
   - type: grid
     cards:

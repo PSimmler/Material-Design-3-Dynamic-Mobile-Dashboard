@@ -1,11 +1,8 @@
-header:
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
-  cards: []
+title: Räume
+icon: m3o:door
+path: rooms
 type: sections
 max_columns: 4
-path: overview
 sections:
   - type: grid
     cards:
@@ -684,6 +681,11 @@ sections:
             margin-bottom: 15px;
             overflow: hidden;
           }
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  cards: []
 badges:
   - type: custom:mushroom-chips-card
     chips:

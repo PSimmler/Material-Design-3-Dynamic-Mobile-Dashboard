@@ -1,3 +1,6 @@
+title: Schlafzimmer
+icon: m3of:bed
+path: master
 type: sections
 max_columns: 4
 sections:
@@ -30,7 +33,7 @@ sections:
                   variables:
                     - title: Raum
                 - type: custom:material-slider-card
-                  entity: light.esszimmer
+                  entity: light.schlafzimmer
                   icon: m3of:lightbulb
                   show_percentage: true
                   bold_text: false
@@ -42,13 +45,13 @@ sections:
                 - type: horizontal-stack
                   cards:
                     - type: custom:material-slider-card
-                      entity: light.esszimmer_decke_unten
+                      entity: light.philipp_sandra_fair
                       icon: m3of:lightbulb
                       show_percentage: true
                       bold_text: false
                       control_type: light
                     - type: custom:material-slider-card
-                      entity: light.esszimmer_decke_oben
+                      entity: light.philipp
                       icon: m3of:lightbulb
                       show_percentage: true
                       bold_text: false
@@ -56,13 +59,7 @@ sections:
                 - type: horizontal-stack
                   cards:
                     - type: custom:material-slider-card
-                      entity: light.esszimmer_decke_garderobe
-                      icon: m3of:lightbulb
-                      show_percentage: true
-                      bold_text: false
-                      control_type: light
-                    - type: custom:material-slider-card
-                      entity: light.zurilicht
+                      entity: light.sandra
                       icon: m3of:lightbulb
                       show_percentage: true
                       bold_text: false
@@ -75,11 +72,11 @@ sections:
                 - type: custom:decluttering-card
                   template: mushroom_title_card
                   variables:
-                    - title: Esszimmer Play 5
+                    - title: Schlafzimmer Era 100
                 - type: custom:decluttering-card
                   template: media_player_card
                   variables:
-                    - entity: media_player.esszimmer
+                    - entity: media_player.schlafzimmer
                     - icon: m3of:play-circle
                     - tap_action: more-info
 badges:
@@ -108,7 +105,7 @@ header:
       - type: custom:decluttering-card
         template: mushroom_room_title_card
         variables:
-          - title: Esszimmer
+          - title: Schlafzimmer
 cards: []
 subview: true
 background:
@@ -118,3 +115,4 @@ background:
   repeat: repeat
   attachment: fixed
   image: null
+  top_margin: false
