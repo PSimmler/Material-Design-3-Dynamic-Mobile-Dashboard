@@ -23,47 +23,55 @@
 - title: Balkon
   icon: mdi:balcony
   path: balcony
+  subview: true
   cards:
     !include rooms/balcony.yaml
 
 - title: Kinderzimmer
   icon: mdi:girl
   path: childroom
+  subview: true
   cards:
     !include rooms/childroom.yaml
 
 - title: Dining Room
   icon: mdi:food
   path: diningroom
+  subview: true
   cards:
     !include rooms/diningroom.yaml
 
 - title: Door
   icon: mdi:door
   path: door
+  subview: true
   cards:
     !include rooms/door.yaml
 
 - title: Hallway
   icon: mdi:floor-plan
   path: hallway
+  subview: true
   cards:
     !include rooms/hallway.yaml    
 
 - title: Wohnzimmer
   icon: mdi:sofa
   path: livingroom
+  subview: true
   cards:
    !include rooms/livingroom.yaml
 
 - title: Schlafzimmer   
   icon: mdi:bed
   path: bedroom
+  subview: true
   cards:
     !include rooms/master.yaml
 
 - title: Office
   icon: mdi:desk
   path: office
+  subview: true
   cards:
     !include rooms/office.yaml
