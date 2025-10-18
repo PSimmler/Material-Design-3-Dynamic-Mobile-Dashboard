@@ -12,7 +12,7 @@ decluttering_templates:
   !include includes/decluttering_templates.yaml
 
 views:
-  # !include lädt die Liste der Ansichten aus einer separaten Datei
+  # !include loads all the existing views in the views folder
   !include views/overview.yaml
   !include views/rooms.yaml
   !include views/scenes.yaml
