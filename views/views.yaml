@@ -1,0 +1,21 @@
+# Overview
+- title: Wohnzimmer
+  icon: mdi:sofa
+  cards:
+    !include views/overview.yaml
+
+# Rooms
+- title: Schlafzimmer
+  icon: mdi:bed
+  cards:
+    !include views/rooms.yaml
+
+#!include views/scenes.yaml
+#  !include views/rooms/balcony.yaml
+#  !include views/rooms/childroom.yaml
+#  !include views/rooms/diningroom.yaml
+#  !include views/rooms/door.yaml
+#  !include views/rooms/hallway.yaml
+#  !include views/rooms/livingroom.yaml
+#  !include views/rooms/master.yaml
+#  !include views/rooms/office.yaml

@@ -12,15 +12,4 @@ decluttering_templates:
   !include ./includes/decluttering_templates.yaml
 
 views:
-  !include views/test.yaml
-  #!include views/overview.yaml
-  #!include views/rooms.yaml
-  #!include views/scenes.yaml
-  #!include views/rooms/balcony.yaml
-  #!include views/rooms/childroom.yaml
-  #!include views/rooms/diningroom.yaml
-  #!include views/rooms/door.yaml
-  #!include views/rooms/hallway.yaml
-  #!include views/rooms/livingroom.yaml
-  #!include views/rooms/master.yaml
-  #!include views/rooms/office.yaml
+  !include views/views.yaml
