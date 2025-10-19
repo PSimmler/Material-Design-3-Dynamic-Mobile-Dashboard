@@ -30,7 +30,7 @@
   sections:
     !include ./scenes.yaml
   header:
-    !include ./roomsHeader.yaml
+    !include ./scenesHeader.yaml
   badges:
     !include ./roomsBadges.yaml
   background:
@@ -124,7 +124,7 @@
 - type: sections
   title: Schlafzimmer   
   icon: mdi:bed
-  path: bedroom
+  path: master
   subview: true
   sections:
     !include rooms/master.yaml

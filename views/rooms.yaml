@@ -2,12 +2,6 @@
   cards:
     - type: horizontal-stack
       cards:
-      - type: custom:decluttering-card
-        template: mushroom_title_card
-        variables:
-          - title: Räume  
-    - type: horizontal-stack
-      cards:
         - type: custom:stack-in-card
           mode: horizontal
           cards:

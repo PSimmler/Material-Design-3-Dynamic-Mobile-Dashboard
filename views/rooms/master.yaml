@@ -1,17 +1,5 @@
 - type: grid
   cards:
-    - type: custom:paper-buttons-row
-      styles:
-        gap: 8px
-        justify-content: flex-start
-        overflow: scroll
-        margin: 12px 0 12px -18px
-        padding-left: 18px
-        width: calc(100% + 36px)
-      extra_styles: |
-        ::-webkit-scrollbar {
-          display: none;
-        }
     - type: custom:simple-tabs
       pre-load: true
       active-background: var(--md-sys-color-tertiary)
