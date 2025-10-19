@@ -20,75 +20,75 @@
   # badges:
   #   !include ./roomsBadges.yaml
 
-# Scenes
-- type: sections
-  title: Scenes
-  icon: mdi:movie-roll
-  path: scenes
-  sections:
-    !include scenes.yaml
+# # Scenes
+# - type: sections
+#   title: Scenes
+#   icon: mdi:movie-roll
+#   path: scenes
+#   sections:
+#     !include scenes.yaml
 
-#Rooms Details
-- type: sections
-  title: Balkon
-  icon: mdi:balcony
-  path: balcony
-  subview: true
-  sections:
-    !include rooms/balcony.yaml
+# #Rooms Details
+# - type: sections
+#   title: Balkon
+#   icon: mdi:balcony
+#   path: balcony
+#   subview: true
+#   sections:
+#     !include rooms/balcony.yaml
 
-- type: sections
-  title: Kinderzimmer
-  icon: mdi:girl
-  path: childroom
-  subview: true
-  sections:
-    !include rooms/childroom.yaml
+# - type: sections
+#   title: Kinderzimmer
+#   icon: mdi:girl
+#   path: childroom
+#   subview: true
+#   sections:
+#     !include rooms/childroom.yaml
 
-- type: sections
-  title: Dining Room
-  icon: mdi:food
-  path: diningroom
-  subview: true
-  sections:
-    !include rooms/diningroom.yaml
+# - type: sections
+#   title: Dining Room
+#   icon: mdi:food
+#   path: diningroom
+#   subview: true
+#   sections:
+#     !include rooms/diningroom.yaml
 
-- type: sections
-  title: Door
-  icon: mdi:door
-  path: door
-  subview: true
-  sections:
-    !include rooms/door.yaml
+# - type: sections
+#   title: Door
+#   icon: mdi:door
+#   path: door
+#   subview: true
+#   sections:
+#     !include rooms/door.yaml
 
-- type: sections
-  title: Hallway
-  icon: mdi:floor-plan
-  path: hallway
-  subview: true
-  sections:
-    !include rooms/hallway.yaml    
+# - type: sections
+#   title: Hallway
+#   icon: mdi:floor-plan
+#   path: hallway
+#   subview: true
+#   sections:
+#     !include rooms/hallway.yaml    
 
-- type: sections
-  title: Wohnzimmer
-  icon: mdi:sofa
-  path: livingroom
-  subview: true
-  sections:
-   !include rooms/livingroom.yaml
+# - type: sections
+#   title: Wohnzimmer
+#   icon: mdi:sofa
+#   path: livingroom
+#   subview: true
+#   sections:
+#    !include rooms/livingroom.yaml
 
-- type: sections
-  title: Schlafzimmer   
-  icon: mdi:bed
-  path: bedroom
-  subview: true
-  sections:
-    !include rooms/master.yaml
+# - type: sections
+#   title: Schlafzimmer   
+#   icon: mdi:bed
+#   path: bedroom
+#   subview: true
+#   sections:
+#     !include rooms/master.yaml
 
-- type: sections
-  title: Office
-  icon: mdi:desk
-  path: office
-  subview: true
-  sections:
-    !include rooms/office.yaml
+# - type: sections
+#   title: Office
+#   icon: mdi:desk
+#   path: office
+#   subview: true
+#   sections:
+#     !include rooms/office.yaml
