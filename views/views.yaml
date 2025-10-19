@@ -19,14 +19,22 @@
     !include ./roomsHeader.yaml
   badges:
     !include ./roomsBadges.yaml
+  background:
+    !include ./roomsBackground.yaml
 
-# # Scenes
-# - type: sections
-#   title: Scenes
-#   icon: mdi:movie-roll
-#   path: scenes
-#   sections:
-#     !include scenes.yaml
+# Scenes
+- type: sections
+  title: Szenen
+  icon: mdi:movie-roll
+  path: scenes
+  sections:
+    !include scenes.yaml
+  header:
+    !include ./roomsHeader.yaml
+  badges:
+    !include ./roomsBadges.yaml
+  background:
+    !include ./roomsBackground.yaml
 
 # #Rooms Details
 # - type: sections
