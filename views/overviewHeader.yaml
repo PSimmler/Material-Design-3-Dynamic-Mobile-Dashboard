@@ -1,3 +1,6 @@
+layout: responsive
+badges_position: bottom
+badges_wrap: wrap
 card:
   type: horizontal-stack
   cards:

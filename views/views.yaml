@@ -3,9 +3,6 @@
   title: Overview
   icon: m3o:home
   path: overview
-  layout: responsive
-  badges_position: bottom
-  badges_wrap: wrap
   sections:
     !include ./overview.yaml
   header:
