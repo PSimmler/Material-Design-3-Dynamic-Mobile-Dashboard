@@ -1,6 +1,6 @@
 # overview.yaml (Inhalt zu Testzwecken)
-type: markdown
-content: "Die Overview-Karte wird jetzt geladen."
+- type: markdown
+  content: "Die Overview-Karte wird jetzt geladen."
 
 # title: Overview
 # icon: m3o:home
