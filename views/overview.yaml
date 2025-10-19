@@ -1,4 +1,3 @@
-# overview.yaml (Inhalt zu Testzwecken)
 - type: grid
   cards:
     - type: custom:mushroom-title-card
