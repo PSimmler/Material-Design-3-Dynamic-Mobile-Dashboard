@@ -9,72 +9,86 @@
     !include ./overviewHeader.yaml
 
 # Rooms
-- title: Räume
+- type: sections
+  title: Räume
   icon: mdi:floor-plan
   path: rooms
-  cards:
+  sections:
     !include ./rooms.yaml
+  header:
+    !include ./roomsHeader.yaml
+  badges:
+    !include ./roomsBadges.yaml
 
 # Scenes
-- title: Scenes
+- type: sections
+  title: Scenes
   icon: mdi:movie-roll
   path: scenes
-  cards:
+  sections:
     !include scenes.yaml
 
 #Rooms Details
-- title: Balkon
+- type: sections
+  title: Balkon
   icon: mdi:balcony
   path: balcony
   subview: true
-  cards:
+  sections:
     !include rooms/balcony.yaml
 
-- title: Kinderzimmer
+- type: sections
+  title: Kinderzimmer
   icon: mdi:girl
   path: childroom
   subview: true
-  cards:
+  sections:
     !include rooms/childroom.yaml
 
-- title: Dining Room
+- type: sections
+  title: Dining Room
   icon: mdi:food
   path: diningroom
   subview: true
-  cards:
+  sections:
     !include rooms/diningroom.yaml
 
-- title: Door
+- type: sections
+  title: Door
   icon: mdi:door
   path: door
   subview: true
-  cards:
+  sections:
     !include rooms/door.yaml
 
-- title: Hallway
+- type: sections
+  title: Hallway
   icon: mdi:floor-plan
   path: hallway
   subview: true
-  cards:
+  sections:
     !include rooms/hallway.yaml    
 
-- title: Wohnzimmer
+- type: sections
+  title: Wohnzimmer
   icon: mdi:sofa
   path: livingroom
   subview: true
-  cards:
+  sections:
    !include rooms/livingroom.yaml
 
-- title: Schlafzimmer   
+- type: sections
+  title: Schlafzimmer   
   icon: mdi:bed
   path: bedroom
   subview: true
-  cards:
+  sections:
     !include rooms/master.yaml
 
-- title: Office
+- type: sections
+  title: Office
   icon: mdi:desk
   path: office
   subview: true
-  cards:
+  sections:
     !include rooms/office.yaml
