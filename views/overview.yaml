@@ -4,8 +4,10 @@
     - type: grid
       cards:
         - type: custom:mushroom-title-card
+          # Achten Sie auf die korrekte Einrückung des Jinja-Codes!
           title: |
-            {% set time = now().hour %} {% if time >= 18 %}
+            {% set time = now().hour %} 
+            {% if time >= 18 %}
               🌙 Guten Abend, {{ user }}!
             {% elif time >= 12 %}
               ☀️ Guten Nachmittag, {{ user }}!
