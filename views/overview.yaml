@@ -1,5 +1,4 @@
 # overview.yaml (Inhalt zu Testzwecken)
-# max_columns: 4
 - type: sections
   sections:
     - type: grid

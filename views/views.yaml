@@ -2,6 +2,7 @@
 - title: Overview
   icon: m3o:home
   path: overview
+  max_columns: 4
   cards:
     !include ./overview.yaml
 
