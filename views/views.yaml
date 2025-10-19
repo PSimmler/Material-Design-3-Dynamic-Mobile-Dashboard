@@ -28,7 +28,7 @@
   icon: mdi:movie-roll
   path: scenes
   sections:
-    !include scenes.yaml
+    !include ./scenes.yaml
   header:
     !include ./roomsHeader.yaml
   badges:
@@ -43,11 +43,11 @@
   path: balcony
   subview: true
   sections:
-    !include rooms/balcony.yaml
+    !include ./rooms/balcony.yaml
   header:
-    !include rooms/balconyHeader.yaml
+    !include ./rooms/balconyHeader.yaml
   badges:
-    !include rooms/roomBadges.yaml
+    !include ./rooms/roomBadges.yaml
   background:
     !include ./roomsBackground.yaml
 

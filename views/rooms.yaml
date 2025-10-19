@@ -19,7 +19,7 @@
                     - room_name: Büro
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /buro
+                    - navigation_path: /office
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -67,7 +67,7 @@
                     - room_name: Wohnzimmer
                     - temperature_sensor: sensor.indoor_temperature
                     - humidity_sensor: sensor.indoor_humidity
-                    - navigation_path: /wohnzimmer
+                    - navigation_path: /livingroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -158,7 +158,7 @@
                     - room_name: Schlafzimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /schlafzimmer
+                    - navigation_path: /master
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -240,7 +240,7 @@
                     - room_name: Esszimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /esszimmer
+                    - navigation_path: /diningroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -341,7 +341,7 @@
                     - room_name: Kinderzimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /kinderzimmer
+                    - navigation_path: /childroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -406,7 +406,7 @@
                     - room_name: Gang
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /gang
+                    - navigation_path: /hallway
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -507,7 +507,7 @@
                     - room_name: Eingang
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /eingang
+                    - navigation_path: /door
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -555,7 +555,7 @@
                     - room_name: Balkon
                     - temperature_sensor: sensor.outdoor_temperature
                     - humidity_sensor: sensor.outdoor_humidity
-                    - navigation_path: /balkon
+                    - navigation_path: /balcony
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -641,17 +641,21 @@
             action: open-popup
           popup:
             - icon: m3of:computer
-              url: /buro
+              url: /office
             - icon: m3of:chair
-              url: /wohnzimmer
+              url: /livingroom
             - icon: m3of:bed
-              url: /schlafzimmer
+              url: /master
             - icon: m3of:restaurant
-              url: /esszimmer
-            - icon: m3of:person-3
-              url: /kinderzimmer
-            - icon: m3of:groups-2
-              url: /gang
+              url: /diningroom
+            - icon: m3of:girl
+              url: /childroom
+            - icon: m3of:hallway
+              url: /hallway
+            - icon: m3of:door_front
+              url: /door
+            - icon: m3of:garden
+              url: /balcony
         - url: /scenes
           label: Scenes
           icon: m3o:layers
