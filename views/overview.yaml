@@ -1,24 +1,18 @@
 # overview.yaml (Inhalt zu Testzwecken)
 - type: grid
   cards:
-    - type: clock
-      clock_size: medium
-      title: "Das ist der Titel"
-    - type: markdown
-      content: "Das ist eine zweite Karte"
     - type: custom:mushroom-title-card
-      title: "Die Mushroom Card wird gefunden!"
-      # title: |
-      #   {% set time = now().hour %} 
-      #   {% if time >= 18 %}
-      #     🌙 Guten Abend, {{ user }}!
-      #   {% elif time >= 12 %}
-      #     ☀️ Guten Nachmittag, {{ user }}!
-      #   {% elif time >= 5 %}
-      #     🌅 Guten Morgen, {{ user }}!
-      #   {% else %}
-      #     🌌 Hallo, {{ user }}!
-      #   {% endif %}
+      title: |
+        {% set time = now().hour %} 
+        {% if time >= 18 %}
+          🌙 Guten Abend, {{ user }}!
+        {% elif time >= 12 %}
+          ☀️ Guten Nachmittag, {{ user }}!
+        {% elif time >= 5 %}
+          🌅 Guten Morgen, {{ user }}!
+        {% else %}
+          🌌 Hallo, {{ user }}!
+        {% endif %}
       card_mod:
         style: |
           ha-card {
