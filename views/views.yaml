@@ -47,62 +47,104 @@
   header:
     !include ./rooms/balconyHeader.yaml
   badges:
-    !include ./rooms/roomBadges.yaml
+    !include ./rooms/roomBadge.yaml
   background:
     !include ./roomsBackground.yaml
 
-# - type: sections
-#   title: Kinderzimmer
-#   icon: mdi:girl
-#   path: childroom
-#   subview: true
-#   sections:
-#     !include rooms/childroom.yaml
+- type: sections
+  title: Kinderzimmer
+  icon: mdi:girl
+  path: childroom
+  subview: true
+  sections:
+    !include rooms/childroom.yaml
+  header:
+    !include ./rooms/childroomHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    
 
-# - type: sections
-#   title: Dining Room
-#   icon: mdi:food
-#   path: diningroom
-#   subview: true
-#   sections:
-#     !include rooms/diningroom.yaml
+- type: sections
+  title: Esszimmer
+  icon: mdi:restaurant
+  path: diningroom
+  subview: true
+  sections:
+    !include rooms/diningroom.yaml
+  header:
+    !include ./rooms/diningroomHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    
 
-# - type: sections
-#   title: Door
-#   icon: mdi:door
-#   path: door
-#   subview: true
-#   sections:
-#     !include rooms/door.yaml
+- type: sections
+  title: Eingang
+  icon: mdi:door
+  path: door
+  subview: true
+  sections:
+    !include rooms/door.yaml
+  header:
+    !include ./rooms/doorHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    
 
-# - type: sections
-#   title: Hallway
-#   icon: mdi:floor-plan
-#   path: hallway
-#   subview: true
-#   sections:
-#     !include rooms/hallway.yaml    
+- type: sections
+  title: Hallway
+  icon: mdi:floor-plan
+  path: hallway
+  subview: true
+  sections:
+    !include rooms/hallway.yaml    
+  header:
+    !include ./rooms/hallwayHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    
 
-# - type: sections
-#   title: Wohnzimmer
-#   icon: mdi:sofa
-#   path: livingroom
-#   subview: true
-#   sections:
-#    !include rooms/livingroom.yaml
+- type: sections
+  title: Wohnzimmer
+  icon: mdi:sofa
+  path: livingroom
+  subview: true
+  sections:
+   !include rooms/livingroom.yaml
+  header:
+    !include ./rooms/livingroomHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    
 
-# - type: sections
-#   title: Schlafzimmer   
-#   icon: mdi:bed
-#   path: bedroom
-#   subview: true
-#   sections:
-#     !include rooms/master.yaml
+- type: sections
+  title: Schlafzimmer   
+  icon: mdi:bed
+  path: bedroom
+  subview: true
+  sections:
+    !include rooms/master.yaml
+  header:
+    !include ./rooms/masterHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml        
 
-# - type: sections
-#   title: Office
-#   icon: mdi:desk
-#   path: office
-#   subview: true
-#   sections:
-#     !include rooms/office.yaml
+- type: sections
+  title: Office
+  icon: mdi:desk
+  path: office
+  subview: true
+  sections:
+    !include rooms/office.yaml
+  header:
+    !include ./rooms/officeHeader.yaml
+  badges:
+    !include ./rooms/roomBadge.yaml
+  background:
+    !include ./roomsBackground.yaml    

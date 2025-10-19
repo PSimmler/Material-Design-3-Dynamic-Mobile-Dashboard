@@ -1,11 +1,5 @@
-title: Büro
-icon: m3of:computer
-path: office
-type: sections
-max_columns: 4
-sections:
-  - type: grid
-    cards:
+- type: grid
+  cards:
     - type: custom:simple-tabs
       pre-load: true
       active-background: var(--md-sys-color-tertiary)
@@ -53,39 +47,3 @@ sections:
                   - entity: media_player.buro_roam
                   - icon: m3of:play-circle
                   - tap_action: more-info
-header:
-  card:
-    type: vertical-stack
-    cards:
-      - type: custom:decluttering-card
-        template: mushroom_room_title_card
-        variables:
-          - title: Büro
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
-badges:
-  - type: custom:mushroom-chips-card
-    chips:
-      - type: template
-        tap_action:
-          action: navigate
-          navigation_path: /rooms
-        icon: m3of:arrow-left-alt
-        card_mod:
-          style:
-            .: |
-              ha-card {
-                --color: {{ 'var(--md-sys-color-on-primary)'   }};
-                --chip-background: {{ 'var(--md-sys-color-primary)' }};
-                margin-top: 0.7em;
-              }
-cards: []
-subview: true
-background:
-  opacity: 90
-  alignment: center
-  size: cover
-  repeat: repeat
-  attachment: fixed
-  image: null

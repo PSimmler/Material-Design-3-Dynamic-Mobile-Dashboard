@@ -8,4 +8,4 @@ card:
     - type: custom:decluttering-card
       template: mushroom_room_title_card
       variables:
-        - title: Balkon
+        - title: Schlafzimmer

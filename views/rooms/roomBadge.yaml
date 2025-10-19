@@ -1,16 +1,16 @@
-badges:
-  - type: custom:mushroom-chips-card
-    chips:
-      - type: template
-        tap_action:
-          action: navigate
-          navigation_path: /rooms
-        icon: m3of:arrow-left-alt
-        card_mod:
-          style:
-            .: |
-              ha-card {
-                --color: {{ 'var(--md-sys-color-on-primary)'   }};
-                --chip-background: {{ 'var(--md-sys-color-primary)' }};
-                margin-top: 0.7em;
-              }
+#todo:create template for back badge and use in all rooms and also in all views. Therefore the naviagation path should be passed as variable.
+- type: custom:mushroom-chips-card
+  chips:
+    - type: template
+      tap_action:
+        action: navigate
+        navigation_path: /rooms
+      icon: m3of:arrow-left-alt
+      card_mod:
+        style:
+          .: |
+            ha-card {
+              --color: {{ 'var(--md-sys-color-on-primary)'   }};
+              --chip-background: {{ 'var(--md-sys-color-primary)' }};
+              margin-top: 0.7em;
+            }

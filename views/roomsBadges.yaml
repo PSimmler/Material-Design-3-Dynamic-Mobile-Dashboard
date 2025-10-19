@@ -1,3 +1,4 @@
+#todo:create template for back badge and use in all rooms and also in all views. Therefore the naviagation path should be passed as variable.
 - type: custom:mushroom-chips-card
   chips:
     - type: template
