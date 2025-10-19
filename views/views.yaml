@@ -13,12 +13,12 @@
   title: Räume
   icon: mdi:floor-plan
   path: rooms
-  # sections:
-  #   !include ./rooms.yaml
-  # # header:
-  #   !include ./roomsHeader.yaml
-  # badges:
-  #   !include ./roomsBadges.yaml
+  sections:
+    !include ./rooms.yaml
+  header:
+    !include ./roomsHeader.yaml
+  badges:
+    !include ./roomsBadges.yaml
 
 # # Scenes
 # - type: sections
