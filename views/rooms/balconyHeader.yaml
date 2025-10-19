@@ -1,0 +1,11 @@
+header:
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  card:
+    type: vertical-stack
+    cards:
+      - type: custom:decluttering-card
+        template: mushroom_room_title_card
+        variables:
+          - title: Balkon

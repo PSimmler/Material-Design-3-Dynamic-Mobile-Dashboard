@@ -3,7 +3,7 @@
     - type: custom:decluttering-card
       template: mushroom_title_card
       variables:
-        - title: Scenes Preset
+        - title: Szenen
     - type: custom:mushroom-title-card
       subtitle: Refreshing
       title: ""

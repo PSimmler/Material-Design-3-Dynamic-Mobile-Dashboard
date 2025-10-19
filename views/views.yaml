@@ -36,14 +36,20 @@
   background:
     !include ./roomsBackground.yaml
 
-# #Rooms Details
-# - type: sections
-#   title: Balkon
-#   icon: mdi:balcony
-#   path: balcony
-#   subview: true
-#   sections:
-#     !include rooms/balcony.yaml
+#Rooms Details
+- type: sections
+  title: Balkon
+  icon: mdi:balcony
+  path: balcony
+  subview: true
+  sections:
+    !include rooms/balcony.yaml
+  header:
+    !include rooms/balconyHeader.yaml
+  badges:
+    !include rooms/roomBadges.yaml
+  background:
+    !include ./roomsBackground.yaml
 
 # - type: sections
 #   title: Kinderzimmer

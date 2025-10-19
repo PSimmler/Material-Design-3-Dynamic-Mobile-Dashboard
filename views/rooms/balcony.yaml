@@ -164,39 +164,3 @@ sections:
                           ha-card {
                             margin-top: 0.6em
                           }
-badges:
-  - type: custom:mushroom-chips-card
-    chips:
-      - type: template
-        tap_action:
-          action: navigate
-          navigation_path: /rooms
-        icon: m3of:arrow-left-alt
-        card_mod:
-          style:
-            .: |
-              ha-card {
-                --color: {{ 'var(--md-sys-color-on-primary)'   }};
-                --chip-background: {{ 'var(--md-sys-color-primary)' }};
-                margin-top: 0.7em;
-              }
-header:
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
-  card:
-    type: vertical-stack
-    cards:
-      - type: custom:decluttering-card
-        template: mushroom_room_title_card
-        variables:
-          - title: Balkon
-cards: []
-subview: true
-background:
-  opacity: 90
-  alignment: center
-  size: cover
-  repeat: repeat
-  attachment: fixed
-  image: null
