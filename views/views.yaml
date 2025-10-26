@@ -52,7 +52,7 @@
       type: custom:decluttering-card
       template: header_template_card
       variables:
-        - title: "[[title]]"
+        - title: Balkon
   badges:
     !include ./rooms/roomBadge.yaml
   background:
