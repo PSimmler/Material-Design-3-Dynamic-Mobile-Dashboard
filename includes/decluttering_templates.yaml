@@ -465,6 +465,9 @@ header_template_card:
   # Default variables for the template
   default:
     - title: Raum
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
   card: # new card definition
     type: custom:decluttering-card
     template: mushroom_room_title_card # Ihr untergeordnetes Template
