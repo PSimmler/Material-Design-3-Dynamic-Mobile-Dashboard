@@ -45,6 +45,9 @@
   sections:
     !include ./rooms/balcony.yaml
   header:
+    layout: responsive
+    badges_position: top
+    badges_wrap: wrap
     card:
       type: custom:decluttering-card
       template: header_template_card
