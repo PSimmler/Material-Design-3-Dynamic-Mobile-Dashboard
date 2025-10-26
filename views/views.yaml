@@ -45,13 +45,15 @@
   sections:
     !include ./rooms/balcony.yaml
   header:
-    type: custom:decluttering-card
-    template: header_template_card
+    card:
+      type: custom:decluttering-card
+      template: header_template_card
+      variables:
+        - title: Balkon
     layout: responsive
     badges_position: top
     badges_wrap: wrap
-    variables:
-      - title: Balkon
+
   badges:
     !include ./rooms/roomBadge.yaml
   background:
