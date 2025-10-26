@@ -50,10 +50,6 @@
       template: header_template_card
       variables:
         - title: Balkon
-    layout: responsive
-    badges_position: top
-    badges_wrap: wrap
-
   badges:
     !include ./rooms/roomBadge.yaml
   background:
