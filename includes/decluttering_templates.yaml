@@ -469,4 +469,4 @@ header_template_card:
     type: custom:decluttering-card
     template: mushroom_room_title_card # Ihr untergeordnetes Template
     variables:
-      - title: "[[title]]" # <-- Setzt die Variable des äußeren Templates ein
+      - title: Raum # <-- Setzt die Variable des äußeren Templates ein
