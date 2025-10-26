@@ -466,8 +466,7 @@ header_template_card:
   default:
     - title: Raum
   card: # new card definition
-    type: vertical-stack
-    cards:
-      - type: custom:decluttering-card
-        template: mushroom_room_title_card # Ihr untergeordnetes Template
-        title: "[[title]]" # <-- Setzt die Variable des äußeren Templates ein
+    type: custom:decluttering-card
+    template: mushroom_room_title_card # Ihr untergeordnetes Template
+    variables:
+      - title: "[[title]]" # <-- Setzt die Variable des äußeren Templates ein
