@@ -461,13 +461,10 @@ media_player_card:
             background-blend-mode: saturation;
           {% endif %}
         }
-header_template:
+header_template_card:
   # Default variables for the template
   default:
     - title: Raum
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
   card: # new card definition
     type: vertical-stack
     cards:

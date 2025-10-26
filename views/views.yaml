@@ -46,7 +46,10 @@
     !include ./rooms/balcony.yaml
   header:
     type: custom:decluttering-card
-    template: header_template
+    template: header_template_card
+    layout: responsive
+    badges_position: top
+    badges_wrap: wrap
     variables:
       - title: Balkon
   badges:
