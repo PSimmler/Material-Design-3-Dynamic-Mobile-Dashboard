@@ -903,33 +903,33 @@
         position: left
         min_width: 768
       routes:
-        - url: /overview
+        - url: overview
           label: Home
           icon: m3o:home
           icon_selected: m3of:home
-        - url: /rooms
+        - url: rooms
           label: Räume
           icon: m3o:chair
           icon_selected: m3of:chair
           tap_action:
             action: navigate
-            navigation_path: /rooms
+            navigation_path: rooms
           hold_action:
             action: open-popup
           popup:
             - icon: m3of:computer
-              url: /buro
+              url: buro
             - icon: m3of:chair
-              url: /wohnzimmer
+              url: wohnzimmer
             - icon: m3of:bed
-              url: /schlafzimmer
+              url: schlafzimmer
             - icon: m3of:restaurant
-              url: /esszimmer
+              url: esszimmer
             - icon: m3of:person-3
-              url: /kinderzimmer
+              url: kinderzimmer
             - icon: m3of:groups-2
-              url: /gang
-        - url: /scenes
+              url: gang
+        - url: scenes
           label: Scenes
           icon: m3o:layers
           icon_selected: m3of:layers

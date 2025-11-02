@@ -460,25 +460,69 @@ media_player_card:
             /* Blend art with background using saturation */
             background-blend-mode: saturation;
           {% endif %}
-        }
-header_template_inner_card:
-  # Default variables for the template
-  default:
-    - title: Raum
-  card: # new card definition
-    type: custom:decluttering-card
-    template: mushroom_room_title_card # Ihr untergeordnetes Template
-    variables:
-      - title: '[[title]]' # <-- Setzt die Variable des äußeren Templates ein
-header_template_card:
-  # Default variables for the template
-  default:
-    - title: Default Title
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
-  card: # new card definition
-    type: custom:decluttering-card
-    template: header_template_inner_card # Ihr untergeordnetes Template
-    variables:
-      - title: '[[title]]' # <-- Setzt die Variable des äußeren Templates ein      
+        }   
+navbar_card:
+  description: Navigation bar for main views
+  variable: []
+  card:
+    type: custom:navbar-card
+    mobile:
+      show_labels: true
+    desktop:
+      show_labels: true
+      position: left
+      min_width: 768
+    routes:
+      - url: overview
+        label: Home
+        icon: m3o:home
+        icon_selected: m3of:home
+      - url: rooms
+        label: Räume
+        icon: m3o:chair
+        icon_selected: m3of:chair
+        tap_action:
+          action: navigate
+          navigation_path: rooms
+        hold_action:
+          action: open-popup
+        popup:
+          - icon: m3of:computer
+            url: office
+          - icon: m3of:chair
+            url: livingroom
+          - icon: m3of:bed
+            url: master
+          - icon: m3of:restaurant
+            url: diningroom
+          - icon: m3of:girl
+            url: childroom
+          - icon: m3of:hallway
+            url: hallway
+          - icon: m3of:door_front
+            url: door
+          - icon: m3of:garden
+            url: balcony
+      - url: scenes
+        label: Scenes
+        icon: m3o:layers
+        icon_selected: m3of:layers
+      - icon: mdi:dots-horizontal
+        label: More
+        tap_action:
+          action: open-popup
+        popup:
+          - icon: m3of:tools-wrench
+            url: /config/dashboard
+    styles: |
+      .navbar-card {
+        --navbar-primary-color: var(--md-sys-color-tertiary);
+        background: var(--nav-background);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(20px) !important;
+        background-blend-mode: overlay;
+        border-radius: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        overflow: hidden;
+      }      
