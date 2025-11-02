@@ -380,50 +380,6 @@ media_player_card:
                     padding-top: 24px;
                   {% endif %}
                 }
-      - entity: "[[entity]]"
-        hide:
-          icon: true
-          name: true
-          runtime: true
-          source: true
-          power: true
-          state_label: true
-          volume: true
-          info: true
-          progress: false
-          controls: true
-        more_info: false
-        type: custom:mini-media-player
-        toggle_power: false
-        group: true
-        card_mod:
-          style: |
-            ha-card {
-              
-              /* Move progress bar up into gap */
-              bottom: calc(3 * var(--mush-spacing, 12px) + var(--mush-control-height, -25px));
-              
-              /* Correct margins for progress bar */
-              margin: 0px calc(1.618 * var(--mush-spacing, 12px)) calc(-1 * var(--mush-spacing, 12px));
-
-              /* Set height of card to match pregress bar height */
-              height: var(--mmp-progress-height);
-
-              /* Remove border outline */
-              --ha-card-border-width: 0;
-
-              /* Round corners of progress bar */
-              --mmp-border-radius: var(--control-border-radius, 12px) !important;
-
-              /* Set height of progress bar */
-              --mmp-progress-height: var(--mush-spacing, 12px) !important;
-
-              /* Make progress bar adjust to use dynamic theming */
-              --mmp-accent-color: var(--md-sys-color-tertiary) !important;
-
-              /* Remove transitions to prevent progress bar floating in */
-              transition: all 0s;
-            }
     card_mod:
       style: |
         ha-card:before {
