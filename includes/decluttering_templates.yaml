@@ -461,15 +461,24 @@ media_player_card:
             background-blend-mode: saturation;
           {% endif %}
         }
-header_template_card:
+header_template_inner_card:
   # Default variables for the template
   default:
     - title: Raum
-  layout: responsive
-  badges_position: top
-  badges_wrap: wrap
   card: # new card definition
     type: custom:decluttering-card
     template: mushroom_room_title_card # Ihr untergeordnetes Template
     variables:
       - title: "[[title]]" # <-- Setzt die Variable des äußeren Templates ein
+header_template_card:
+  # Default variables for the template
+  default:
+    - title: Default Title
+  layout: responsive
+  badges_position: top
+  badges_wrap: wrap
+  card: # new card definition
+    type: custom:decluttering-card
+    template: header_template_inner_card # Ihr untergeordnetes Template
+    variables:
+      - title: "[[title]]" # <-- Setzt die Variable des äußeren Templates ein      
