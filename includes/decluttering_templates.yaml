@@ -513,7 +513,18 @@ navbar_card:
           action: open-popup
         popup:
           - icon: m3of:tools-wrench
-            url: /config/dashboard
+            url: config/dashboard
+          - icon: m3of:colors
+            url: material-you-configuration
+          - icon: m3of:server-person
+            url: server
+          - icon: m3of:power-settings-new
+            tap_action:
+              action: call-service
+              service: homeassistant.restart
+              service_data: {}
+              confirmation:
+                text: Are you sure you want to restart Home Assistant?
     styles: |
       .navbar-card {
         --navbar-primary-color: var(--md-sys-color-tertiary);
