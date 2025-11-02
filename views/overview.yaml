@@ -1863,33 +1863,33 @@
         min_width: 768
         show_popup_label_backgrounds: false
       routes:
-        - url: /overview
+        - url: overview
           label: Home
           icon: m3o:home
           icon_selected: m3of:home
-        - url: /rooms
+        - url: rooms
           label: Rooms
           icon: m3o:chair
           icon_selected: m3of:chair
           tap_action:
             action: navigate
-            navigation_path: /rooms
+            navigation_path: rooms
           hold_action:
             action: open-popup
           popup:
             - icon: m3of:computer
-              url: /office
+              url: office
             - icon: m3of:chair
-              url: /livingroom
+              url: livingroom
             - icon: m3of:bed
-              url: /master
+              url: master
             - icon: m3of:restaurant
-              url: /diningroom
+              url: diningroom
             - icon: m3of:person-3
-              url: /childroom
+              url: childroom
             - icon: m3of:groups-2
-              url: /hallway
-        - url: /scenes
+              url: hallway
+        - url: scenes
           label: Scenes
           icon: m3o:layers
           icon_selected: m3of:layers

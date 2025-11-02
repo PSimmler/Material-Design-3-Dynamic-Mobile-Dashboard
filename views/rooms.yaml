@@ -13,7 +13,7 @@
                     - room_name: Büro
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /office
+                    - navigation_path: office
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -61,7 +61,7 @@
                     - room_name: Wohnzimmer
                     - temperature_sensor: sensor.indoor_temperature
                     - humidity_sensor: sensor.indoor_humidity
-                    - navigation_path: /livingroom
+                    - navigation_path: livingroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -152,7 +152,7 @@
                     - room_name: Schlafzimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /master
+                    - navigation_path: master
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -234,7 +234,7 @@
                     - room_name: Esszimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /diningroom
+                    - navigation_path: diningroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -335,7 +335,7 @@
                     - room_name: Kinderzimmer
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /childroom
+                    - navigation_path: childroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -400,7 +400,7 @@
                     - room_name: Gang
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /hallway
+                    - navigation_path: hallway
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -501,7 +501,7 @@
                     - room_name: Eingang
                     - temperature_sensor:
                     - humidity_sensor:
-                    - navigation_path: /door
+                    - navigation_path: door
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -549,7 +549,7 @@
                     - room_name: Balkon
                     - temperature_sensor: sensor.outdoor_temperature
                     - humidity_sensor: sensor.outdoor_humidity
-                    - navigation_path: /balcony
+                    - navigation_path: balcony
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
                   variables:
@@ -620,37 +620,37 @@
         position: left
         min_width: 768
       routes:
-        - url: /overview
+        - url: overview
           label: Home
           icon: m3o:home
           icon_selected: m3of:home
-        - url: /rooms
+        - url: rooms
           label: Räume
           icon: m3o:chair
           icon_selected: m3of:chair
           tap_action:
             action: navigate
-            navigation_path: /rooms
+            navigation_path: rooms
           hold_action:
             action: open-popup
           popup:
             - icon: m3of:computer
-              url: /office
+              url: office
             - icon: m3of:chair
-              url: /livingroom
+              url: livingroom
             - icon: m3of:bed
-              url: /master
+              url: master
             - icon: m3of:restaurant
-              url: /diningroom
+              url: diningroom
             - icon: m3of:girl
-              url: /childroom
+              url: childroom
             - icon: m3of:hallway
-              url: /hallway
+              url: hallway
             - icon: m3of:door_front
-              url: /door
+              url: door
             - icon: m3of:garden
-              url: /balcony
-        - url: /scenes
+              url: balcony
+        - url: scenes
           label: Scenes
           icon: m3o:layers
           icon_selected: m3of:layers
