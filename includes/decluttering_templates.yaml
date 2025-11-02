@@ -406,7 +406,7 @@ media_player_card:
               /* Correct margins for progress bar */
               margin: 0px calc(1.618 * var(--mush-spacing, 12px)) calc(-1 * var(--mush-spacing, 12px));
 
-              /* Set height of card to match pregress bar height */
+              /* Set height of card to match progress bar height */
               height: var(--mmp-progress-height);
 
               /* Remove border outline */
@@ -424,43 +424,43 @@ media_player_card:
               /* Remove transitions to prevent progress bar floating in */
               transition: all 0s;
             }
-    card_mod:
-      style: |
-        ha-card:before {
-          content: "";
-          
-          /* Position and size background color */
-          position: absolute;
-          height: 100%;
-          width: 100%;
+  card_mod:
+    style: |
+      ha-card:before {
+        content: "";
+        
+        /* Position and size background color */
+        position: absolute;
+        height: 100%;
+        width: 100%;
 
-          /* Apply background to media player using album art color */
-          {% if is_state('[[entity]]', ['playing', 'paused']) %}
-            background: color-mix(in srgb, var(--md-sys-color-on-primary) 50%, transparent);
+        /* Apply background to media player using album art color */
+        {% if is_state('[[entity]]', ['playing', 'paused']) %}
+          background: color-mix(in srgb, var(--md-sys-color-on-primary) 50%, transparent);
+        {% endif %}
+        
+      }
+      ha-card {
+
+        /* Apply blended album art background */
+        {% if is_state('[[entity]]', ['playing', 'paused']) %}
+          background: url( '{{ state_attr("[[entity]]", "entity_picture") }}' ) no-repeat, 
+                      linear-gradient(to left, transparent, rgb(var(--rgb-card-background-color)) 70%);
+
+          /* Adjust for different aspect ratio of TV shows episode art */
+          {% if state_attr('[[entity]]', 'media_content_type') == 'tvshow' %}
+            background-size: 50% 100%, cover;
+          {% else %}
+            background-size: 50% auto, cover;
           {% endif %}
-          
-        }
-        ha-card {
 
-          /* Apply blended album art background */
-          {% if is_state('[[entity]]', ['playing', 'paused']) %}
-            background: url( '{{ state_attr("[[entity]]", "entity_picture") }}' ) no-repeat, 
-                        linear-gradient(to left, transparent, rgb(var(--rgb-card-background-color)) 70%);
+          /* Position art on right side */
+          background-position: right;
 
-            /* Adjust for different aspect ratio of TV shows episode art */
-            {% if state_attr('[[entity]]', 'media_content_type') == 'tvshow' %}
-              background-size: 50% 100%, cover;
-            {% else %}
-              background-size: 50% auto, cover;
-            {% endif %}
-
-            /* Position art on right side */
-            background-position: right;
-
-            /* Blend art with background using saturation */
-            background-blend-mode: saturation;
-          {% endif %}
-        }   
+          /* Blend art with background using saturation */
+          background-blend-mode: saturation;
+        {% endif %}
+      }   
 navbar_card:
   description: Navigation bar for main views
   variable: []
