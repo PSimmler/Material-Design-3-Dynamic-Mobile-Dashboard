@@ -380,9 +380,20 @@ media_player_card:
                     padding-top: 24px;
                   {% endif %}
                 }
-      - entity: "[[entity]]"
+      - type: custom:mini-media-player
+        entity: "[[entity]]"
+        hide:
+          icon: true
+          name: true
+          runtime: true
+          source: true
+          power: true
+          state_label: true
+          volume: true
+          info: true
+          progress: false
+          controls: true
         more_info: false
-        type: custom:mini-media-player
         toggle_power: false
         group: true
         card_mod:

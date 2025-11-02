@@ -149,4 +149,11 @@
   badges:
     !include ./rooms/roomBadge.yaml
   background:
-    !include ./roomsBackground.yaml    
+    !include ./roomsBackground.yaml
+
+- title: Testview
+  icon: mdi:test-tube
+  path: Test
+  subview: true
+  sections:
+    !include rooms/test.yaml
