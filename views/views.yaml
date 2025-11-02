@@ -82,7 +82,11 @@
   sections:
     !include rooms/diningroom.yaml
   header:
-    !include ./rooms/diningroomHeader.yaml
+    <<: *header_layout_props
+    type: custom:decluttering-card
+    template: header_template_card
+    variables:
+      - title: Esszimmer
   badges:
     !include ./rooms/roomBadge.yaml
   background:
