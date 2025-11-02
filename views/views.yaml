@@ -1,6 +1,5 @@
 # Overview
-- type: sections
-  title: Overview
+- title: Overview
   icon: m3o:home
   path: overview
   sections:
@@ -9,8 +8,7 @@
     !include ./overviewHeader.yaml
 
 # Rooms
-- type: sections
-  title: Räume
+- title: Räume
   icon: mdi:floor-plan
   path: rooms
   sections:
@@ -23,8 +21,7 @@
     !include ./roomsBackground.yaml
 
 # Scenes
-- type: sections
-  title: Szenen
+- title: Szenen
   icon: mdi:movie-roll
   path: scenes
   sections:
@@ -37,14 +34,15 @@
     !include ./roomsBackground.yaml
 
 #Rooms Details
-- type: sections
-  title: Balkon
+- title: Balkon
   icon: mdi:balcony
   path: balcony
   subview: true
   sections:
     !include ./rooms/balcony.yaml
   header:
+    header:
+    <<: *header_layout_props
     type: custom:decluttering-card
     template: header_template_card
     variables:
@@ -54,8 +52,7 @@
   background:
     !include ./roomsBackground.yaml
 
-- type: sections
-  title: Kinderzimmer
+- title: Kinderzimmer
   icon: mdi:girl
   path: childroom
   subview: true
@@ -68,8 +65,7 @@
   background:
     !include ./roomsBackground.yaml    
 
-- type: sections
-  title: Esszimmer
+- title: Esszimmer
   icon: mdi:restaurant
   path: diningroom
   subview: true
@@ -82,8 +78,7 @@
   background:
     !include ./roomsBackground.yaml    
 
-- type: sections
-  title: Eingang
+- title: Eingang
   icon: mdi:door
   path: door
   subview: true
@@ -96,8 +91,7 @@
   background:
     !include ./roomsBackground.yaml    
 
-- type: sections
-  title: Hallway
+- title: Hallway
   icon: mdi:floor-plan
   path: hallway
   subview: true
@@ -110,8 +104,7 @@
   background:
     !include ./roomsBackground.yaml    
 
-- type: sections
-  title: Wohnzimmer
+- title: Wohnzimmer
   icon: mdi:sofa
   path: livingroom
   subview: true
@@ -124,8 +117,7 @@
   background:
     !include ./roomsBackground.yaml    
 
-- type: sections
-  title: Schlafzimmer   
+- title: Schlafzimmer   
   icon: mdi:bed
   path: master
   subview: true
@@ -138,8 +130,7 @@
   background:
     !include ./roomsBackground.yaml        
 
-- type: sections
-  title: Office
+- title: Office
   icon: mdi:desk
   path: office
   subview: true
