@@ -180,3 +180,7 @@
           show_empty: false
           sort:
             method: friendly_name
+- type: grid
+  cards:
+    - type: custom:decluttering-card
+      template: navbar_card            
