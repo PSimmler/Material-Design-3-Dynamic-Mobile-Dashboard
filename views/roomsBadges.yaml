@@ -4,7 +4,7 @@
     - type: template
       tap_action:
         action: navigate
-        navigation_path: /overview
+        navigation_path: overview
       icon: m3of:arrow-left-alt
       card_mod:
         style:
