@@ -89,3 +89,7 @@
                     show_percentage: true
                     bold_text: false
                     control_type: light
+- type: grid
+  cards:
+    - type: custom:decluttering-card
+      template: navbar_card          

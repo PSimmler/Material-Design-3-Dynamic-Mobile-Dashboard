@@ -61,3 +61,7 @@
                   - entity: media_player.schlafzimmer
                   - icon: m3of:play-circle
                   - tap_action: more-info
+- type: grid
+  cards:
+    - type: custom:decluttering-card
+      template: navbar_card          
