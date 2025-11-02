@@ -1,0 +1,75 @@
+layout: responsive
+badges_position: top
+badges_wrap: wrap
+card:
+  type: vertical-stack
+  cards:
+    - type: custom:decluttering-card
+      template: mushroom_room_title_card
+      variables:
+        - title: 🤖 Server
+    - type: custom:paper-buttons-row
+      styles:
+        justify-content: flex-start
+        flex-wrap: wrap
+        font-size: 0.9em
+        line-height: 1.2em
+        margin: 0 0 0 6px
+        width: 100%
+      buttons:
+        - layout: name
+          name: Home Assistant OS
+          styles:
+            button:
+              flex-basis: 1
+              flex-shrink: 0
+            name:
+              color: var(--primary-text-color)
+        - layout: name
+          entity: update.home_assistant_operating_system_update
+          name: >-
+            {% if
+            is_state('update.home_assistant_operating_system_update',
+            'off') %}    ✅ Up to date {% else %} 🔔 Update available {%
+            endif %}
+          tap_action:
+            action: more-info
+          styles:
+            icon:
+              color: var(--md-sys-color-on-primary)
+            name:
+              color: var(--md-sys-color-on-primary)
+              font-weight: bold
+            button:
+              padding: 2px 8px
+              background-color: var(--md-sys-color-primary)
+              border-radius: 24px
+              flex-basis: 1
+              flex-shrink: 0
+        - layout: name
+          name: · Core
+          styles:
+            button:
+              flex-basis: 1
+              flex-shrink: 0
+            name:
+              color: var(--primary-text-color)
+        - layout: name
+          entity: update.home_assistant_core_update
+          name: >-
+            {% if is_state('update.home_assistant_core_update', 'off')
+            %}    ✅ Up to date {% else %} 🔔 Update available {% endif %}
+          tap_action:
+            action: more-info
+          styles:
+            icon:
+              color: var(--md-sys-color-on-primary)
+            name:
+              color: var(--md-sys-color-on-primary)
+              font-weight: bold
+            button:
+              padding: 2px 8px
+              background-color: var(--md-sys-color-primary)
+              border-radius: 24px
+              flex-basis: 1
+              flex-shrink: 0

@@ -33,6 +33,19 @@
   background:
     !include ./roomsBackground.yaml
 
+# Server
+- title: Server
+  icon: m3of:server-person
+  path: server
+  sections:
+    !include ./server.yaml
+  header:
+    !include ./serverHeader.yaml
+  badges:
+    !include ./roomsBadges.yaml
+  background:
+    !include ./roomsBackground.yaml
+
 #Rooms Details
 - title: Balkon
   icon: mdi:balcony
