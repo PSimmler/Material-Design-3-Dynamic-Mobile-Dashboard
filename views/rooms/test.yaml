@@ -18,14 +18,16 @@
     style: |
       ha-card {
         
-        /* Move progress bar up into gap */
-        bottom: calc(3 * var(--mush-spacing, 12px) + var(--mush-control-height, -25px));
+        /* STATIC VALUES for Move progress bar up into gap 
+           (ersetzt die dynamische Berechnung mit statischen Werten 
+           basierend auf den Standardwerten 12px und -25px) */
+        bottom: 11px; # calc(3 * 12px + -25px)
         
-        /* Correct margins for progress bar */
-        margin: 0px calc(1.618 * var(--mush-spacing, 12px)) calc(-1 * var(--mush-spacing, 12px));
-
+        /* STATIC VALUES for Correct margins for progress bar */
+        margin: 0px 19.4px -12px; # calc(1.618 * 12px)
+        
         /* Set height of card to match pregress bar height */
-        height: var(--mmp-progress-height);
+        height: 12px; # <-- Ersetzt var(--mush-spacing) durch 12px
 
         /* Remove border outline */
         --ha-card-border-width: 0;
@@ -34,7 +36,7 @@
         --mmp-border-radius: var(--control-border-radius, 12px) !important;
 
         /* Set height of progress bar */
-        --mmp-progress-height: var(--mush-spacing, 12px) !important;
+        --mmp-progress-height: 12px !important; # <-- Ersetzt var(--mush-spacing) durch 12px
 
         /* Make progress bar adjust to use dynamic theming */
         --mmp-accent-color: var(--md-sys-color-tertiary) !important;
