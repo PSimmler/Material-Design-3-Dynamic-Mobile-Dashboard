@@ -12,9 +12,11 @@ mushroom_title_card:
 mushroom_room_title_card:
   default:
     - title: ""
+    - icon: ""
   card:
     type: custom:mushroom-title-card
     title: "[[title]]"
+    icon: "[[icon]]"
     card_mod:
       style: |
         ha-card {

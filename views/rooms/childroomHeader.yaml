@@ -7,3 +7,4 @@ card:
   template: mushroom_room_title_card
   variables:
     - title: Kinderzimmer
+    - icon: m3of:girl
