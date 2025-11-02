@@ -38,10 +38,16 @@
   icon: mdi:balcony
   path: balcony
   subview: true
+
+    # Definition des wiederverwendbaren Header-Layouts
+  _header_layout_anchor: &header_layout_props
+    layout: responsive
+    badges_position: top
+    badges_wrap: wrap
+
   sections:
     !include ./rooms/balcony.yaml
   header:
-    header:
     <<: *header_layout_props
     type: custom:decluttering-card
     template: header_template_card
@@ -59,7 +65,11 @@
   sections:
     !include rooms/childroom.yaml
   header:
-    !include ./rooms/childroomHeader.yaml
+    <<: *header_layout_props
+    type: custom:decluttering-card
+    template: header_template_card
+    variables:
+      - title: Kinderzimmer
   badges:
     !include ./rooms/roomBadge.yaml
   background:
