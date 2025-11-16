@@ -1,9 +1,45 @@
+- type: entities
+  entities:
+  - &big_room_card_style |
+      ha-card {
+        background:
+        {% set temp = states('sensor.indoor_temperature') | float %}
+          {% if temp < 13 %}
+            rgba(172, 156, 175, 0.8)
+          {% elif temp < 16 %}          
+            rgba(215, 196, 219, 0.8)
+          {% elif temp < 19 %}
+            rgba(163, 217, 245, 0.8)
+          {% elif temp < 22 %}
+            rgba(205, 227, 219, 0.8)
+          {% elif temp < 24 %}
+            rgba(255, 229, 153, 0.8)
+          {% elif temp < 27 %}
+            rgba(247, 190, 129, 0.8)
+          {% else %}
+            rgba(224, 102, 102, 0.8)
+          {% endif %};             
+        max-width: 100%;
+        min-width: 50%;
+        height: 186px;
+      }
+  - &chip_style |
+    ha-card {
+      --chip-background: {% if is_state(this.entity_id, 'on') %} #D3C890 {% else %} #353535 {% endif %};
+      --color: {% if is_state(this.entity_id, 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+      justify-content: center;
+      height: 35px !important;
+      width: 35px !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      border-radius: 22px !important;
+    }
 - type: grid
   cards:
     - type: horizontal-stack
       cards:
-        - type: custom:decluttering-card
-          template: room_stack
+        - type: custom:stack-in-card
+          mode: horizontal
           cards:
             - type: vertical-stack
               cards:
@@ -25,17 +61,7 @@
                     action: toggle
                   icon: m3of:lightbulb
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.buro_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.buro_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style # <--- Uses the defined style
               card_mod:
                 style: |
                   .chip-container {
@@ -48,8 +74,8 @@
                   .container {
                     align: end;
                   }
-        - type: custom:decluttering-card
-          template: room_stack
+        - type: custom:stack-in-card
+          mode: horizontal
           cards:
             - type: vertical-stack
               cards:
@@ -114,29 +140,7 @@
                     align: end;
                   }
           card_mod:
-            style: |
-              ha-card {
-                background:
-                {% set temp = states('sensor.indoor_temperature') | float %}
-                  {% if temp < 13 %}
-                    rgba(172, 156, 175, 0.8)
-                  {% elif temp < 16 %}          
-                    rgba(215, 196, 219, 0.8)
-                  {% elif temp < 19 %}
-                    rgba(163, 217, 245, 0.8)
-                  {% elif temp < 22 %}
-                    rgba(205, 227, 219, 0.8)
-                  {% elif temp < 24 %}
-                    rgba(255, 229, 153, 0.8)
-                  {% elif temp < 27 %}
-                    rgba(247, 190, 129, 0.8)
-                  {% else %}
-                    rgba(224, 102, 102, 0.8)
-                  {% endif %};             
-                max-width: 100%;
-                min-width: 50%;
-                height: 186px;
-              }
+            style: *big_room_card_style # <--- Uses the defined style
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -390,6 +394,8 @@
                   template: room_summary_card
                   variables:
                     - room_name: Gang
+                    - temperature_sensor:
+                    - humidity_sensor:
                     - navigation_path: hallway
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -489,6 +495,8 @@
                   template: room_summary_card
                   variables:
                     - room_name: Eingang
+                    - temperature_sensor:
+                    - humidity_sensor:
                     - navigation_path: door
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
