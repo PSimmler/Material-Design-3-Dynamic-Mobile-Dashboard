@@ -39,6 +39,7 @@
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
+          entity: ""
           mode: horizontal
           cards:
             - type: vertical-stack
@@ -79,6 +80,8 @@
                   .container {
                     align: end;
                   }
+          card_mod:
+            style: *big_room_card_style
         - type: custom:stack-in-card
           mode: horizontal
           entity: sensor.indoor_temperature
