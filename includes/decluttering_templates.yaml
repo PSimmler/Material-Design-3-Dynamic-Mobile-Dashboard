@@ -192,6 +192,34 @@ humidity_entity:
               /* Push value to the left */
               padding-right: 12px !important;   /* adds space on the right so the number is not cut */                
             }
+room_stack:
+  description: Stack of cards for room overview
+  default:
+    - temperature_sensor: ""
+  card_mod:
+    style: |
+      ha-card {
+        background:
+        {% set temp = states('sensor.indoor_temperature') | float %}
+          {% if temp < 13 %}
+            rgba(172, 156, 175, 0.8)
+          {% elif temp < 16 %}          
+            rgba(215, 196, 219, 0.8)
+          {% elif temp < 19 %}
+            rgba(163, 217, 245, 0.8)
+          {% elif temp < 22 %}
+            rgba(205, 227, 219, 0.8)
+          {% elif temp < 24 %}
+            rgba(255, 229, 153, 0.8)
+          {% elif temp < 27 %}
+            rgba(247, 190, 129, 0.8)
+          {% else %}
+            rgba(224, 102, 102, 0.8)
+          {% endif %};             
+        max-width: 100%;
+        min-width: 50%;
+        height: 186px;
+      }
 room_summary_card:
   description: Primary room info (name + temp/humidity)
   default:
