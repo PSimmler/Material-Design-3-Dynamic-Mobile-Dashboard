@@ -11,8 +11,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Büro
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: office
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -150,8 +148,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Schlafzimmer
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: master
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -232,8 +228,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Esszimmer
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: diningroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -333,8 +327,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Kinderzimmer
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: childroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -398,8 +390,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Gang
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: hallway
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -499,8 +489,6 @@
                   template: room_summary_card
                   variables:
                     - room_name: Eingang
-                    - temperature_sensor:
-                    - humidity_sensor:
                     - navigation_path: door
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
