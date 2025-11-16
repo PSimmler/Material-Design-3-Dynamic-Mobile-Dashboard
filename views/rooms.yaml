@@ -14,7 +14,6 @@
   - &big_room_card_style |
       ha-card {
         background:
-        {% set entity_id = config.entity | default('') %}
         {% set temp = states(config.entity) | float %}
         {% if temp < 13 %}
           rgba(172, 156, 175, 0.8)
