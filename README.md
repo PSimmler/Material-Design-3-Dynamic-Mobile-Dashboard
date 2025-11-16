@@ -4,6 +4,11 @@ A modern Home Assistant dashboard built on Material Design 3 (MD3) principles. I
 
 _v3.1.0_ brings a major visual and functional redesign inspired by Google Home, improving the overall Material Design 3 (MD3) experience. Buttons have been redesigned with new light sliders and switches, including tap and hold actions for quick off or more-info access. The Server page has been reworked to show detailed HAOS and Proxmox info, with battery data merged in. Each room now features climate control, power consumption charts where available, and media player support for rooms with speakers. Most MDI icons have been replaced with Material Symbols, and the font has been updated to Figtree (similar to Google Sans). Old decluttering templates tied to previous button cards have been removed, and a new media_player_card decluttering template has been added. This release focuses on polish, consistency, and usability, making the dashboard cleaner, more functional, and visually cohesive.
 
+# ✨ ToDo
+Install Material You Utilities according to this how to: [Material You Utilities](https://github.com/Nerwyn/material-you-utilities)
+Add extra_module_url and panel_custom to the configuration.yaml in config folder of the lovelace ui. (This will also allow to change the material design later.)
+
+
 # ✨ Features
 
 **🎨 MD3 Theme Engine**
