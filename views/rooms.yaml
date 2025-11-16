@@ -1,39 +1,3 @@
-- type: entities
-  entities:
-  - &big_room_card_style |
-      ha-card {
-        background:
-        {% set temp = states('[[entity]]') | float %}
-          {% if temp < 13 %}
-            rgba(172, 156, 175, 0.8)
-          {% elif temp < 16 %}          
-            rgba(215, 196, 219, 0.8)
-          {% elif temp < 19 %}
-            rgba(163, 217, 245, 0.8)
-          {% elif temp < 22 %}
-            rgba(205, 227, 219, 0.8)
-          {% elif temp < 24 %}
-            rgba(255, 229, 153, 0.8)
-          {% elif temp < 27 %}
-            rgba(247, 190, 129, 0.8)
-          {% else %}
-            rgba(224, 102, 102, 0.8)
-          {% endif %};             
-        max-width: 100%;
-        min-width: 50%;
-        height: 186px;
-      }
-  - &chip_style |
-    ha-card {
-      --chip-background: {% if is_state('[[entity]]', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-      --color: {% if is_state('[[entity]]', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-      justify-content: center;
-      height: 35px !important;
-      width: 35px !important;
-      border: 0 !important;
-      box-shadow: none !important;
-      border-radius: 22px !important;
-    }
 - type: grid
   cards:
     - type: horizontal-stack
@@ -55,11 +19,23 @@
                     - icon: m3of:computer
             - type: custom:mushroom-chips-card
               chips:
-                - type: custom:decluttering-card
-                  template: icon_chip_template
-                  variables:
-                  - entity: light.buro_decke # <--- Pass the entity to the template
-                  - icon: m3of:lightbulb     # <--- Pass the icon to the template
+                - type: template
+                  entity: light.buro_decke
+                  tap_action:
+                    action: toggle
+                  icon: m3of:lightbulb
+                  card_mod:
+                    style: |
+                      ha-card {
+                        --chip-background: {% if is_state('light.buro_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                        --color: {% if is_state('light.buro_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                        justify-content: center;
+                        height: 35px !important;
+                        width: 35px !important;
+                        border: 0 !important;
+                        box-shadow: none !important;
+                        border-radius: 22px !important;
+                      }
               card_mod:
                 style: |
                   .chip-container {
@@ -74,7 +50,6 @@
                   }
         - type: custom:stack-in-card
           mode: horizontal
-          entity: sensor.indoor_temperature
           cards:
             - type: vertical-stack
               cards:
@@ -98,14 +73,34 @@
                     action: toggle
                   icon: m3of:floor_lamp
                   card_mod:
-                    style: *chip_style
+                    style: |
+                      ha-card {
+                        --chip-background: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                        --color: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                        justify-content: center;
+                        height: 35px !important;
+                        width: 35px !important;
+                        border: 0 !important;
+                        box-shadow: none !important;
+                        border-radius: 22px !important;
+                      }
                 - type: template
                   entity: light.wohnzimmer_decke_tv
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: *chip_style
+                    style: |
+                      ha-card {
+                        --chip-background: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+                        --color: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+                        justify-content: center;
+                        height: 35px !important;
+                        width: 35px !important;
+                        border: 0 !important;
+                        box-shadow: none !important;
+                        border-radius: 22px !important;
+                      }
               card_mod:
                 style: |
                   .chip-container {
@@ -119,7 +114,29 @@
                     align: end;
                   }
           card_mod:
-            style: *big_room_card_style
+            style: |
+              ha-card {
+                background:
+                {% set temp = states('sensor.indoor_temperature') | float %}
+                  {% if temp < 13 %}
+                    rgba(172, 156, 175, 0.8)
+                  {% elif temp < 16 %}          
+                    rgba(215, 196, 219, 0.8)
+                  {% elif temp < 19 %}
+                    rgba(163, 217, 245, 0.8)
+                  {% elif temp < 22 %}
+                    rgba(205, 227, 219, 0.8)
+                  {% elif temp < 24 %}
+                    rgba(255, 229, 153, 0.8)
+                  {% elif temp < 27 %}
+                    rgba(247, 190, 129, 0.8)
+                  {% else %}
+                    rgba(224, 102, 102, 0.8)
+                  {% endif %};             
+                max-width: 100%;
+                min-width: 50%;
+                height: 186px;
+              }
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -310,6 +327,8 @@
                   template: room_summary_card
                   variables:
                     - room_name: Kinderzimmer
+                    - temperature_sensor:
+                    - humidity_sensor:
                     - navigation_path: childroom
                 - type: custom:decluttering-card
                   template: big_icon_toggle_card
@@ -467,7 +486,6 @@
       cards:
         - type: custom:stack-in-card
           mode: horizontal
-          entity: sensor.outdoor_temperature
           cards:
             - type: vertical-stack
               cards:
@@ -563,7 +581,29 @@
                     align: end;
                   }
           card_mod:
-            style: *big_room_card_style
+            style: |
+              ha-card {
+                background:
+                {% set temp = states('sensor.outdoor_temperature') | float %}
+                  {% if temp < 13 %}
+                    rgba(172, 156, 175, 0.8)
+                  {% elif temp < 16 %}          
+                    rgba(215, 196, 219, 0.8)
+                  {% elif temp < 19 %}
+                    rgba(163, 217, 245, 0.8)
+                  {% elif temp < 22 %}
+                    rgba(205, 227, 219, 0.8)
+                  {% elif temp < 24 %}
+                    rgba(255, 229, 153, 0.8)
+                  {% elif temp < 27 %}
+                    rgba(247, 190, 129, 0.8)
+                  {% else %}
+                    rgba(224, 102, 102, 0.8)
+                  {% endif %};             
+                max-width: 100%;
+                min-width: 50%;
+                height: 186px;
+              }
 - type: grid
   cards:
     - type: custom:decluttering-card
