@@ -113,7 +113,7 @@
                   .container {
                     align: end;
                   }
-    - type: hcustom:decluttering-card
+    - type: custom:decluttering-card
       template: room_stack
       cards:
         - type: custom:stack-in-card
