@@ -16,29 +16,22 @@
         background:
         {% set entity_id = config.entity | default('') %}
         {% set state = states(entity_id) %}
-
-        # Check if the entity is missing, invalid, or its state is not a number
-        {% if entity_id == '' or state in ['unavailable', 'unknown', 'none'] %}
-          rgba(100, 100, 100, 0.8) # return default gray color
+        {% set temp = state | float(20) %} # Proceed with temperature calculation
+        {% if temp < 13 %}
+          rgba(172, 156, 175, 0.8)
+        {% elif temp < 16 %}
+          rgba(215, 196, 219, 0.8)
+        {% elif temp < 19 %}
+          rgba(163, 217, 245, 0.8)
+        {% elif temp < 22 %}
+          rgba(205, 227, 219, 0.8)
+        {% elif temp < 24 %}
+          rgba(255, 229, 153, 0.8)
+        {% elif temp < 27 %}
+          rgba(247, 190, 129, 0.8)
         {% else %}
-          {% set temp = state | float(20) %} # Proceed with temperature calculation
-
-          {% if temp < 13 %}
-            rgba(172, 156, 175, 0.8)
-          {% elif temp < 16 %}
-            rgba(215, 196, 219, 0.8)
-          {% elif temp < 19 %}
-            rgba(163, 217, 245, 0.8)
-          {% elif temp < 22 %}
-            rgba(205, 227, 219, 0.8)
-          {% elif temp < 24 %}
-            rgba(255, 229, 153, 0.8)
-          {% elif temp < 27 %}
-            rgba(247, 190, 129, 0.8)
-          {% else %}
-            rgba(224, 102, 102, 0.8)
-          {% endif %}
-        {% endif %}; # End of the main if/else block
+          rgba(224, 102, 102, 0.8)
+        {% endif %}
         
         max-width: 100%;
         min-width: 50%;
