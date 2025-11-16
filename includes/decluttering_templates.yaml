@@ -198,8 +198,8 @@ icon_chip_template:
     icon: ""
   card:
     type: template
-    entity: "[[entity]]" # <--- This is where the entity ID goes
-    icon: "[[icon]]" # <--- Pass the icon as a variable
+    entity: "[[entity]]"
+    icon: "[[icon]]"
     tap_action:
       action: toggle
     card_mod:
