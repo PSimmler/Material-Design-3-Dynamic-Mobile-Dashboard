@@ -196,6 +196,7 @@ room_stack:
   description: Stack of cards for room overview
   default:
     - temperature_sensor: ""
+  mode: horizontal
   card_mod:
     style: |
       ha-card {
