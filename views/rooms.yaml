@@ -384,6 +384,7 @@
                   }
         - type: custom:stack-in-card
           mode: horizontal
+          entity: sensor.indoor_temperature
           cards:
             - type: vertical-stack
               cards:
