@@ -15,10 +15,10 @@
       ha-card {
         background:
         {% set entity_id = config.entity | default('') %}
-        {% set temp = states(config.entity) | float %}
-        {% if entity_id == '' or temp in ['unavailable', 'unknown', 'none'] or temp | float('error') == 'error' %}
-            rgba(100, 100, 100, 0.8)
+        {% if entity_id == '' %}
+          rgba(100, 100, 100, 0.8)
         {% else %}
+          {% set temp = states(config.entity) | float %}
           {% if temp < 13 %}
             rgba(172, 156, 175, 0.8)
           {% elif temp < 16 %}          
@@ -33,8 +33,7 @@
             rgba(247, 190, 129, 0.8)
           {% else %}
             rgba(224, 102, 102, 0.8)
-          {% endif %}
-        {% endif %};             
+        {% endif %}
         max-width: 100%;
         min-width: 50%;
         height: 186px;
