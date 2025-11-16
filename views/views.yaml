@@ -150,16 +150,3 @@
     !include ./rooms/roomBadge.yaml
   background:
     !include ./roomsBackground.yaml
-
-- title: Testview
-  icon: mdi:test-tube
-  path: test
-  subview: true
-  sections:
-    !include rooms/test.yaml
-  header:
-    !include ./rooms/officeHeader.yaml
-  badges:
-    !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml
