@@ -194,17 +194,29 @@ humidity_entity:
             }
 room_summary_card:
   description: Primary room info (name + temp/humidity)
-  variables:
-    - room_name
-    - temperature_sensor
-    - humidity_sensor
-    - navigation_path
+  default:
+    room_name: ""
+    temperature_sensor: ""
+    humidity_sensor: ""
+    navigation_path: ""
   card:
     type: custom:mushroom-template-card
     primary: "[[room_name]]"
-    secondary: >-
-      {{ states('[[temperature_sensor]]') | round(1) }}°C / {{
-      states('[[humidity_sensor]]') | round(1) }}%
+    secondary: |
+      {% set temp_state = states('sensor.temperature_sensor') %}
+      {% set hum_state = states('sensor.humidity_sensor') %}
+      {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
+      {% set hum = hum_state if hum_state not in ['unknown', 'unavailable', 'none', ''] else none %}
+
+      {% if temp and hum %}
+        {{ temp }}°C / {{ hum }}%
+      {% elif temp %}
+        {{ temp }}°C
+      {% elif hum %}
+        {{ hum }}%
+      {% else %}
+
+      {% endif %}
     tap_action:
       action: navigate
       navigation_path: "[[navigation_path]]"
