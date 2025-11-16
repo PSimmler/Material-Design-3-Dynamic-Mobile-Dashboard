@@ -194,8 +194,8 @@ humidity_entity:
             }
 icon_chip_template:
   default:
-    - entity: ""
-    - icon: ""
+    entity: ""
+    icon: ""
   card:
     type: template
     entity: "[[entity]]" # <--- This is where the entity ID goes
