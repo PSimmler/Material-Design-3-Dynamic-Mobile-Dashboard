@@ -2,7 +2,8 @@ type: custom:stack-in-card
 cards:
   - type: custom:mushroom-media-player-card
     entity: media_player.buro_roam
-    icon: mdi:play
+    icon: m3of:play-circle
+    name: more-info
     use_media_info: true
     use_media_artwork: false
     show_volume_level: false
@@ -14,80 +15,103 @@ cards:
       - volume_buttons
       - volume_set
     fill_container: false
+    collapsible_controls: true
+    tap_action:
+      action: "[[tap_action]]"
+    layout: vertical
     card_mod:
-      style: |
-        mushroom-shape-icon {
-          display: flex;
-          {% set media_type = state_attr(config.entity, 'media_content_type') %}
-          {% if media_type == 'tvshow' %}
-            --card-mod-icon: mdi:television-classic;
-            animation: flicker 1s linear infinite alternate;
-          {% elif media_type == 'movie' %}
-            --card-mod-icon: mdi:movie-roll;
-            animation: spin 2s linear infinite reverse;
-          {% elif media_type == 'music' %}
-            --card-mod-icon: mdi:music;
-            animation: beat 1.3s ease-out infinite both;
-          {% elif media_type == 'playlist' %}
-            --card-mod-icon: mdi:music;
-            animation: beat 1.3s ease-out infinite both;
-          {% else %}
-            --card-mod-icon: mdi:play;
-          {% endif %}
+      style:
+        mushroom-media-player-volume-control$: |
+          mushroom-slider {
+            --main-color: var(--md-sys-color-primary) !important;
+            --bg-color: color-mix(in srgb, var(--md-sys-color-primary) 70%, transparent) !important;
+          }
+        .: |
+          mushroom-shape-icon {
+            display: flex;
+            {% set media_type = state_attr(config.entity, 'media_content_type') %}
+            {% if media_type == 'tvshow' %}
+              --card-mod-icon: m3of:comedy_mask;
+              animation: beat 1.3s ease-out infinite both;
+            {% elif media_type == 'movie' %}
+              --card-mod-icon: m3of:movie;
+              animation: beat 1.3s ease-out infinite both;
+            {% elif media_type == 'music' %}
+              --card-mod-icon: m3of:music-note;
+              animation: beat 1.3s ease-out infinite both;
+            {% elif media_type == 'playlist' %}
+              --card-mod-icon: m3of:music-note;
+              animation: beat 1.3s ease-out infinite both;
+            {% else %}
+              --card-mod-icon: m3of:play-circle;
+            {% endif %}
 
-          {{ 'animation: none;' if not is_state(config.entity, 'playing') }}
+            {{ 'animation: none;' if not is_state(config.entity, 'playing') }}
 
-        }
-        @keyframes flicker {
-          0%, 31.98%, 32.98%, 34.98%, 36.98%, 39.98%, 67.98%, 68.98%, 95.98%, 96.98%, 97.98%, 98.98%, 100% { --icon-color: rgba(var(--rgb-indigo), 1); }
-          32%, 33%, 35%, 36%, 37%, 40%, 68%, 69%, 96%, 97%, 98%, 99% { --icon-color: rgba(var(--rgb-indigo), 0.6); }
-        }
-        @keyframes beat {
-          0%, 60% { --icon-symbol-size: 21px; }
-          5%, 17%, 57% { --icon-symbol-size: 22px; }
-          10%, 20%, 51% { --icon-symbol-size: 23px; }
-          25%, 45% { --icon-symbol-size: 24px; }
-          30%, 39% { --icon-symbol-size: 25px; }
-          33% { --icon-symbol-size: 26px; }
-        }
-        ha-card {
-          --ha-card-border-width: 0;
-        }
-        ha-card:before {
-          transform: translate3d(0,0,0);
-          -webkit-transform: translate3d(0,0,0);
-          content: "";
+          }
+          @keyframes flicker {
+            0%, 31.98%, 32.98%, 34.98%, 36.98%, 39.98%, 67.98%, 68.98%, 95.98%, 96.98%, 97.98%, 98.98%, 100% { --icon-color: rgba(var(--album-art-color), 1); }
+            32%, 33%, 35%, 36%, 37%, 40%, 68%, 69%, 96%, 97%, 98%, 99% { --icon-color: rgba(var(--album-art-color), 0.6); }
+          }
+          @keyframes beat {
+            0%, 60% { --icon-symbol-size: 21px; }
+            5%, 17%, 57% { --icon-symbol-size: 22px; }
+            10%, 20%, 51% { --icon-symbol-size: 23px; }
+            25%, 45% { --icon-symbol-size: 24px; }
+            30%, 39% { --icon-symbol-size: 25px; }
+            33% { --icon-symbol-size: 26px; }
+          }
+          .: |
+            mushroom-shape-icon {
 
-          background: url('/local/idle_art.png') center no-repeat;
-          {% if not is_state(config.entity, 'idle') %}
-            background: url( '{{ state_attr(config.entity, "entity_picture") }}') center no-repeat;
-          {% endif %}
+              /* Change media player icon based on media type */
+              {% set media_type = state_attr(config.entity, 'media_content_type') %}
+              --card-mod-icon:
+              {% if media_type == 'tvshow' %}
+                  m3of:comedy_mask
+              {% elif media_type == 'movie' %}
+                m3of:movie
+              {% elif media_type == 'music' %}
+                m3of:music-note
+              {% elif media_type == 'playlist' %}
+                m3of:music-note
+              {% else %}
+                m3of:play-circle
+              {% endif %};
+            }
+            ha-card {
 
-          background-size: contain;
-          margin: 4px 4px 16px;
-          filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
-          border-radius: var(--control-border-radius);
+              /* Remove border from media player */
+              --ha-card-border-width: 0;
 
-          {% set media_type = state_attr(config.entity, 'media_content_type') %}
-          {% if media_type == 'tvshow' %}
-            aspect-ratio: 16 / 9;
-          {% elif media_type == 'movie' %}
-            aspect-ratio: 2 / 3;
-          {% else %}
-            aspect-ratio: 1 / 1;
-          {% endif %}
-        }
+              /* Apply album art color to media player icon & volume bar */
+              --rgb-state-media-player: var(--album-art-color);
+
+              /* Disable transitions */
+              transition: all 0s;
+            }
+            .actions {
+
+              /* Apply to controls only when active */
+              {% if is_state(config.entity, ['playing', 'paused']) %}
+
+                /* Apply album art color to media player controls */
+                --rgb-primary-text-color: var(--rgb-primary-text-color);
+                --primary-text-color: var(--rgb-primary-text-color);
+
+                /* Add space for progress bar */
+                padding-top: 24px;
+              {% endif %}
+            }
   - type: conditional
     conditions:
-      - entity: media_player.buro_roam
+      - entity: media_player.currently_playing
         state_not: 'off'
-      - entity: media_player.buro_roam
+      - entity: media_player.currently_playing
         state_not: idle
-      - entity: media_player.buro_roam
-        state: playing
     card:
       type: custom:mini-media-player
-      entity: media_player.buro_roam
+      entity: "[[entity]]"
       hide:
         icon: true
         name: true
@@ -103,39 +127,67 @@ cards:
       toggle_power: false
       group: true
       card_mod:
-        style:
-          mmp-progress$: |
-            paper-progress {
-              {{ '--paper-progress-container-color: rgba(var(--md-sys-color-tertiary), 0.2) !important;' if is_state(config.entity, 'playing') }}
-            }
-          .: |
-            ha-card {
-              margin: 0px 12px 12px;
-              --mmp-progress-height: 12px !important;
-              height: var(--mmp-progress-height);
-              --mmp-accent-color: rgb(var(--md-sys-color-tertiary));
-              --mmp-border-radius: 12px !important;
-              --ha-card-border-width: 0;
-            }
+        style: |
+          ha-card {
+            
+            /* Move progress bar up into gap */
+            bottom: calc(3 * var(--mush-spacing, 12px) + var(--mush-control-height, -25px));
+            
+            /* Correct margins for progress bar */
+            margin: 0px calc(1.618 * var(--mush-spacing, 12px)) calc(-1 * var(--mush-spacing, 12px));
+
+            /* Set height of card to match progress bar height */
+            height: var(--mmp-progress-height);
+
+            /* Remove border outline */
+            --ha-card-border-width: 0;
+
+            /* Round corners of progress bar */
+            --mmp-border-radius: var(--control-border-radius, 12px) !important;
+
+            /* Set height of progress bar */
+            --mmp-progress-height: var(--mush-spacing, 12px) !important;
+
+            /* Make progress bar adjust to use dynamic theming */
+            --mmp-accent-color: var(--md-sys-color-tertiary) !important;
+
+            /* Remove transitions to prevent progress bar floating in */
+            transition: all 0s;
+          }
 card_mod:
   style: |
     ha-card:before {
-      transform: translate3d(0,0,0);
-      -webkit-transform: translate3d(0,0,0);
       content: "";
+      
+      /* Position and size background color */
       position: absolute;
       height: 100%;
       width: 100%;
 
-      background: url('/local/idle_art.png') center no-repeat;
-      {% if not is_state('media_player.currently_playing', 'idle') %}
-        background: url( '{{ state_attr('media_player.currently_playing', "entity_picture") }}' ) center no-repeat;
+      /* Apply background to media player using album art color */
+      {% if is_state('[[entity]]', ['playing', 'paused']) %}
+        background: color-mix(in srgb, var(--md-sys-color-on-primary) 50%, transparent);
       {% endif %}
-
-      filter: blur(150px) saturate(200%);
-      background-size: 100% 100%;
+      
     }
     ha-card {
-      transform: translate3d(0,0,0);
-      -webkit-transform: translate3d(0,0,0);
+
+      /* Apply blended album art background */
+      {% if is_state('[[entity]]', ['playing', 'paused']) %}
+        background: url( '{{ state_attr("[[entity]]", "entity_picture") }}' ) no-repeat, 
+                    linear-gradient(to left, transparent, rgb(var(--rgb-card-background-color)) 70%);
+
+        /* Adjust for different aspect ratio of TV shows episode art */
+        {% if state_attr('[[entity]]', 'media_content_type') == 'tvshow' %}
+          background-size: 50% 100%, cover;
+        {% else %}
+          background-size: 50% auto, cover;
+        {% endif %}
+
+        /* Position art on right side */
+        background-position: right;
+
+        /* Blend art with background using saturation */
+        background-blend-mode: saturation;
+      {% endif %}
     }
