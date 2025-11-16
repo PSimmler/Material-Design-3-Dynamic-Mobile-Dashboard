@@ -468,6 +468,42 @@ media_player_card:
             background-blend-mode: saturation;
           {% endif %}
         }   
+room_light_chip:
+  default:
+    - icon: m3of:lightbulb_2
+    - entity: light.buro_decke
+  card:
+    type: custom:mushroom-chips-card
+    chips:
+      - type: template
+        entity: "[[entity]]"
+        tap_action:
+          action: toggle
+        icon: "[[icon]]"
+        card_mod:
+          style: |
+            ha-card {
+              --chip-background: {% if is_state('[[entity]]', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+              --color: {% if is_state('[[entity]]', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+              justify-content: center;
+              height: 35px !important;
+              width: 35px !important;
+              border: 0 !important;
+              box-shadow: none !important;
+              border-radius: 22px !important;
+            }
+    card_mod:
+      style: |
+        .chip-container {
+          flex-flow: column wrap-reverse !important;
+          display: flex !important;
+          --chip-spacing: 8px;
+          margin: 12px;
+        }
+        .: |
+        .container {
+          align: end;
+        }
 navbar_card:
   description: Navigation bar for main views
   variable: []
