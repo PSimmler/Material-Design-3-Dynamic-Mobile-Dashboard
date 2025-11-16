@@ -3,7 +3,7 @@
   - &big_room_card_style |
       ha-card {
         background:
-        {% set temp = states(this.entity_id) | float %}
+        {% set temp = states('[[entity]]') | float %}
           {% if temp < 13 %}
             rgba(172, 156, 175, 0.8)
           {% elif temp < 16 %}          
@@ -25,8 +25,8 @@
       }
   - &chip_style |
     ha-card {
-      --chip-background: {% if is_state(this.entity_id, 'on') %} #D3C890 {% else %} #353535 {% endif %};
-      --color: {% if is_state(this.entity_id, 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+      --chip-background: {% if is_state('[[entity]]', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+      --color: {% if is_state('[[entity]]', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
       justify-content: center;
       height: 35px !important;
       width: 35px !important;
