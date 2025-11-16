@@ -55,13 +55,11 @@
                     - icon: m3of:computer
             - type: custom:mushroom-chips-card
               chips:
-                - type: template
-                  entity: light.buro_decke
-                  tap_action:
-                    action: toggle
-                  icon: m3of:lightbulb
-                  card_mod:
-                    style: *chip_style
+                - type: custom:decluttering-card
+                  template: icon_chip_template
+                  variables:
+                  - entity: light.buro_decke # <--- Pass the entity to the template
+                  - icon: m3of:lightbulb     # <--- Pass the icon to the template
               card_mod:
                 style: |
                   .chip-container {

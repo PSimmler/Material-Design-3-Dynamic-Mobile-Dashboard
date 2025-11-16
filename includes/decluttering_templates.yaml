@@ -192,35 +192,26 @@ humidity_entity:
               /* Push value to the left */
               padding-right: 12px !important;   /* adds space on the right so the number is not cut */                
             }
-room_stack:
-  description: Stack of cards for room overview
-  default:
-    - temperature_sensor: ""
-  mode: horizontal
-  card_mod:
-    style: |
-      ha-card {
-        background:
-        {% set temp = states('sensor.indoor_temperature') | float %}
-          {% if temp < 13 %}
-            rgba(172, 156, 175, 0.8)
-          {% elif temp < 16 %}          
-            rgba(215, 196, 219, 0.8)
-          {% elif temp < 19 %}
-            rgba(163, 217, 245, 0.8)
-          {% elif temp < 22 %}
-            rgba(205, 227, 219, 0.8)
-          {% elif temp < 24 %}
-            rgba(255, 229, 153, 0.8)
-          {% elif temp < 27 %}
-            rgba(247, 190, 129, 0.8)
-          {% else %}
-            rgba(224, 102, 102, 0.8)
-          {% endif %};             
-        max-width: 100%;
-        min-width: 50%;
-        height: 186px;
-      }
+icon_chip_template:
+  card:
+    type: template
+    entity: '[[entity]]' # <--- This is where the entity ID goes
+    icon: '[[icon]]' # <--- Pass the icon as a variable
+    tap_action:
+      action: toggle
+    card_mod:
+      style: |
+        ha-card {
+          /* Now, the style correctly uses the entity variable passed to the template */
+          --chip-background: {% if is_state('[[entity]]', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+          --color: {% if is_state('[[entity]]', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+          justify-content: center;
+          height: 35px !important;
+          width: 35px !important;
+          border: 0 !important;
+          box-shadow: none !important;
+          border-radius: 22px !important;
+        }
 room_summary_card:
   description: Primary room info (name + temp/humidity)
   default:
