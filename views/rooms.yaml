@@ -22,8 +22,8 @@
                 - type: custom:decluttering-card
                   template: icon_chip_template
                   variables:
-                    - entity: light.buro_decke
-                    - icon: m3of:lightbulb_2
+                    entity: light.buro_decke
+                    icon: m3of:lightbulb_2
                 - type: template
                   entity: light.buro_decke
                   tap_action:
