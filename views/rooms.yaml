@@ -75,16 +75,20 @@
                     - icon: m3of:chair
             - type: custom:mushroom-chips-card
               chips:
-                - type: custom:decluttering-card
-                  template: icon_chip_template
-                  variables:
-                    - entity: light.signe_gradient_wohnzimmer
-                    - icon: m3of:floor_lamp
-                - type: custom:decluttering-card
-                  template: icon_chip_template
-                  variables:
-                    - entity: light.wohnzimmer_decke_tv
-                    - icon: m3of:light
+                - type: template
+                  entity: light.signe_gradient_wohnzimmer
+                  tap_action:
+                    action: toggle
+                  icon: m3of:floor_lamp
+                  card_mod:
+                    style: *chip_style
+                - type: template
+                  entity: light.wohnzimmer_decke_tv
+                  tap_action:
+                    action: toggle
+                  icon: m3of:light
+                  card_mod:
+                    style: *chip_style
                 # - type: template
                 #   entity: light.signe_gradient_wohnzimmer
                 #   tap_action:
