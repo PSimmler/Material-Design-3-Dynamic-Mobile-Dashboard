@@ -1,6 +1,6 @@
 mushroom_title_card:
   default:
-    - title: ""
+    title: ""
   card:
     type: custom:mushroom-title-card
     title: "[[title]]"
@@ -11,7 +11,7 @@ mushroom_title_card:
         }
 mushroom_room_title_card:
   default:
-    - title: ""
+    title: ""
   card:
     type: custom:mushroom-title-card
     title: "[[title]]"
@@ -49,7 +49,7 @@ mushroom_overview_card:
         }
 temperature_entity:
   default:
-    - title: ""
+    title: ""
   card:
     type: entities
     card_mod:
@@ -131,7 +131,7 @@ temperature_entity:
             }
 humidity_entity:
   default:
-    - title: ""
+    title: ""
   card:
     type: entities
     card_mod:
@@ -265,8 +265,8 @@ room_summary_card:
 big_icon_toggle_card:
   description: Large horizontal icon toggle for switch/light
   variables:
-    - entity
-    - icon
+    entity
+    icon
   card:
     type: custom:mushroom-template-card
     entity: "[[entity]]"
