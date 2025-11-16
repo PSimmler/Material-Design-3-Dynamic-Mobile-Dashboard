@@ -16,12 +16,10 @@
         background:
         {% set entity_id = config.entity | default('') %}
         {% set state = states(entity_id) %}
-        {% set fallback_color = 'rgba(100, 100, 100, 0.8)' %} # <-- Define your dedicated fallback color here
 
         # Check if the entity is missing, invalid, or its state is not a number
         {% if entity_id == '' or state in ['unavailable', 'unknown', 'none'] or state | float('error') == 'error' %}
-          {{ fallback_color }} # Use the dedicated fallback color
-        
+          rgba(100, 100, 100, 0.8) # return default gray color
         {% else %}
           {% set temp = state | float(20) %} # Proceed with temperature calculation
 
