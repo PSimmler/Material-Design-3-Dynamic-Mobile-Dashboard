@@ -41,42 +41,52 @@
                   variables:
                     - entity: light.wohnzimmer
                     - icon: m3of:chair
-            - type: custom:mushroom-chips-card
-              chips:
-                - type: template
-                  entity: light.signe_gradient_wohnzimmer
-                  tap_action:
-                    action: toggle
-                  icon: m3of:floor_lamp
-                  card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
-                - type: template
-                  entity: light.wohnzimmer_decke_tv
-                  tap_action:
-                    action: toggle
-                  icon: m3of:light
-                  card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+            - type: custom:decluttering-card
+              template: room_light_chip
+              variables:
+                - entity: light.signe_gradient_wohnzimmer
+                - icon: m3of:floor_lamp
+            - type: custom:decluttering-card
+              template: room_light_chip
+              variables:
+                - entity: light.wohnzimmer_decke_tv
+                - icon: m3of:light
+            # - type: custom:mushroom-chips-card
+            #   chips:
+            #     - type: template
+            #       entity: light.signe_gradient_wohnzimmer
+            #       tap_action:
+            #         action: toggle
+            #       icon: m3of:floor_lamp
+            #       card_mod:
+            #         style: |
+            #           ha-card {
+            #             --chip-background: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+            #             --color: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+            #             justify-content: center;
+            #             height: 35px !important;
+            #             width: 35px !important;
+            #             border: 0 !important;
+            #             box-shadow: none !important;
+            #             border-radius: 22px !important;
+            #           }
+            #     - type: template
+            #       entity: light.wohnzimmer_decke_tv
+            #       tap_action:
+            #         action: toggle
+            #       icon: m3of:light
+            #       card_mod:
+            #         style: |
+            #           ha-card {
+            #             --chip-background: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #D3C890 {% else %} #353535 {% endif %};
+            #             --color: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
+            #             justify-content: center;
+            #             height: 35px !important;
+            #             width: 35px !important;
+            #             border: 0 !important;
+            #             box-shadow: none !important;
+            #             border-radius: 22px !important;
+            #           }
               card_mod:
                 style: |
                   .chip-container {
