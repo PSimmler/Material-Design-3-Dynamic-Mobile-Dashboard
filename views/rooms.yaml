@@ -20,7 +20,7 @@
                     - entity: light.buro
                     - icon: m3of:computer
             - type: custom:decluttering-card
-              template: room_light_chip
+              template: room_light_chips_card
               variables:
                 - entity: light.buro_decke
                 - icon: m3of:lightbulb
@@ -42,12 +42,12 @@
                     - entity: light.wohnzimmer
                     - icon: m3of:chair
             - type: custom:decluttering-card
-              template: room_light_chip
+              template: room_light_chips_card
               variables:
                 - entity: light.signe_gradient_wohnzimmer
                 - icon: m3of:floor_lamp
             - type: custom:decluttering-card
-              template: room_light_chip
+              template: room_light_chips_card
               variables:
                 - entity: light.wohnzimmer_decke_tv
                 - icon: m3of:light
