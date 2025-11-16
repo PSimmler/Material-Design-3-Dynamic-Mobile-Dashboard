@@ -15,8 +15,7 @@
       ha-card {
         background:
         {% set entity_id = config.entity | default('') %}
-        {% set state = states(entity_id) %}
-        {% set temp = state | float(20) %} # Proceed with temperature calculation
+        {% set temp = states(config.entity) | float %}
         {% if temp < 13 %}
           rgba(172, 156, 175, 0.8)
         {% elif temp < 16 %}
