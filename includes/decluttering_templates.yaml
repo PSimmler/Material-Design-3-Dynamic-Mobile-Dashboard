@@ -193,10 +193,13 @@ humidity_entity:
               padding-right: 12px !important;   /* adds space on the right so the number is not cut */                
             }
 icon_chip_template:
+  default:
+    - entity: ""
+    - icon: ""
   card:
     type: template
-    entity: '[[entity]]' # <--- This is where the entity ID goes
-    icon: '[[icon]]' # <--- Pass the icon as a variable
+    entity: "[[entity]]" # <--- This is where the entity ID goes
+    icon: "[[icon]]" # <--- Pass the icon as a variable
     tap_action:
       action: toggle
     card_mod:
