@@ -264,9 +264,9 @@ room_summary_card:
           }
 big_icon_toggle_card:
   description: Large horizontal icon toggle for switch/light
-  variables:
-    entity
-    icon
+  default:
+    entity: ""
+    icon: ""
   card:
     type: custom:mushroom-template-card
     entity: "[[entity]]"
@@ -306,9 +306,9 @@ big_icon_toggle_card:
               }
 media_player_card:
   default:
-    - icon: m3of:play-circle
-    - name: Media Player
-    - tap_action: none
+    icon: m3of:play-circle
+    name: Media Player
+    tap_action: none
   card:
     type: custom:stack-in-card
     cards:
