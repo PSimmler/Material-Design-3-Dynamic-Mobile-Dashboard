@@ -89,40 +89,6 @@
                   icon: m3of:light
                   card_mod:
                     style: *chip_style
-                # - type: template
-                #   entity: light.signe_gradient_wohnzimmer
-                #   tap_action:
-                #     action: toggle
-                #   icon: m3of:floor_lamp
-                #   card_mod:
-                #     style: |
-                #       ha-card {
-                #         --chip-background: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                #         --color: {% if is_state('light.signe_gradient_wohnzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                #         justify-content: center;
-                #         height: 35px !important;
-                #         width: 35px !important;
-                #         border: 0 !important;
-                #         box-shadow: none !important;
-                #         border-radius: 22px !important;
-                #       }
-                # - type: template
-                #   entity: light.wohnzimmer_decke_tv
-                #   tap_action:
-                #     action: toggle
-                #   icon: m3of:light
-                #   card_mod:
-                #     style: |
-                #       ha-card {
-                #         --chip-background: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                #         --color: {% if is_state('light.wohnzimmer_decke_tv', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                #         justify-content: center;
-                #         height: 35px !important;
-                #         width: 35px !important;
-                #         border: 0 !important;
-                #         box-shadow: none !important;
-                #         border-radius: 22px !important;
-                #       }
               card_mod:
                 style: |
                   .chip-container {
@@ -184,51 +150,21 @@
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.philipp_sandra_fair', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.philipp_sandra_fair', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.philipp
                   tap_action:
                     action: toggle
                   icon: m3of:wall_lamp
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.philipp', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.philipp', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.sandra
                   tap_action:
                     action: toggle
                   icon: m3of:wall_lamp
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.sandra', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.sandra', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
@@ -264,68 +200,28 @@
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.esszimmer_decke_unten', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.esszimmer_decke_unten', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.esszimmer_decke_oben
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.esszimmer_decke_oben', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.esszimmer_decke_oben', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.esszimmer_decke_garderobe
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.esszimmer_decke_garderobe', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.esszimmer_decke_garderobe', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.zurilicht
                   tap_action:
                     action: toggle
                   icon: m3of:wall_lamp
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.zurilicht', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.zurilicht', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
@@ -365,34 +261,14 @@
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.kinderzimmer_enrave', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.kinderzimmer_enrave', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.lia_light_strip
                   tap_action:
                     action: toggle
                   icon: m3of:backlight_high
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.lia_light_strip', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.lia_light_strip', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
@@ -430,68 +306,28 @@
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.gang_farbig_1_schlafzimmer', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.gang_farbig_1_schlafzimmer', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.gang_farbig_2_buro
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.gang_farbig_2_buro', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.gang_farbig_2_buro', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.gang_farbig_3_pinwand
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.gang_farbig_3_pinwand', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.gang_farbig_3_pinwand', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
                 - type: template
                   entity: light.gang_farbig_4_lia
                   tap_action:
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.gang_farbig_4_lia', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.gang_farbig_4_lia', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
@@ -531,17 +367,7 @@
                     action: toggle
                   icon: m3of:light
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.eingang_decke', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.eingang_decke', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
@@ -579,17 +405,7 @@
                     action: toggle
                   icon: m3of:lightbulb_circle
                   card_mod:
-                    style: |
-                      ha-card {
-                        --chip-background: {% if is_state('light.balkonlicht', 'on') %} #D3C890 {% else %} #353535 {% endif %};
-                        --color: {% if is_state('light.balkonlicht', 'on') %} #5b5326 {% else %} #dbdbdb {% endif %};
-                        justify-content: center;
-                        height: 35px !important;
-                        width: 35px !important;
-                        border: 0 !important;
-                        box-shadow: none !important;
-                        border-radius: 22px !important;
-                      }
+                    style: *chip_style
               card_mod:
                 style: |
                   .chip-container {
