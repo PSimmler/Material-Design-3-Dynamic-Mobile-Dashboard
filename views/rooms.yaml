@@ -50,9 +50,7 @@
                     - icon: m3of:floor_lamp
                 - type: custom:decluttering-card
                   template: room_light_chip
-                  variables:
-                    - entity: light.wohnzimmer_decke_tv
-                    - icon: m3of:light
+                  
             #- type: custom:decluttering-card
             #  template: room_light_chips_card
             #  variables:

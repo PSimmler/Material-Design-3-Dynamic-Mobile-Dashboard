@@ -472,8 +472,8 @@ room_light_chip:
   default:
     - icon: m3of:lightbulb_2
     - entity: light.buro_decke
-  chip:
-    type: custom:mushroom-chip
+  card:
+    type: template
     entity: "[[entity]]"
     tap_action:
       action: toggle
