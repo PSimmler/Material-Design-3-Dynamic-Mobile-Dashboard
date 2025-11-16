@@ -203,8 +203,8 @@ room_summary_card:
     type: custom:mushroom-template-card
     primary: "[[room_name]]"
     secondary: |
-      {% set temp_state = states('sensor.temperature_sensor') %}
-      {% set hum_state = states('sensor.humidity_sensor') %}
+      {% set temp_state = states(sensor.temperature_sensor) %}
+      {% set hum_state = states(sensor.humidity_sensor) %}
       {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
       {% set hum = hum_state if hum_state not in ['unknown', 'unavailable', 'none', ''] else none %}
 
