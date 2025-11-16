@@ -21,7 +21,7 @@
                     - icon: m3of:computer
             - type: custom:mushroom-chips-card
               chips:
-                - type: light
+                - type: template
                   entity: light.buro_decke
                   tap_action:
                     action: toggle
