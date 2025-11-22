@@ -251,15 +251,16 @@ room_summary_card:
       style:
         .: |
           ha-card {
+            /* This is the card's main text color variable */
             --primary-text-color:
               {% set temp_state = states('[[temperature_sensor]]') %}
               {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
 
-              # Determine the font color based on temperature sensor state
+              /* Check if a valid temperature was found */
               {% if temp is not none %}
-                #00FF00
+                #00FF00  /* GREEN when sensor is valid */
               {% else %}
-                #FF0000
+                #FF0000  /* RED when sensor is invalid */
               {% endif %};
             border: 0px;
             padding-left: 5px;
@@ -268,6 +269,7 @@ room_summary_card:
           }
         mushroom-state-info$: |
           .container {
+            /* These apply the card's main text color variable to the actual text */
             --card-primary-color: var(--primary-text-color);
             --card-secondary-color: var(--primary-text-color);
           }
