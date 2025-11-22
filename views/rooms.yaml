@@ -26,11 +26,11 @@
       ha-card {
         background:
           {% set entity_id = config.entity | default('') %}
-          {% set state = states(entity_id) | none %}
-          {% if entity_id == '' or state in ['unavailable', 'unknown', 'none'] or state | float('error') == 'error') %}
+          {% if entity_id == '' %}
             rgba(100, 100, 100, 0.9) 
           {% else %}
-            {% set temp = states(config.entity) | float %}
+            {% set temp_state = states(entity_id) %}
+            {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
             {% if temp < 13 %}
               rgba(172, 156, 175, 0.8)
             {% elif temp < 16 %}          
