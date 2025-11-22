@@ -27,7 +27,7 @@
         background:
         {% set entity_id = config.entity | default('') %}
         {% if entity_id == '' %}
-          rgba(100, 100, 100, 0.8)
+          rgba(100, 100, 100, 0.9)
         {% else %}
           {% set temp = states(config.entity) | float %}
           {% if temp < 13 %}
