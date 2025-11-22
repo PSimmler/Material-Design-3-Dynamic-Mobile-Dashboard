@@ -187,6 +187,8 @@
                     style: *chip_style
               card_mod:
                 style: *chip_Card_style
+          card_mod:
+            style: *big_room_card_style
         - type: custom:stack-in-card
           mode: horizontal
           cards:
@@ -234,6 +236,8 @@
                     style: *chip_style
               card_mod:
                 style: *chip_Card_style
+          card_mod:
+            style: *big_room_card_style
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -271,6 +275,8 @@
                     style: *chip_style
               card_mod:
                 style: *chip_Card_style
+          card_mod:
+            style: *big_room_card_style
         - type: custom:stack-in-card
           mode: horizontal
           cards:
@@ -320,6 +326,8 @@
                     style: *chip_style
               card_mod:
                 style: *chip_Card_style
+          card_mod:
+            style: *big_room_card_style
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -350,6 +358,8 @@
                     style: *chip_style
               card_mod:
                 style: *chip_Card_style
+          card_mod:
+            style: *big_room_card_style
         - type: custom:stack-in-card
           mode: horizontal
           entity: sensor.outdoor_temperature
