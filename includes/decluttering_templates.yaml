@@ -257,7 +257,7 @@ room_summary_card:
 
               # Determine the font color based on temperature sensor state
               {% if temp is not none %}
-                var(--primary-text-color)
+                #00FF00
               {% else %}
                 #FF0000
               {% endif %}
