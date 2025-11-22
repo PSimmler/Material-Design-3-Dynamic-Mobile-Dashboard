@@ -231,6 +231,8 @@ room_summary_card:
       {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
       {% set hum = hum_state if hum_state not in ['unknown', 'unavailable', 'none', ''] else none %}
 
+      {% set text_color = 'var(--primary-text-color)' %}
+
       {% if temp and hum %}
         {{ temp }}°C / {{ hum }}%
       {% elif temp %}
@@ -238,7 +240,7 @@ room_summary_card:
       {% elif hum %}
         {{ hum }}%
       {% else %}
-
+        {% set text_color = '#ffffff' %}
       {% endif %}
     tap_action:
       action: navigate
@@ -251,7 +253,7 @@ room_summary_card:
       style:
         .: |
           ha-card {
-            --primary-text-color: black;
+            --primary-text-color: text_color;
             border: 0px;
             padding-left: 5px;
             padding-top: 5px;
