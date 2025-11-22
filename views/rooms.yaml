@@ -11,6 +11,17 @@
         box-shadow: none !important;
         border-radius: 22px !important;
       }
+  - &chip_Card_style |
+      .chip-container {
+        flex-flow: column wrap-reverse !important;
+        display: flex !important;
+        --chip-spacing: 8px;
+        margin: 12px;
+      }
+      .: |
+      .container {
+        align: end;
+      }
   - &big_room_card_style |
       ha-card {
         background:
@@ -175,17 +186,7 @@
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
         - type: custom:stack-in-card
           mode: horizontal
           cards:
@@ -232,17 +233,7 @@
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -279,17 +270,7 @@
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
         - type: custom:stack-in-card
           mode: horizontal
           cards:
@@ -338,17 +319,7 @@
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
     - type: horizontal-stack
       cards:
         - type: custom:stack-in-card
@@ -378,17 +349,7 @@
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
         - type: custom:stack-in-card
           mode: horizontal
           entity: sensor.outdoor_temperature
