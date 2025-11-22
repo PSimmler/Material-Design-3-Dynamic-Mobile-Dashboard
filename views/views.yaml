@@ -17,8 +17,8 @@
     !include ./roomsHeader.yaml
   badges:
     !include ./roomsBadges.yaml
-  background:
-    !include ./roomsBackground.yaml
+  # background:
+    # !include ./roomsBackground.yaml
 
 # Scenes
 - title: Szenen
@@ -30,9 +30,8 @@
     !include ./scenesHeader.yaml
   badges:
     !include ./roomsBadges.yaml
-  background:
-    !include ./roomsBackground.yaml
-
+  # background:
+    # !include ./roomsBackground.yaml
 # Server
 - title: Server
   icon: m3of:server-person
@@ -43,9 +42,8 @@
     !include ./serverHeader.yaml
   badges:
     !include ./roomsBadges.yaml
-  background:
-    !include ./roomsBackground.yaml
-
+  # background:
+    # !include ./roomsBackground.yaml
 #Rooms Details
 - title: Balkon
   icon: mdi:balcony
@@ -57,9 +55,8 @@
     !include ./rooms/balconyHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Kinderzimmer
   icon: mdi:girl
   path: childroom
@@ -70,9 +67,8 @@
     !include ./rooms/childroomHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml    
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Esszimmer
   icon: mdi:restaurant
   path: diningroom
@@ -83,9 +79,8 @@
     !include ./rooms/diningroomHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml    
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Eingang
   icon: mdi:door
   path: door
@@ -96,9 +91,8 @@
     !include ./rooms/doorHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml    
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Hallway
   icon: mdi:floor-plan
   path: hallway
@@ -109,9 +103,8 @@
     !include ./rooms/hallwayHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml    
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Wohnzimmer
   icon: mdi:sofa
   path: livingroom
@@ -122,9 +115,8 @@
     !include ./rooms/livingroomHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml    
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Schlafzimmer   
   icon: mdi:bed
   path: master
@@ -135,9 +127,8 @@
     !include ./rooms/masterHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml        
-
+  # background:
+    # !include ./roomsBackground.yaml
 - title: Office
   icon: mdi:desk
   path: office
@@ -148,5 +139,5 @@
     !include ./rooms/officeHeader.yaml
   badges:
     !include ./rooms/roomBadge.yaml
-  background:
-    !include ./roomsBackground.yaml
+  # background:
+    # !include ./roomsBackground.yaml
