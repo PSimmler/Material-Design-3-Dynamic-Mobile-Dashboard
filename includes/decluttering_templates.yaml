@@ -239,7 +239,7 @@ room_summary_card:
       {%- set_card_mod_var('room_text_color', text_color) -%}
       
       # Set the actual primary text after calculating the color
-      [[room_name]]
+      '[[room_name]]'
     secondary: |      
       {% set temp_state = states('[[temperature_sensor]]') %}
       {% set hum_state = states('[[humidity_sensor]]') %}
