@@ -347,7 +347,7 @@
                   template: big_icon_toggle_card
                   variables:
                     - entity: light.eingang
-                    - icon: m3of:door
+                    - icon: m3of:bed
             - type: custom:mushroom-chips-card
               chips:
                 - type: template
@@ -378,7 +378,7 @@
                   template: big_icon_toggle_card
                   variables:
                     - entity: light.balkonlicht
-                    - icon: m3of:garden
+                    - icon: m3of:girl
             - type: custom:mushroom-chips-card
               chips:
                 - type: template
