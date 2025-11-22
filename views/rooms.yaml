@@ -1,4 +1,4 @@
-- type: entities
+- type: grid
   entities:
   - &chip_style |
       ha-card {
@@ -51,7 +51,6 @@
         min-width: 50%;
         height: 186px;
       }   
-- type: grid
   cards:
     - type: horizontal-stack
       cards:
