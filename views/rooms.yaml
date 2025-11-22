@@ -29,7 +29,7 @@
           {% if entity_id == '' %}
             rgba(100, 100, 100, 0.9) 
           {% else %}
-            {% set temp_state = states(entity_id) %}
+            {% set temp_state = states(entity_id) | float %}
             {% set temp = temp_state if temp_state not in ['unknown', 'unavailable', 'none', ''] else none %}
             {% if temp < 13 %}
               rgba(172, 156, 175, 0.8)
