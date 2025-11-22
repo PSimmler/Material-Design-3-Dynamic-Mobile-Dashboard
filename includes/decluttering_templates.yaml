@@ -260,7 +260,7 @@ room_summary_card:
                 #00FF00
               {% else %}
                 #FF0000
-              {% endif %}
+              {% endif %};
             border: 0px;
             padding-left: 5px;
             padding-top: 5px;
