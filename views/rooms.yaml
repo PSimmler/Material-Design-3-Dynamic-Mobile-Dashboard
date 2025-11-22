@@ -122,7 +122,7 @@
                   entity: light.signe_gradient_wohnzimmer
                   tap_action:
                     action: toggle
-                  icon: m3of:floor_lamp
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
                 - type: template
@@ -176,14 +176,14 @@
                   entity: light.philipp
                   tap_action:
                     action: toggle
-                  icon: m3of:wall_lamp
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
                 - type: template
                   entity: light.sandra
                   tap_action:
                     action: toggle
-                  icon: m3of:wall_lamp
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
               card_mod:
@@ -232,7 +232,7 @@
                   entity: light.zurilicht
                   tap_action:
                     action: toggle
-                  icon: m3of:wall_lamp
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
               card_mod:
@@ -271,7 +271,7 @@
                   entity: light.lia_light_strip
                   tap_action:
                     action: toggle
-                  icon: m3of:backlight_high
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
               card_mod:
@@ -347,7 +347,7 @@
                   template: big_icon_toggle_card
                   variables:
                     - entity: light.eingang
-                    - icon: m3of:door_front
+                    - icon: m3of:door
             - type: custom:mushroom-chips-card
               chips:
                 - type: template
@@ -378,28 +378,18 @@
                   template: big_icon_toggle_card
                   variables:
                     - entity: light.balkonlicht
-                    - icon: m3of:lightbulb_circle
+                    - icon: m3of:garden
             - type: custom:mushroom-chips-card
               chips:
                 - type: template
                   entity: light.balkonlicht
                   tap_action:
                     action: toggle
-                  icon: m3of:lightbulb_circle
+                  icon: m3of:light
                   card_mod:
                     style: *chip_style
               card_mod:
-                style: |
-                  .chip-container {
-                    flex-flow: column wrap-reverse !important;
-                    display: flex !important;
-                    --chip-spacing: 8px;
-                    margin: 12px;
-                  }
-                  .: |
-                  .container {
-                    align: end;
-                  }
+                style: *chip_Card_style
           card_mod:
             style: *big_room_card_style
 - type: grid
