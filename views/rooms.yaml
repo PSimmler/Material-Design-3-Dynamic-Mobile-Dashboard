@@ -26,7 +26,7 @@
       ha-card {
         background:
           {% set entity_id = config.entity | default('') %}
-          {% set state = states(entity_id) %}
+          {% set state = states(entity_id) | none %}
           {% if entity_id == '' or state in ['unavailable', 'unknown', 'none'] or state | float('error') == 'error') %}
             rgba(100, 100, 100, 0.9) 
           {% else %}
