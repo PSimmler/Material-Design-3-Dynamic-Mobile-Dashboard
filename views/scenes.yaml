@@ -58,24 +58,6 @@
     # ROOM SELECTOR POPUP/CHIPS
     - type: vertical-stack
       cards:
-        - type: custom:bubble-card
-          card_type: pop-up
-          hash: "#room-selector"
-          margin_top_mobile: calc(96vh - 800px)
-          name: Room Selector
-          icon: m3o:room-preferences
-          styles: |-
-            #root {
-                    height: unset !important;
-                    max-height: 100% !important;
-                    transition: transform var(--md-sys-motion-expressive-spatial-default) !important;
-                  }
-                  .bubble-pop-up-container {
-                    padding-bottom: 64px !important;
-
-                  }
-          bg_color: var(--card-background-color)
-          button_type: name
         - type: horizontal-stack
           cards:
             - type: custom:mushroom-template-card

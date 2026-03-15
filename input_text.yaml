@@ -1,0 +1,6 @@
+# This helper tracks which Room Selector is currently active on the Scenes dashboard 
+# so that auto-entities knows which native Hue Scenes to filter and display.
+dynamic_scene_selected:
+  name: Dynamic Scene Selected
+  initial: ""
+  mode: text
