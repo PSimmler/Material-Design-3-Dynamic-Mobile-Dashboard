@@ -15,32 +15,36 @@
       card_param: cards
       filter:
         template: >
-          {% set selected_room = states('input_text.dynamic_scene_selected') %}
-          {% if selected_room == '' %}
-            {# If no room is selected, display nothing #}
+          {% set selected_room_abstract = states('input_text.dynamic_scene_selected') %}
+          {% if selected_room_abstract == '' %}
             []
           {% else %}
-            {# Map the selected abstract room to actual Home Assistant Areas #}
-            {% set area_map = {
-              'office': 'Büro',
-              'livingroom': 'Wohnzimmer',
-              'master': 'Schlafzimmer',
-              'diningroom': 'Esszimmer',
-              'childroom': 'Kinderzimmer',
-              'hallway': 'Gang',
-              'door': 'Eingang',
-              'balcony': 'Balkon'
+            {# Map the abstract room to the Hue scene ID prefix convention (lowercase, usually no umlauts) #}
+            {% set search_map = {
+              'office': 'buro',
+              'livingroom': 'wohnzimmer',
+              'master': 'schlafzimmer',
+              'diningroom': 'esszimmer',
+              'childroom': 'kinderzimmer',
+              'hallway': 'gang',
+              'door': 'eingang',
+              'balcony': 'balkon'
             } %}
-            {% set active_area = area_map.get(selected_room, 'Unknown') %}
+            {% set search_term = search_map.get(selected_room_abstract, 'unknown') %}
 
-            {# Find all Hue 'scene' entities in that area #}
+            {# Find all Hue 'scene' entities containing this room name in their entity_id #}
             {% set entities = [] %}
             {% for state in states.scene %}
-              {% if area_id(state.entity_id) == area_id(active_area) %}
+              {% if search_term in state.entity_id %}
+                {% set friendly = state.attributes.friendly_name | default('') %}
+                {# Filter out generic 'auto_hue' scenes or default system ones if needed, but for now include all matches #}
+                {% set display_name = friendly.replace(search_term.title() ~ ' ', '') %}
+                
                 {% set entities = entities + [
                   {
                     'type': 'custom:mushroom-entity-card',
                     'entity': state.entity_id,
+                    'name': display_name,
                     'icon_color': 'var(--md-sys-color-primary)',
                     'layout': 'horizontal',
                     'tap_action': {
@@ -90,7 +94,7 @@
                   value: 'livingroom'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'livingroom' %}
-                  #fc8d59
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -105,7 +109,7 @@
                   value: 'master'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'master' %}
-                  #e6f598
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -124,7 +128,7 @@
                   value: 'diningroom'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'diningroom' %}
-                  #d53e4f
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -139,7 +143,7 @@
                   value: 'childroom'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'childroom' %}
-                  var(--md-sys-color-tertiary)
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -173,7 +177,7 @@
                   value: 'door'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'door' %}
-                  #fc8d59
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -188,7 +192,7 @@
                   value: 'balcony'
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'balcony' %}
-                  #e6f598
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}

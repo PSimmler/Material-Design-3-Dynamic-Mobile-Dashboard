@@ -33,7 +33,7 @@
   header:
     !include ./scenesHeader.yaml
   badges:
-    !include ./roomsBadges.yaml
+    !include ./scenesBadges.yaml
   # background:
     # !include ./roomsBackground.yaml
 # Server
