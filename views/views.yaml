@@ -68,7 +68,7 @@
   path: childroom
   subview: true
   sections:
-    !include rooms/childroom.yaml
+    !include ./rooms/childroom.yaml
   header:
     !include ./rooms/childroomHeader.yaml
   badges:
@@ -81,7 +81,7 @@
   path: diningroom
   subview: true
   sections:
-    !include rooms/diningroom.yaml
+    !include ./rooms/diningroom.yaml
   header:
     !include ./rooms/diningroomHeader.yaml
   badges:
@@ -94,7 +94,7 @@
   path: door
   subview: true
   sections:
-    !include rooms/door.yaml
+    !include ./rooms/door.yaml
   header:
     !include ./rooms/doorHeader.yaml
   badges:
@@ -107,7 +107,7 @@
   path: hallway
   subview: true
   sections:
-    !include rooms/hallway.yaml    
+    !include ./rooms/hallway.yaml
   header:
     !include ./rooms/hallwayHeader.yaml
   badges:
@@ -120,7 +120,7 @@
   path: livingroom
   subview: true
   sections:
-   !include rooms/livingroom.yaml
+   !include ./rooms/livingroom.yaml
   header:
     !include ./rooms/livingroomHeader.yaml
   badges:
@@ -133,7 +133,7 @@
   path: master
   subview: true
   sections:
-    !include rooms/master.yaml
+    !include ./rooms/master.yaml
   header:
     !include ./rooms/masterHeader.yaml
   badges:
@@ -146,7 +146,7 @@
   path: office
   subview: true
   sections:
-    !include rooms/office.yaml
+    !include ./rooms/office.yaml
   header:
     !include ./rooms/officeHeader.yaml
   badges:
