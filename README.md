@@ -96,7 +96,7 @@ Removed in v3.1.0:
   1. Navigate to **HACS > Frontend**.
   2. Search for the name of each card/theme and click **Download**.
   3. When installed via HACS, it will automatically register the required libraries in your Lovelace resources list. No manual `resources:` configuration is needed.
-  4. *Note:* Some add-ons (like Alarmo, Scene Presets, and Web RTC Camera) require installing both the **Integration** (from HACS > Integrations) as well as the **Frontend Card** (from HACS > Frontend).
+  4. *Note:* Some add-ons (like **Material Symbols**, Alarmo, Scene Presets, and Web RTC Camera) require installing from **HACS > Integrations**, followed by adding them in Home Assistant `Settings > Devices & Services`.
 - You need to adjust the navbar card directory to suit your current dashboard (if you don't start fresh).
 - To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
 - For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset). For the images, you can get them from [here](https://github.com/Hypfer/hass-scene_presets/blob/master/custom_components/scene_presets/assets/Readme.md).
