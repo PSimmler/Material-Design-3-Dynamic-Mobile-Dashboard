@@ -62,7 +62,7 @@
           cards:
             - type: custom:mushroom-template-card
               icon: m3of:table-restaurant
-              primary: Dining
+              primary: Esszimmer
               tap_action:
                 action: call-service
                 service: input_text.set_value
@@ -76,8 +76,8 @@
                   var(--md-sys-color-outline-variant)
                 {% endif %}
             - type: custom:mushroom-template-card
-              icon: m3of:chair
-              primary: Sofa
+              icon: m3of:weekend
+              primary: Wohnzimmer
               tap_action:
                 action: call-service
                 service: input_text.set_value
@@ -108,8 +108,8 @@
                   var(--md-sys-color-outline-variant)
                 {% endif %}
             - type: custom:mushroom-template-card
-              icon: m3of:restaurant
-              primary: Esszimmer
+              icon: m3of:child-care
+              primary: Kinderzimmer
               tap_action:
                 action: call-service
                 service: input_text.set_value
@@ -125,8 +125,8 @@
         - type: horizontal-stack
           cards:
             - type: custom:mushroom-template-card
-              icon: m3of:person-3
-              primary: Kinderzimmer
+              icon: m3of:luggage
+              primary: Gästezimmer
               tap_action:
                 action: call-service
                 service: input_text.set_value
@@ -136,21 +136,6 @@
               color: >-
                 {% if states('input_text.dynamic_scene_selected') == 'single_guest_room' %}
                   var(--md-sys-color-tertiary)
-                {% else %}
-                  var(--md-sys-color-outline-variant)
-                {% endif %}
-            - type: custom:mushroom-template-card
-              icon: m3of:groups-2
-              primary: Multiple
-              tap_action:
-                action: call-service
-                service: input_text.set_value
-                data:
-                  entity_id: input_text.dynamic_scene_selected
-                  value: ''
-              color: >-
-                {% if states('input_text.dynamic_scene_selected') == '' %}
-                  var(--md-sys-color-error)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
