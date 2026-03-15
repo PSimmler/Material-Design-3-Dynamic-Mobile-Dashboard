@@ -74,7 +74,6 @@ Theming / ETC:
 - [My Cards Bundle](https://github.com/AnthonMS/my-cards)
 - [Paper Buttons Row](https://github.com/jcwillox/lovelace-paper-buttons-row)
 - [Stack In Card](https://github.com/custom-cards/stack-in-card)
-- [Scene Presets](https://github.com/Hypfer/hass-scene_presets)
 - [Simple Swipe Card](https://github.com/nutteloost/simple-swipe-card)
 - [Simple Tabs Card](https://github.com/agoberg85/home-assistant-simple-tabs)
 - [Vertical Stack In Card](https://github.com/ofekashery/vertical-stack-in-card)
@@ -96,10 +95,10 @@ Removed in v3.1.0:
   1. Navigate to **HACS > Frontend**.
   2. Search for the name of each card/theme and click **Download**.
   3. When installed via HACS, it will automatically register the required libraries in your Lovelace resources list. No manual `resources:` configuration is needed.
-  4. *Note:* Some add-ons (like **Material Symbols**, Alarmo, Scene Presets, and Web RTC Camera) require installing from **HACS > Integrations**, followed by adding them in Home Assistant `Settings > Devices & Services`.
+  4. *Note:* Some add-ons (like **Material Symbols**, Alarmo, and Web RTC Camera) require installing from **HACS > Integrations**, followed by adding them in Home Assistant `Settings > Devices & Services`.
 - You need to adjust the navbar card directory to suit your current dashboard (if you don't start fresh).
 - To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
-- For the Hue scene, you'll need to have the automation, scripts, input boolean, input text, and input number in your system that you can find in [hue asset folder](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/hue%20asset). For the images, you can get them from [here](https://github.com/Hypfer/hass-scene_presets/blob/master/custom_components/scene_presets/assets/Readme.md).
+- For the Scenes tab, ensure you have the official Philips Hue integration installed. The dashboard will automatically detect and populate your native Hue scenes per room using `auto-entities`!
 - Apply the MD3 theme and select your preferred colors. It is accessible from Overview page > More > Theme Icon
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
