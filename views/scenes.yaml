@@ -22,11 +22,14 @@
           {% else %}
             {# Map the selected abstract room to actual Home Assistant Areas #}
             {% set area_map = {
-              'dining': 'Esszimmer',
-              'sofa': 'Wohnzimmer',
-              'schlafzimmer': 'Schlafzimmer',
-              'baby_room': 'Kinderzimmer',
-              'single_guest_room': 'Gästezimmer'
+              'office': 'Büro',
+              'livingroom': 'Wohnzimmer',
+              'master': 'Schlafzimmer',
+              'diningroom': 'Esszimmer',
+              'childroom': 'Kinderzimmer',
+              'hallway': 'Gang',
+              'door': 'Eingang',
+              'balcony': 'Balkon'
             } %}
             {% set active_area = area_map.get(selected_room, 'Unknown') %}
 
@@ -58,20 +61,21 @@
     # ROOM SELECTOR POPUP/CHIPS
     - type: vertical-stack
       cards:
+        # Row 1: Büro, Wohnzimmer, Schlafzimmer
         - type: horizontal-stack
           cards:
             - type: custom:mushroom-template-card
-              icon: m3of:table-restaurant
-              primary: Esszimmer
+              icon: m3of:computer
+              primary: Büro
               tap_action:
                 action: call-service
                 service: input_text.set_value
                 data:
                   entity_id: input_text.dynamic_scene_selected
-                  value: 'dining'
+                  value: 'office'
               color: >-
-                {% if states('input_text.dynamic_scene_selected') == 'dining' %}
-                  #d53e4f
+                {% if states('input_text.dynamic_scene_selected') == 'office' %}
+                  var(--md-sys-color-primary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -83,15 +87,13 @@
                 service: input_text.set_value
                 data:
                   entity_id: input_text.dynamic_scene_selected
-                  value: 'sofa'
+                  value: 'livingroom'
               color: >-
-                {% if states('input_text.dynamic_scene_selected') == 'sofa' %}
+                {% if states('input_text.dynamic_scene_selected') == 'livingroom' %}
                   #fc8d59
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
-        - type: horizontal-stack
-          cards:
             - type: custom:mushroom-template-card
               icon: m3of:bed
               primary: Schlafzimmer
@@ -100,10 +102,29 @@
                 service: input_text.set_value
                 data:
                   entity_id: input_text.dynamic_scene_selected
-                  value: 'schlafzimmer'
+                  value: 'master'
               color: >-
-                {% if states('input_text.dynamic_scene_selected') == 'schlafzimmer' %}
-                  var(--md-sys-color-primary)
+                {% if states('input_text.dynamic_scene_selected') == 'master' %}
+                  #e6f598
+                {% else %}
+                  var(--md-sys-color-outline-variant)
+                {% endif %}
+        
+        # Row 2: Esszimmer, Kinderzimmer, Gang
+        - type: horizontal-stack
+          cards:
+            - type: custom:mushroom-template-card
+              icon: m3of:restaurant
+              primary: Esszimmer
+              tap_action:
+                action: call-service
+                service: input_text.set_value
+                data:
+                  entity_id: input_text.dynamic_scene_selected
+                  value: 'diningroom'
+              color: >-
+                {% if states('input_text.dynamic_scene_selected') == 'diningroom' %}
+                  #d53e4f
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
@@ -115,27 +136,59 @@
                 service: input_text.set_value
                 data:
                   entity_id: input_text.dynamic_scene_selected
-                  value: 'baby_room'
+                  value: 'childroom'
               color: >-
-                {% if states('input_text.dynamic_scene_selected') == 'baby_room' %}
-                  #e6f598
+                {% if states('input_text.dynamic_scene_selected') == 'childroom' %}
+                  var(--md-sys-color-tertiary)
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
-        - type: horizontal-stack
-          cards:
             - type: custom:mushroom-template-card
-              icon: m3of:luggage
-              primary: Gästezimmer
+              icon: m3of:hallway
+              primary: Gang
               tap_action:
                 action: call-service
                 service: input_text.set_value
                 data:
                   entity_id: input_text.dynamic_scene_selected
-                  value: 'single_guest_room'
+                  value: 'hallway'
               color: >-
-                {% if states('input_text.dynamic_scene_selected') == 'single_guest_room' %}
-                  var(--md-sys-color-tertiary)
+                {% if states('input_text.dynamic_scene_selected') == 'hallway' %}
+                  var(--md-sys-color-primary)
+                {% else %}
+                  var(--md-sys-color-outline-variant)
+                {% endif %}
+
+        # Row 3: Eingang, Balkon
+        - type: horizontal-stack
+          cards:
+            - type: custom:mushroom-template-card
+              icon: m3of:door_front
+              primary: Eingang
+              tap_action:
+                action: call-service
+                service: input_text.set_value
+                data:
+                  entity_id: input_text.dynamic_scene_selected
+                  value: 'door'
+              color: >-
+                {% if states('input_text.dynamic_scene_selected') == 'door' %}
+                  #fc8d59
+                {% else %}
+                  var(--md-sys-color-outline-variant)
+                {% endif %}
+            - type: custom:mushroom-template-card
+              icon: m3of:garden
+              primary: Balkon
+              tap_action:
+                action: call-service
+                service: input_text.set_value
+                data:
+                  entity_id: input_text.dynamic_scene_selected
+                  value: 'balcony'
+              color: >-
+                {% if states('input_text.dynamic_scene_selected') == 'balcony' %}
+                  #e6f598
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
