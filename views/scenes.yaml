@@ -139,3 +139,5 @@
                 {% else %}
                   var(--md-sys-color-outline-variant)
                 {% endif %}
+    - type: custom:decluttering-card
+      template: navbar_card

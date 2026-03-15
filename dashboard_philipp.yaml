@@ -1,4 +1,5 @@
 kiosk_mode:
+  hide_header: true
   mobile_settings:
     hide_header: true
     ignore_entity_settings: false
