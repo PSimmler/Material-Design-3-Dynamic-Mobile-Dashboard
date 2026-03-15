@@ -169,7 +169,7 @@
         - type: horizontal-stack
           cards:
             - type: custom:mushroom-template-card
-              icon: m3of:door_front
+              icon: m3of:door
               primary: Eingang
               tap_action:
                 action: call-service
@@ -184,7 +184,7 @@
                   var(--md-sys-color-outline-variant)
                 {% endif %}
             - type: custom:mushroom-template-card
-              icon: m3of:garden
+              icon: m3of:balcony
               primary: Balkon
               tap_action:
                 action: call-service
