@@ -636,7 +636,7 @@
                   action: expand
                 type: custom:calendar-card-pro
         - title: Environment
-          icon: mdi:weather-partly-cloudy
+          icon: m3of:partly-cloudy-day
           card:
             type: horizontal-stack
             cards:
@@ -692,7 +692,7 @@
                       options:
                         type: custom:google-slider-card
                         entity: this.entity_id
-                        icon: mdi:led-strip-variant
+                        icon: m3of:linear-scale
                         show_percentage: true
                         bold_text: false
                         control_type: light
@@ -806,7 +806,7 @@
               chip:
                 type: template
                 entity: sensor.soil_sensor_corner_moisture
-                icon: mdi:water-percent
+                icon: m3of:humidity-percentage
                 content: "{{ states('sensor.soil_sensor_corner_moisture') }}%"
                 icon_color: >
                   {% set moisture =
@@ -903,7 +903,7 @@
                 entity: sensor.dryer_switch_lr_power
                 tap_action:
                   action: more-info
-                icon: mdi:tumble-dryer
+                icon: m3of:local-laundry-service
                 icon_color: "#880808"
                 content: Dryer Running
             - type: conditional
@@ -1322,7 +1322,7 @@
           hash: "#weather"
           margin_top_mobile: calc(96vh - 800px)
           name: Weather
-          icon: mdi:weather-partly-cloudy
+          icon: m3of:partly-cloudy-day
           styles: |-
             #root {
                     height: unset !important;
@@ -1529,7 +1529,7 @@
         - type: custom:mushroom-chips-card
           chips:
             - type: template
-              icon: mdi:weather-cloudy-arrow-right
+              icon: m3of:cloud-sync
               tap_action:
                 action: navigate
                 navigation_path: "#weather-forecast"
@@ -1568,7 +1568,7 @@
           hash: "#weather-forecast"
           margin_top_mobile: calc(96vh - 800px)
           name: Forecast
-          icon: mdi:weather-cloudy-arrow-right
+          icon: m3of:cloud-sync
           styles: |-
             #root {
                     height: unset !important;
@@ -1820,7 +1820,7 @@
         - type: custom:mushroom-chips-card
           chips:
             - type: template
-              icon: mdi:weather-partly-cloudy
+              icon: m3of:partly-cloudy-day
               tap_action:
                 action: navigate
                 navigation_path: "#weather"

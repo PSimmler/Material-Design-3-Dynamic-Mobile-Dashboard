@@ -560,7 +560,7 @@ navbar_card:
         label: Scenes
         icon: m3o:layers
         icon_selected: m3of:layers
-      - icon: mdi:dots-horizontal
+      - icon: m3of:more-horiz
         label: More
         tap_action:
           action: open-popup

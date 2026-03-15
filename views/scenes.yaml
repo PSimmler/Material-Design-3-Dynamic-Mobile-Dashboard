@@ -836,7 +836,7 @@
                     - type: custom:mushroom-number-card
                       entity: input_number.dynamic_scene_brightness
                       name: Brightness
-                      icon: mdi:brightness-6
+                      icon: m3of:brightness-medium
                       display_mode: slider
                       fill_container: true
                       card_mod:
@@ -857,7 +857,7 @@
                     - type: custom:mushroom-number-card
                       entity: input_number.dynamic_scene_interval
                       name: Interval
-                      icon: mdi:timer
+                      icon: m3of:timer
                       display_mode: slider
                       fill_container: true
                       card_mod:

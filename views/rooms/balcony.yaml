@@ -104,7 +104,7 @@
                         chip:
                           type: template
                           entity: sensor.outdoor_temperature
-                          icon: mdi:chart-areaspline
+                          icon: m3of:area-chart
                           content: >-
                             {% set val =
                             states('sensor.outdoor_temperature') |
@@ -124,7 +124,7 @@
                     primary: >-
                       Humidity: {{ states('sensor.outdoor_humidity')
                       }}%
-                    icon: mdi:water-percent
+                    icon: m3of:humidity-percentage
                     color: >-
                       {% set hum = states('sensor.outdoor_humidity') |
                       float(0) %} {% if hum < 31 %}
@@ -145,7 +145,7 @@
                         chip:
                           type: template
                           entity: sensor.outdoor_humidity
-                          icon: mdi:chart-areaspline
+                          icon: m3of:area-chart
                           content: >-
                             {% set val =
                             states('sensor.outdoor_humidity') |

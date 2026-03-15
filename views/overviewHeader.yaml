@@ -86,7 +86,7 @@ card:
             tap_action:
               action: navigate
               navigation_path: "#alarmo"
-            icon: mdi:shield-lock
+            icon: m3of:gpp-good
             icon_color: "#69ac5a"
         - type: conditional
           conditions:
@@ -99,7 +99,7 @@ card:
             tap_action:
               action: navigate
               navigation_path: "#alarmo"
-            icon: mdi:shield
+            icon: m3of:shield
             icon_color: "#efa340"
         - type: conditional
           conditions:
@@ -112,7 +112,7 @@ card:
             tap_action:
               action: navigate
               navigation_path: "#alarmo"
-            icon: mdi:shield-outline
+            icon: m3o:shield
             icon_color: "#efa340"
         - type: conditional
           conditions:
@@ -124,7 +124,7 @@ card:
             tap_action:
               action: navigate
               navigation_path: "#alarmo"
-            icon: mdi:shield-off
+            icon: m3of:gpp-bad
             icon_color: "#disarmed"
         - type: template
           entity: sensor.active_notification_count

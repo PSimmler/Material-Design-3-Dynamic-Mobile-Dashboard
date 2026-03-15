@@ -9,7 +9,9 @@
 
 # Rooms
 - title: Räume
-  icon: mdi:floor-plan
+  # m3of:floor or m3of:architecture
+  icon: m3of:floor
+  cards: rooms
   path: rooms
   sections:
     !include ./rooms.yaml
@@ -22,7 +24,9 @@
 
 # Scenes
 - title: Szenen
-  icon: mdi:movie-roll
+  # m3of:movie
+  icon: m3of:movie
+  cards: scenes
   path: scenes
   sections:
     !include ./scenes.yaml
@@ -46,7 +50,8 @@
     # !include ./roomsBackground.yaml
 #Rooms Details
 - title: Balkon
-  icon: mdi:balcony
+  icon: m3of:balcony
+  cards: balcony
   path: balcony
   subview: true
   sections:
@@ -58,7 +63,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Kinderzimmer
-  icon: mdi:girl
+  icon: m3of:girl
+  cards: childroom
   path: childroom
   subview: true
   sections:
@@ -70,7 +76,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Esszimmer
-  icon: mdi:restaurant
+  icon: m3of:restaurant
+  cards: diningroom
   path: diningroom
   subview: true
   sections:
@@ -82,7 +89,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Eingang
-  icon: mdi:door
+  icon: m3of:door-front
+  cards: door
   path: door
   subview: true
   sections:
@@ -94,7 +102,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Hallway
-  icon: mdi:floor-plan
+  icon: m3of:floor
+  cards: hallway
   path: hallway
   subview: true
   sections:
@@ -106,7 +115,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Wohnzimmer
-  icon: mdi:sofa
+  icon: m3of:chair-alt
+  cards: livingroom
   path: livingroom
   subview: true
   sections:
@@ -118,7 +128,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Schlafzimmer   
-  icon: mdi:bed
+  icon: m3of:bed
+  cards: master
   path: master
   subview: true
   sections:
@@ -130,7 +141,8 @@
   # background:
     # !include ./roomsBackground.yaml
 - title: Office
-  icon: mdi:desk
+  icon: m3of:desk
+  cards: office
   path: office
   subview: true
   sections:
