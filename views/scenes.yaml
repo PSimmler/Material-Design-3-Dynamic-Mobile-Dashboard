@@ -19,9 +19,9 @@
           {% if selected_room_abstract == '' %}
             []
           {% else %}
-            {# Map the abstract room to the Hue scene ID prefix convention (lowercase, usually no umlauts) #}
+            {# Map the abstract room to the actual Home Assistant Area or Hue Room name #}
             {% set search_map = {
-              'office': 'buro',
+              'office': 'büro',
               'livingroom': 'wohnzimmer',
               'master': 'schlafzimmer',
               'diningroom': 'esszimmer',
@@ -32,13 +32,15 @@
             } %}
             {% set search_term = search_map.get(selected_room_abstract, 'unknown') %}
 
-            {# Find all Hue 'scene' entities containing this room name in their entity_id #}
+            {# Find all Hue 'scene' entities containing this room name in their ID or Friendly Name #}
             {% set entities = [] %}
             {% for state in states.scene %}
-              {% if search_term in state.entity_id %}
-                {% set friendly = state.attributes.friendly_name | default('') %}
-                {# Filter out generic 'auto_hue' scenes or default system ones if needed, but for now include all matches #}
-                {% set display_name = friendly.replace(search_term.title() ~ ' ', '') %}
+              {% set e_id = state.entity_id | lower %}
+              {% set f_name = state.attributes.friendly_name | lower | default('') %}
+              {% if search_term in e_id or search_term in f_name %}
+                {% set display_name = state.attributes.friendly_name | default(state.entity_id) %}
+                {# Clean up the display name for the button so it just says "Hell" instead of "Büro Hell" #}
+                {% set display_name = display_name|replace('Büro ', '')|replace('Wohnzimmer ', '')|replace('Schlafzimmer ', '')|replace('Esszimmer ', '')|replace('Kinderzimmer ', '')|replace('Gang ', '')|replace('Eingang ', '')|replace('Balkon ', '') %}
                 
                 {% set entities = entities + [
                   {

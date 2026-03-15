@@ -98,7 +98,8 @@ Removed in v3.1.0:
   4. *Note:* Some add-ons (like **Material Symbols**, Alarmo, and Web RTC Camera) require installing from **HACS > Integrations**, followed by adding them in Home Assistant `Settings > Devices & Services`.
 - You need to adjust the navbar card directory to suit your current dashboard (if you don't start fresh).
 - To unlock the full functionality (like weather icons, notification counts, and more), you’ll need to add the corresponding [sensors](https://github.com/ElementZoom/Material-Design-3-Dynamic-Mobile-Dashboard/tree/main/template%20sensor) to your config.
-- For the Scenes tab, ensure you have the official Philips Hue integration installed. The dashboard will automatically detect and populate your native Hue scenes per room using `auto-entities`!
+- **For the Scenes tab:** Ensure you have the official Philips Hue integration installed. The dashboard will automatically detect and populate your native Hue scenes per room using `auto-entities`.
+  - **Important:** You must create a Text Helper for the Room Selector chips to function. Go to *Settings > Devices & Services > Helpers > Create Helper > Text*. Name it exactly: **Dynamic Scene Selected**.
 - Apply the MD3 theme and select your preferred colors. It is accessible from Overview page > More > Theme Icon
 
 <img width="200" height="180" alt="Dynamic Colors Showcase" src="https://github.com/user-attachments/assets/b7a0166b-edbd-4767-9e13-1623be587465" />
