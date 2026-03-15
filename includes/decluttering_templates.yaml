@@ -557,9 +557,9 @@ navbar_card:
           - icon: m3of:garden
             url: balcony
       - url: scenes
-        label: Scenes
-        icon: m3o:layers
-        icon_selected: m3of:layers
+        label: Szenen
+        icon: m3o:movie
+        icon_selected: m3of:movie
       - icon: m3of:more-horiz
         label: More
         tap_action:
