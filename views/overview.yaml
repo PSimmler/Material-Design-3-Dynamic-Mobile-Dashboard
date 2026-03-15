@@ -594,9 +594,9 @@
                     }
               - entities:
                   - entity: calendar.1
-                    accent_color: "#ff6a6a"
+                    accent_color: var(--md-sys-color-error)
                   - entity: calendar.2
-                    accent_color: "#71c8fe"
+                    accent_color: var(--md-sys-color-primary)
                 days_to_show: 10
                 compact_events_to_show: 10
                 background_color: transparent
@@ -904,7 +904,7 @@
                 tap_action:
                   action: more-info
                 icon: m3of:local-laundry-service
-                icon_color: "#880808"
+                icon_color: var(--md-sys-color-error)
                 content: Dryer Running
             - type: conditional
               conditions:
@@ -1716,7 +1716,7 @@
                   curve: smooth
                   yaxis_id: temp
                   stroke_width: 2
-                  color: "#E53935"
+                  color: var(--md-sys-color-error)
                   data_generator: |
                     return entity.attributes.forecasts.map(f => {
                       return {
@@ -1797,7 +1797,7 @@
                   type: line
                   curve: smooth
                   yaxis_id: speed
-                  color: "#0288D1"
+                  color: var(--md-sys-color-primary)
                   stroke_width: 2
                   data_generator: |
                     return entity.attributes.forecasts.map(f => {
@@ -1810,7 +1810,7 @@
                   type: line
                   curve: smooth
                   yaxis_id: direction
-                  color: "#8E24AA"
+                  color: var(--md-sys-color-tertiary)
                   stroke_width: 1
                   data_generator: |
                     return entity.attributes.forecasts.map(f => {

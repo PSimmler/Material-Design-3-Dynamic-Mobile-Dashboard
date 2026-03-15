@@ -124,11 +124,11 @@
           series:
             - entity: sensor.download_speed_mbps
               name: Download
-              color: '#42a5f5'
+              color: var(--md-sys-color-primary)
               type: area
             - entity: sensor.upload_speed_mbps
               name: Upload
-              color: '#66bb6a'
+              color: var(--md-sys-color-tertiary)
               type: area
     - type: vertical-stack
       cards:

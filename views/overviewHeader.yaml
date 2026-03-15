@@ -74,7 +74,7 @@ card:
               action: navigate
               navigation_path: "#alarmo"
             icon: m3of:notifications-active
-            icon_color: "#d14f3a"
+            icon_color: var(--md-sys-color-error)
         - type: conditional
           conditions:
             - entity: alarm_control_panel.alarmo
@@ -87,7 +87,7 @@ card:
               action: navigate
               navigation_path: "#alarmo"
             icon: m3of:gpp-good
-            icon_color: "#69ac5a"
+            icon_color: var(--success-color, var(--md-sys-color-primary))
         - type: conditional
           conditions:
             - entity: alarm_control_panel.alarmo
@@ -100,7 +100,7 @@ card:
               action: navigate
               navigation_path: "#alarmo"
             icon: m3of:shield
-            icon_color: "#efa340"
+            icon_color: var(--warning-color, var(--md-sys-color-tertiary))
         - type: conditional
           conditions:
             - entity: alarm_control_panel.alarmo
@@ -113,7 +113,7 @@ card:
               action: navigate
               navigation_path: "#alarmo"
             icon: m3o:shield
-            icon_color: "#efa340"
+            icon_color: var(--warning-color, var(--md-sys-color-tertiary))
         - type: conditional
           conditions:
             - entity: alarm_control_panel.alarmo
